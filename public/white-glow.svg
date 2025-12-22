@@ -1,0 +1,14 @@
+<svg width="1563.794" height="2712" viewBox="-781.897 -1356 1563.794 2712" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="60" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="-390.948" y="-678" width="781.896" height="1356" fill="white" filter="url(#glow)"/>
+</svg>
