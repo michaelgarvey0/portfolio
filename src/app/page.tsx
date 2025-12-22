@@ -296,8 +296,8 @@ export default function Home() {
         <div className="relative flex flex-col items-start" style={{ zIndex: 100 }}>
           <motion.h3
             animate={{ opacity: (isFadingOut || isReversing || (isReturning && !showButton)) ? 0 : 1 }}
-            transition={{ duration: 0.5, delay: (isReversing && showButton) ? 0 : 0 }}
-            className="mb-8 text-3xl font-bold text-white leading-relaxed md:text-4xl"
+            transition={{ duration: 0.2, delay: (isReversing && showButton) ? 0 : 0 }}
+            className="mb-8 text-2xl font-bold text-white leading-relaxed md:text-3xl"
           >
             Hey. I'm Michael.<br />Welcome to a little peek inside my brain.
           </motion.h3>
@@ -306,17 +306,29 @@ export default function Home() {
           <motion.button
             onClick={handleDoorClick}
             disabled={isFadingOut || isReversing || (isReturning && !showButton)}
-            animate={{ opacity: (isFadingOut || isReversing || (isReturning && !showButton)) ? 0 : 1 }}
-            whileHover={{ backgroundColor: 'rgba(255, 255, 255, 1)', color: '#000000' }}
+            initial={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+            animate={{
+              opacity: (isFadingOut || isReversing || (isReturning && !showButton)) ? 0 : 1,
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              transition: { backgroundColor: { duration: 0.15 } }
+            }}
+            whileHover={{
+              backgroundColor: 'rgba(255, 255, 255, 1)',
+              color: '#000000',
+              transition: { backgroundColor: { duration: 0.15, ease: 'easeOut' }, color: { duration: 0 } }
+            }}
             whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.5, delay: (isReversing && showButton) ? 0 : 0 }}
+            transition={{
+              duration: 0.5,
+              delay: (isReversing && showButton) ? 0 : 0
+            }}
             style={{
               transform: 'translateZ(0)',
               willChange: 'opacity',
               backfaceVisibility: 'hidden',
               cursor: 'pointer'
             }}
-            className="flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 disabled:opacity-50 cursor-pointer"
+            className="flex items-center gap-3 px-6 py-3 text-lg font-semibold text-white backdrop-blur-sm border border-white/20 disabled:opacity-50 cursor-pointer"
           >
             <span>View my work</span>
             <ArrowForward />

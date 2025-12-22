@@ -16,10 +16,11 @@ export default function TestReverse() {
     }
 
     console.log('Lottie instance:', lottieRef.current);
-    console.log('Total frames:', lottieRef.current.getDuration(true));
+    const duration = lottieRef.current.getDuration?.(true);
+    console.log('Total frames:', duration);
 
     // Go to last frame first
-    const lastFrame = lottieRef.current.getDuration(true) - 1;
+    const lastFrame = (duration || 0) - 1;
     lottieRef.current.goToAndStop(lastFrame, true);
     console.log(`Jumped to frame ${lastFrame}`);
 
