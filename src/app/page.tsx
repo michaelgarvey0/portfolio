@@ -65,7 +65,7 @@ export default function Home() {
             setTimeout(() => {
               setIsReversing(false);
               setShowButton(true);
-            }, 1600);
+            }, 1400);
           }, 50);
         }
       }, 100);
@@ -147,15 +147,13 @@ export default function Home() {
       backgroundRef.current.setSpeed(5);
     }
 
-    setTimeout(() => {
-      setIsFullyOpening(true);
-      if (doorZoomRef.current) {
-        doorZoomRef.current.play();
-      }
-      if (backgroundRef.current) {
-        backgroundRef.current.play();
-      }
-    }, 250);
+    setIsFullyOpening(true);
+    if (doorZoomRef.current) {
+      doorZoomRef.current.play();
+    }
+    if (backgroundRef.current) {
+      backgroundRef.current.play();
+    }
     setTimeout(() => {
       router.push('/work');
     }, 2200);
@@ -171,8 +169,8 @@ export default function Home() {
           marginLeft: isFullyOpening ? '-90%' : '-65%'
         }}
         transition={{
-          duration: 1.2,
-          delay: isReturning ? 0 : 0.25,
+          duration: 2,
+          delay: 0,
           ease: [0.25, 0.1, 0.25, 1]
         }}
         style={{
@@ -250,8 +248,8 @@ export default function Home() {
           marginLeft: isFullyOpening ? '-25%' : '0%'
         }}
         transition={{
-          duration: 1.2,
-          delay: isReturning ? 0 : 0.25,
+          duration: 2,
+          delay: 0,
           ease: [0.25, 0.1, 0.25, 1]
         }}
         style={{
@@ -296,7 +294,7 @@ export default function Home() {
         <div className="relative flex flex-col items-start" style={{ zIndex: 100 }}>
           <motion.h3
             animate={{ opacity: (isFadingOut || isReversing || (isReturning && !showButton)) ? 0 : 1 }}
-            transition={{ duration: 0.2, delay: (isReversing && showButton) ? 0 : 0 }}
+            transition={{ duration: 0.5 }}
             className="mb-8 text-2xl font-bold text-white leading-relaxed md:text-3xl"
           >
             Hey. I'm Michael.<br />Welcome to a little peek inside my brain.
@@ -318,10 +316,7 @@ export default function Home() {
               transition: { backgroundColor: { duration: 0.15, ease: 'easeOut' }, color: { duration: 0 } }
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{
-              duration: 0.5,
-              delay: (isReversing && showButton) ? 0 : 0
-            }}
+            transition={{ duration: 0.5 }}
             style={{
               transform: 'translateZ(0)',
               willChange: 'opacity',
