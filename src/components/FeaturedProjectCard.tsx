@@ -29,13 +29,44 @@ export default function FeaturedProjectCard({
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: isExiting ? 0 : delay }}
       className="flex"
     >
+      <style jsx>{`
+        :global(.featured-card) {
+          display: flex !important;
+          flex-direction: row !important;
+        }
+        :global(.featured-image) {
+          width: 50%;
+          min-height: 400px;
+        }
+        :global(.featured-content) {
+          width: 50%;
+          padding: 4rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        @media (max-width: 767px) {
+          :global(.featured-card) {
+            flex-direction: column !important;
+          }
+          :global(.featured-image) {
+            width: 100%;
+            height: 300px;
+            min-height: 300px;
+          }
+          :global(.featured-content) {
+            width: 100%;
+            padding: 2rem;
+          }
+        }
+      `}</style>
       <Link
         href={href}
-        className="flex w-full bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] relative overflow-hidden group"
+        className="w-full bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] relative overflow-hidden group featured-card"
       >
-        <div className="w-1/2 bg-gray-200"></div>
+        <div className="featured-image bg-gray-200"></div>
 
-        <div className="relative z-[1] w-1/2 p-16 flex flex-col justify-center">
+        <div className="featured-content relative z-[1]">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-xs font-semibold tracking-wider uppercase">
               {tag}

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const sourceSans = Source_Sans_3({
+const sourceSans3 = Source_Sans_3({
   weight: ['400', '600', '700'],
   subsets: ["latin"],
-  variable: "--font-source-sans",
+  variable: "--font-source-sans-3",
 });
 
 export const metadata: Metadata = {
@@ -21,8 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sourceSans.variable} antialiased font-sans`}
-        style={{ fontFamily: 'var(--font-source-sans)' }}
+        className={`${sourceSans3.variable} antialiased`}
+        style={{ fontFamily: 'var(--font-source-sans-3)' }}
       >
         {children}
       </body>

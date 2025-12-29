@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --max-width: 1200px;
 }
 
 @theme inline {
@@ -22,6 +23,24 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-source-sans-3), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-source-sans-3), sans-serif;
+}
+
+/* Button hover animation */
+.button-hover-animation {
+  transition: all 0.3s ease-out;
+}
+
+.button-hover-animation:hover {
+  background-color: #cc3200 !important;
+  transform: scale(0.95) !important;
+}
+
+.button-hover-animation:active {
+  transform: scale(0.9) !important;
 }
 

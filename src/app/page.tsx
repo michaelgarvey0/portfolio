@@ -6,8 +6,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Lottie from 'lottie-react';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import backgroundAnimation from '../../public/background.json';
+import backgroundMobileAnimation from '../../public/background-mobile.json';
 import doorCrackAnimation from '../../public/door.json';
+import doorMobileAnimation from '../../public/door-mobile.json';
 import doorZoomAnimation from '../../public/door-zoom.json';
+import doorZoomMobileAnimation from '../../public/door-zoom-mobile.json';
 
 export default function Home() {
   // Check sessionStorage immediately before rendering
@@ -20,6 +23,7 @@ export default function Home() {
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [isReversing, setIsReversing] = useState(isReturningFromStorage);
   const [reverseReady, setReverseReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const doorCrackRef = useRef<any>(null);
   const doorZoomRef = useRef<any>(null);
   const backgroundRef = useRef<any>(null);
@@ -27,6 +31,13 @@ export default function Home() {
 
   useEffect(() => {
     setIsLoaded(true);
+
+    // Check for mobile on mount and resize
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
 
     // Clear the sessionStorage flag immediately
     if (isReturning) {
@@ -155,6 +166,7 @@ export default function Home() {
       backgroundRef.current.play();
     }
     setTimeout(() => {
+      sessionStorage.setItem('isFromHome', 'true');
       router.push('/work');
     }, 2200);
   };
@@ -163,10 +175,10 @@ export default function Home() {
     <div className="relative min-h-screen overflow-hidden bg-white">
       {/* Background Lottie animation */}
       <motion.div
-        className="fixed"
-        initial={{ marginLeft: isReturning ? '-90%' : '-65%' }}
+        className="fixed background-lottie"
+        initial={{ marginLeft: isMobile ? undefined : (isReturning ? '-90%' : '-65%') }}
         animate={{
-          marginLeft: isFullyOpening ? '-90%' : '-65%'
+          marginLeft: isMobile ? undefined : (isFullyOpening ? '-90%' : '-65%')
         }}
         transition={{
           duration: 2,
@@ -186,7 +198,7 @@ export default function Home() {
       >
         <Lottie
           lottieRef={backgroundRef}
-          animationData={backgroundAnimation}
+          animationData={isMobile ? backgroundMobileAnimation : backgroundAnimation}
           loop={false}
           autoplay={false}
           rendererSettings={{
@@ -201,12 +213,13 @@ export default function Home() {
 
       {/* Door crack animation - keep mounted, toggle visibility - hide completely when returning */}
       <div
-        className="absolute door-glow"
+        className="absolute door-glow door-crack-responsive"
         style={{
           zIndex: 2,
-          width: '150%',
+          width: '200%',
           height: '100%',
-          inset: '0%',
+          left: '-25%',
+          top: '0%',
           objectFit: 'cover',
           opacity: (isFullyOpening || isReturning) ? 0 : 1,
           pointerEvents: (isFullyOpening || isReturning) ? 'none' : 'auto',
@@ -216,9 +229,20 @@ export default function Home() {
           display: isReturning ? 'none' : 'block'
         }}
       >
+        <style jsx>{`
+          .door-crack-responsive {
+            /* Mobile Landscape - 767px and below - center door */
+            @media (max-width: 767px) {
+              left: -50% !important;
+              height: 100% !important;
+              bottom: 0 !important;
+              top: auto !important;
+            }
+          }
+        `}</style>
         <Lottie
           lottieRef={doorCrackRef}
-          animationData={doorCrackAnimation}
+          animationData={isMobile ? doorMobileAnimation : doorCrackAnimation}
           loop={false}
           autoplay={true}
           renderer="svg"
@@ -242,10 +266,10 @@ export default function Home() {
 
       {/* Door zoom animation - keep mounted, toggle visibility */}
       <motion.div
-        className="fixed"
-        initial={{ marginLeft: isReturning ? '-25%' : '0%' }}
+        className="fixed door-zoom-responsive"
+        initial={{ marginLeft: isMobile ? '-50%' : (isReturning ? '-50%' : '-25%') }}
         animate={{
-          marginLeft: isFullyOpening ? '-25%' : '0%'
+          marginLeft: isMobile ? '-50%' : (isFullyOpening ? '-50%' : '-25%')
         }}
         transition={{
           duration: 2,
@@ -254,7 +278,7 @@ export default function Home() {
         }}
         style={{
           zIndex: 2,
-          width: '150%',
+          width: '200%',
           height: '100%',
           objectFit: 'cover',
           opacity: (isFullyOpening || isReturning) ? 1 : 0,
@@ -266,7 +290,7 @@ export default function Home() {
       >
         <Lottie
           lottieRef={doorZoomRef}
-          animationData={doorZoomAnimation}
+          animationData={isMobile ? doorZoomMobileAnimation : doorZoomAnimation}
           loop={false}
           autoplay={false}
           rendererSettings={{
@@ -281,17 +305,73 @@ export default function Home() {
 
       {/* Hero copy container - positioned on left */}
       <div
-        className="fixed flex items-center justify-start"
+        className="fixed flex items-center hero-container"
         style={{
           zIndex: 10,
-          width: '30%',
+          width: '100%',
           height: '100%',
-          marginLeft: '20%',
           perspective: '902px',
           perspectiveOrigin: '50%'
         }}
       >
-        <div className="relative flex flex-col items-start" style={{ zIndex: 100 }}>
+        <style jsx>{`
+          .hero-container {
+            align-items: center;
+          }
+          .hero-content {
+            /* Desktop (base) - left side */
+            margin-left: 20%;
+            width: 30%;
+            align-items: flex-start;
+          }
+          .hero-content :global(h3) {
+            text-align: left;
+          }
+          /* Tablet - 991px and below - closer to LEFT */
+          @media (max-width: 991px) {
+            .hero-content {
+              margin-left: 10%;
+              width: 40%;
+            }
+          }
+          /* Mobile Landscape - 767px and below - centered ABOVE door */
+          @media (max-width: 767px) {
+            .hero-container {
+              align-items: flex-start;
+              padding-top: 8rem;
+            }
+            .hero-content {
+              margin-left: 0;
+              width: 100%;
+              align-items: center;
+              padding: 0 1.5rem;
+            }
+            .hero-content :global(h3) {
+              text-align: center;
+            }
+          }
+          /* Mobile Portrait - 478px and below */
+          @media (max-width: 478px) {
+            .hero-content {
+              padding: 0 1rem;
+            }
+          }
+
+          /* Mobile Lottie positioning */
+          @media (max-width: 767px) {
+            :global(.background-lottie) {
+              height: 100% !important;
+              bottom: 0 !important;
+              top: auto !important;
+            }
+            :global(.door-zoom-responsive) {
+              height: 100% !important;
+              bottom: 0 !important;
+              top: auto !important;
+            }
+          }
+        `}</style>
+        <div className="relative flex flex-col hero-content" style={{ zIndex: 100 }}>
           <motion.h3
             animate={{ opacity: (isFadingOut || isReversing || (isReturning && !showButton)) ? 0 : 1 }}
             transition={{ duration: 0.5 }}
