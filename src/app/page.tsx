@@ -338,12 +338,13 @@ export default function Home() {
           @media (max-width: 767px) {
             .hero-container {
               align-items: flex-start;
-              padding-top: 8rem;
             }
             .hero-content {
               margin-left: 0;
               width: 100%;
+              height: 40vh;
               align-items: center;
+              justify-content: center;
               padding: 0 1.5rem;
             }
             .hero-content :global(h3) {
