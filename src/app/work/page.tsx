@@ -129,6 +129,7 @@ export default function Work() {
                 description="Migrated and enhanced their design system from Sketch to Figma."
                 delay={0.65}
                 isExiting={false}
+                imageSrc="/assets/case-studies/webster-feature-home.png"
               />
 
               <ProjectCard

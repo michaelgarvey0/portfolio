@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -11,6 +11,13 @@ export default function Webster() {
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
   const { scrollYProgress } = useScroll();
   const brandColor = '#002d82';
+
+  const imageY = useTransform(scrollYProgress, [0, 0.3], [0, 300]);
+  const imageScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.7]);
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+
+  const textY = useTransform(scrollYProgress, [0, 0.3], [0, -100]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   const sections = [
     { id: 'summary', title: 'Summary' },
@@ -84,22 +91,47 @@ export default function Webster() {
       <Navbar />
 
       {/* Hero */}
-      <div id="hero-section" className="pt-32 pb-16" style={{ backgroundColor: '#fafafa' }}>
-        <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          >
-            <h1 className="font-sans text-[clamp(3rem,6vw,5rem)] font-bold mb-6 text-[#333] tracking-tight">
-              Webster Bank Design System
-            </h1>
-            <p className="text-[clamp(1rem,2vw,1.25rem)] text-[#666] leading-relaxed mb-10 max-w-[800px]">
-              Revamping our design system for scalability and accessibility during its migration from Sketch to Figma.
-            </p>
-          </motion.div>
+      <motion.div
+        id="hero-section"
+        className="pt-20 pb-0 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #002d82 0%, #0047cc 100%)' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="mx-auto relative px-12" style={{ maxWidth: 'var(--max-width)' }}>
+          <div className="flex justify-between gap-12">
+            {/* Left: Text - 40% */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              style={{ y: textY, opacity: textOpacity }}
+              className="w-[40%] flex flex-col justify-center"
+            >
+              <h1 className="font-sans text-[clamp(2.5rem,5vw,4rem)] font-bold mb-6 text-white tracking-tight">
+                Webster Bank
+              </h1>
+              <p className="text-[clamp(1rem,2vw,1.25rem)] text-white leading-relaxed mb-10">
+                Revamping our design system for scalability and accessibility during its migration from Sketch to Figma.
+              </p>
+            </motion.div>
+
+            {/* Right: Image - 60% */}
+            <div className="w-[60%] flex flex-col">
+              <div className="h-20"></div>
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                style={{ y: imageY, scale: imageScale, opacity: imageOpacity }}
+              >
+                <img src="/assets/case-studies/webster-feature.png" alt="Webster Design System" className="w-full block" style={{ aspectRatio: '16/10' }} />
+              </motion.div>
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Content with Sidebar */}
       <div className="mx-auto px-12 pt-20 flex gap-20" style={{ maxWidth: 'var(--max-width)' }}>

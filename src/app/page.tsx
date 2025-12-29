@@ -213,7 +213,7 @@ export default function Home() {
 
       {/* Door crack animation - keep mounted, toggle visibility - hide completely when returning */}
       <div
-        className="absolute door-glow door-crack-responsive"
+        className="fixed door-glow door-crack-responsive"
         style={{
           zIndex: 2,
           width: '200%',

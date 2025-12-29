@@ -33,7 +33,7 @@ export default function ProjectCard({
     >
       <Link
         href={href}
-        className="flex flex-col bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-gray-300 w-full overflow-hidden"
+        className="flex flex-col bg-white border border-gray-200 shadow-[0_4px_48px_rgba(0,0,0,0.08)] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_20px_80px_rgba(0,0,0,0.08)] hover:border-gray-300 w-full overflow-hidden"
       >
         <div className="w-full pt-4 px-4">
           <div className="w-full bg-gray-100" style={{ aspectRatio: '5/2' }}>

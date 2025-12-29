@@ -112,7 +112,7 @@ export default function OrgoCaseAlt() {
               style={{ y: textY, opacity: textOpacity }}
               className="w-[40%] flex flex-col justify-center"
             >
-              <h1 className="font-sans text-[clamp(3rem,6vw,5rem)] font-bold mb-6 text-white tracking-tight">
+              <h1 className="font-sans text-[clamp(2.5rem,5vw,4rem)] font-bold mb-6 text-white tracking-tight">
                 Orgo
               </h1>
               <p className="text-[clamp(1rem,2vw,1.25rem)] text-white leading-relaxed mb-10">
