@@ -342,7 +342,7 @@ export default function Home() {
             .hero-content {
               margin-left: 0;
               width: 100%;
-              height: 40vh;
+              height: 50vh;
               align-items: center;
               justify-content: center;
               padding: 0 1.5rem;
@@ -378,7 +378,8 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="mb-8 text-2xl font-bold text-white leading-relaxed md:text-3xl"
           >
-            Hey. I'm Michael.<br />Welcome to a little peek inside my brain.
+            <span className="hidden md:inline">Hey. I'm Michael.<br />Welcome to a little peek inside my brain.</span>
+            <span className="md:hidden">Hey. I'm Michael.<br />Welcome to a little peek<br />inside my brain.</span>
           </motion.h3>
 
           {/* Button with icon */}
