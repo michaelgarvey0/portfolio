@@ -111,7 +111,7 @@ export default function Work() {
             {/* Hero Project */}
             <FeaturedProjectCard
               href="/work/orgo"
-              title="Orgo: The App"
+              title="Orgo"
               tag="Mobile App Design + Development"
               description="B2C mobile app for managing daily life. End-to-end product design from research to launch."
               linkText="View project"
