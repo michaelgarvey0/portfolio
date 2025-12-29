@@ -94,84 +94,46 @@ export default function OrgoCaseAlt() {
       <Navbar />
 
       {/* Hero */}
-      <div id="hero-section" className="pt-32 pb-0 relative overflow-hidden" style={{ backgroundColor: '#212121' }}>
-        <style jsx>{`
-          .hero-container {
-            padding-left: 3rem;
-            padding-right: 3rem;
-          }
-          .hero-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
-            padding-bottom: 0;
-            min-height: 500px;
-          }
-          .hero-text {
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          @media (max-width: 767px) {
-            .hero-container {
-              padding-left: 1.5rem;
-              padding-right: 1.5rem;
-            }
-            .hero-flex {
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              gap: 2rem;
-              min-height: auto;
-              padding-bottom: 3rem;
-            }
-            .hero-text {
-              text-align: center;
-              flex: none;
-              width: 100%;
-              align-items: center;
-            }
-            .hero-text :global(p) {
-              max-width: 100%;
-            }
-            .hero-image {
-              align-self: center;
-            }
-          }
-        `}</style>
-        <div className="mx-auto hero-container relative" style={{ maxWidth: 'var(--max-width)' }}>
-          <div className="hero-flex">
+      <motion.div
+        id="hero-section"
+        className="pt-20 pb-0 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #ff3e00 0%, #ff8c00 100%)' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="mx-auto relative px-12" style={{ maxWidth: 'var(--max-width)' }}>
+          <div className="flex justify-between gap-12">
+            {/* Left: Text - 40% */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
               style={{ y: textY, opacity: textOpacity }}
-              className="flex-1 hero-text"
+              className="w-[40%] flex flex-col justify-center"
             >
               <h1 className="font-sans text-[clamp(3rem,6vw,5rem)] font-bold mb-6 text-white tracking-tight">
                 Orgo
               </h1>
-              <p className="text-[clamp(1rem,2vw,1.25rem)] text-white leading-relaxed mb-10 max-w-[800px]">
+              <p className="text-[clamp(1rem,2vw,1.25rem)] text-white leading-relaxed mb-10">
                 Creating a B2C mobile app to help with the logistics of daily life.
               </p>
               <a
                 href="https://www.orgohq.com/download"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-10 py-4 font-bold text-base shadow-lg"
+                className="inline-block px-10 py-4 font-bold text-base shadow-lg self-start"
                 style={{
-                  backgroundColor: '#ff3e00',
+                  backgroundColor: '#212121',
                   color: 'white',
                   transition: 'all 0.3s ease-out'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#e63700';
+                  e.currentTarget.style.backgroundColor = '#000000';
                   e.currentTarget.style.transform = 'scale(0.95)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ff3e00';
+                  e.currentTarget.style.backgroundColor = '#212121';
                   e.currentTarget.style.transform = 'scale(1)';
                 }}
               >
@@ -179,19 +141,21 @@ export default function OrgoCaseAlt() {
               </a>
             </motion.div>
 
-            {/* Parallax Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              style={{ y: imageY, scale: imageScale, opacity: imageOpacity }}
-              className="flex-shrink-0 self-end hero-image"
-            >
-              <img src="/assets/case-studies/orgo-header.png" alt="Orgo App" className="h-[450px] w-auto block" style={{ display: 'block' }} />
-            </motion.div>
+            {/* Right: Image - 60% */}
+            <div className="w-[60%] flex flex-col">
+              <div className="h-20"></div>
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+                style={{ y: imageY, scale: imageScale, opacity: imageOpacity }}
+              >
+                <img src="/assets/case-studies/orgo-feature.png" alt="Orgo App" className="w-full block" style={{ aspectRatio: '16/10' }} />
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Content with Sidebar */}
       <div className="mx-auto pt-20 content-with-sidebar" style={{ maxWidth: 'var(--max-width)' }}>

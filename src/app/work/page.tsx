@@ -33,7 +33,7 @@ export default function Work() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a] overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50 text-[#1a1a1a] overflow-x-hidden">
       <style jsx>{`
         .main-container {
           padding-left: 3rem;
@@ -117,6 +117,7 @@ export default function Work() {
               linkText="View project"
               delay={0.5}
               isExiting={false}
+              imageSrc="/assets/case-studies/orgo-header.png"
             />
 
             {/* Secondary Projects */}
@@ -148,6 +149,7 @@ export default function Work() {
                     description="Defining a brand for a B2C mobile app."
                     delay={0}
                     isExiting={false}
+                    imageSrc="/assets/case-studies/orgo-brand-feature.png"
                   />
 
                   <ProjectCard

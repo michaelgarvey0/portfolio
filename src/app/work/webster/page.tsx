@@ -140,7 +140,7 @@ export default function Webster() {
             </div>
           </div>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
         </motion.section>
 
         {/* Background */}
@@ -171,7 +171,7 @@ export default function Webster() {
             The design system is now fully integrated with Figma's capabilities, resulting in a more scalable and accessible system. A consistent naming convention and organization of colors and typography has been established, making it easier to identify, add, and categorize elements.
           </p>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 mb-8"></div>
+          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-8"></div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             For example, I standardized the buttons to align with industry best practices using features such as auto layout, constraints, absolute positioning, variants, and boolean properties. This made the system more adaptable and easy to update in response to future changes.
@@ -191,7 +191,7 @@ export default function Webster() {
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">The Sketch UI library</h5>
               <p className="text-[#666]">Below is a view of some Symbols in the Sketch library.</p>
             </div>
-            <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+            <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
@@ -219,7 +219,7 @@ export default function Webster() {
             To address this, I used the spreadsheet to brainstorm and ideate on the necessary variants and property values for each component. This allowed me to create a set of necessary components and variants that were tailored to our specific needs. I also consulted with the other designers to ensure that my choices were in line with the overall design strategy.
           </p>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
         </section>
 
         {/* Styles */}
@@ -312,7 +312,7 @@ export default function Webster() {
             The designers collectively made a decision that a solid blue button would be the primary one going forward. I took this opportunity to also define some hover, active, and focus states for the new buttons as there was no clear pattern to these states in the previous design system.
           </p>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
         </section>
 
         {/* Tokens */}
@@ -331,7 +331,7 @@ export default function Webster() {
             As a first step in implementing these tokens, I organized our typography tokens, which are a composition of several other tokens such as font family and font size. This helped to simplify the hierarchy of text styles, making it easier to edit and maintain consistency throughout the design system.
           </p>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
         </section>
 
         {/* Next Steps */}

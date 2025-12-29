@@ -67,37 +67,9 @@ export default function Navbar() {
         initial={shouldAnimate ? { opacity: 0, y: -20 } : false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 bg-white/95 border-b border-[rgba(0,0,0,0.08)] z-50"
+        className="fixed top-0 left-0 right-0 bg-gray-50/95 border-b border-[rgba(0,0,0,0.08)] z-50"
       >
-        <style jsx>{`
-          .nav-container {
-            padding-left: 3rem;
-            padding-right: 3rem;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-          }
-          .desktop-nav {
-            display: flex;
-          }
-          .mobile-menu-button {
-            display: none;
-          }
-          @media (max-width: 991px) {
-            .nav-container {
-              padding-left: 1.5rem;
-              padding-right: 1.5rem;
-              padding-top: 1rem;
-              padding-bottom: 1rem;
-            }
-            .desktop-nav {
-              display: none;
-            }
-            .mobile-menu-button {
-              display: flex;
-            }
-          }
-        `}</style>
-        <div className="mx-auto flex justify-between items-center nav-container" style={{ maxWidth: 'var(--max-width)' }}>
+        <div className="mx-auto flex justify-between items-center px-6 py-4 lg:px-12 lg:py-6" style={{ maxWidth: 'var(--max-width)' }}>
           <Link href="/work" className="text-2xl font-bold text-[#1e3f66] hover:text-[#0d243f] transition-colors" style={{ letterSpacing: 0 }}>
             Michael Garvey
           </Link>
@@ -105,7 +77,7 @@ export default function Navbar() {
           {/* Hamburger Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="mobile-menu-button items-center justify-center w-10 h-10 text-[#666] hover:text-[#1a1a1a] transition-colors relative cursor-pointer"
+            className="lg:hidden flex items-center justify-center w-10 h-10 text-[#666] hover:text-[#1a1a1a] transition-colors relative cursor-pointer"
             aria-label="Toggle menu"
           >
             <svg
@@ -161,7 +133,7 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Nav */}
-          <div className="desktop-nav items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             <div className="relative group">
               <Link href="/work" className="text-[0.95rem] font-medium text-[#666] hover:text-[#1a1a1a] transition-colors duration-300 flex items-center gap-2">
                 Work

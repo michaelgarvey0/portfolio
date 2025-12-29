@@ -11,6 +11,7 @@ interface ProjectCardProps {
   delay: number;
   isExiting: boolean;
   imageHeight?: string;
+  imageSrc?: string;
 }
 
 export default function ProjectCard({
@@ -20,7 +21,8 @@ export default function ProjectCard({
   description,
   delay,
   isExiting,
-  imageHeight = "200px"
+  imageHeight = "200px",
+  imageSrc
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -31,9 +33,15 @@ export default function ProjectCard({
     >
       <Link
         href={href}
-        className="flex flex-col bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-[rgba(0,0,0,0.15)] w-full overflow-hidden"
+        className="flex flex-col bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-gray-300 w-full overflow-hidden"
       >
-        <div className={`w-full bg-gray-200`} style={{ height: imageHeight }}></div>
+        <div className="w-full pt-4 px-4">
+          <div className="w-full bg-gray-100" style={{ aspectRatio: '5/2' }}>
+            {imageSrc && (
+              <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+            )}
+          </div>
+        </div>
         <div className="p-10 flex flex-col flex-1">
           <div className="flex gap-4 mb-6">
             <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-xs font-semibold tracking-wider uppercase">
