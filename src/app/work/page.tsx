@@ -127,6 +127,7 @@ export default function Work() {
                 tag="Design System"
                 description="Migrated and enhanced their design system from Sketch to Figma."
                 delay={0.65}
+                isExiting={false}
               />
 
               <ProjectCard
@@ -135,6 +136,7 @@ export default function Work() {
                 tag="Web App Design"
                 description="Converting wireframes to high-fidelity designs."
                 delay={0.8}
+                isExiting={false}
               />
 
               {showMore && (
@@ -145,6 +147,7 @@ export default function Work() {
                     tag="Branding and Site Design"
                     description="Defining a brand for a B2C mobile app."
                     delay={0}
+                    isExiting={false}
                   />
 
                   <ProjectCard
@@ -153,6 +156,7 @@ export default function Work() {
                     tag="Site Design + Development"
                     description="Designing and developing a responsive website for a local nonprofit."
                     delay={0.15}
+                    isExiting={false}
                   />
 
                   <ProjectCard
@@ -161,6 +165,7 @@ export default function Work() {
                     tag="Mobile App Concept"
                     description="A GPS for your grocery shopping experience."
                     delay={0.3}
+                    isExiting={false}
                   />
                 </>
               )}
