@@ -55,28 +55,39 @@ export default function FeaturedProjectCard({
           :global(.featured-card) {
             flex-direction: column !important;
           }
-          :global(.featured-image) {
-            width: 100%;
-            aspect-ratio: 16/9;
+          :global(.featured-card) > div:first-child {
+            order: 2;
+          }
+          :global(.featured-card) > div:last-child {
+            order: 1;
+            width: 100% !important;
+            padding: 1rem 1rem 0 1rem !important;
+            align-items: flex-start !important;
+          }
+          :global(.featured-card) > div:last-child > div {
+            aspect-ratio: 5/2 !important;
+            padding: 0 !important;
+          }
+          :global(.featured-card) > div:last-child > div img {
+            object-position: center 10% !important;
           }
           :global(.featured-content) {
-            width: 100%;
-            padding: 2rem;
+            width: 100% !important;
+            padding: 2.5rem !important;
+            order: 2;
+          }
+          :global(.featured-content h3) {
+            font-size: 2rem !important;
+          }
+          :global(.featured-content p) {
+            font-size: 1.1rem !important;
           }
         }
       `}</style>
       <Link
         href={href}
-        className="w-full bg-white border border-gray-200 shadow-[0_4px_48px_rgba(0,0,0,0.08)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_100px_rgba(0,0,0,0.08)] relative overflow-hidden group featured-card"
+        className="w-full bg-white border border-gray-200 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] relative overflow-hidden group featured-card"
       >
-        <div className="w-1/2 flex items-center justify-center pl-8 pt-8 pb-8">
-          <div className="w-full p-8 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #ff3e00 0%, #ff8c00 100%)', aspectRatio: '1/1', maxWidth: '100%' }}>
-            {imageSrc && (
-              <img src={imageSrc} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            )}
-          </div>
-        </div>
-
         <div className="featured-content relative z-[1]">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-xs font-semibold tracking-wider uppercase">
@@ -92,6 +103,14 @@ export default function FeaturedProjectCard({
           <span className="inline-flex items-center gap-2 text-base font-bold text-[#0066cc]">
             {linkText} →
           </span>
+        </div>
+
+        <div className="w-1/2 flex items-center justify-center p-8">
+          <div className="w-full p-8 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #ff3e00 0%, #ff8c00 100%)', aspectRatio: '1/1', maxWidth: '100%' }}>
+            {imageSrc && (
+              <img src={imageSrc} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            )}
+          </div>
         </div>
       </Link>
     </motion.div>

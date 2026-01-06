@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CaseStudyHero from '@/components/CaseStudyHero';
 
 export default function InkbenchEZMode() {
   const [activeSection, setActiveSection] = useState('summary');
@@ -83,25 +84,39 @@ export default function InkbenchEZMode() {
       <Navbar />
 
       {/* Hero */}
-      <div id="hero-section" className="pt-32 pb-16" style={{ backgroundColor: '#fafafa' }}>
-        <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          >
-            <h1 className="font-sans text-[clamp(3rem,6vw,5rem)] font-bold mb-6 text-[#333] tracking-tight">
-              Inkbench EZ Mode
-            </h1>
-            <p className="text-[clamp(1rem,2vw,1.25rem)] text-[#666] leading-relaxed mb-10 max-w-[800px]">
-              Rethinking the Inkbench dashboard for both administrators and users.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+      <CaseStudyHero
+        title="Inkbench"
+        description="Rethinking the dashboard for both administrators and users."
+        gradientFrom="#6B5ACC"
+        gradientTo="#3b3668"
+        imageSrc="/assets/case-studies/inkbench/hero.png"
+        imageAlt="Inkbench Dashboard"
+      />
 
       {/* Content with Sidebar */}
-      <div className="mx-auto px-12 pt-20 flex gap-20" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto pt-20 flex gap-20 content-container" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          .content-container {
+            padding-left: 3rem;
+            padding-right: 3rem;
+          }
+          .sidebar {
+            width: 190px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 8rem;
+            height: fit-content;
+          }
+          @media (max-width: 767px) {
+            .content-container {
+              padding-left: 1.5rem;
+              padding-right: 1.5rem;
+            }
+            .sidebar {
+              display: none;
+            }
+          }
+        `}</style>
         <main className="flex-1">
           {/* Summary */}
           <motion.section
@@ -592,7 +607,7 @@ export default function InkbenchEZMode() {
         </main>
 
         {/* Sidebar */}
-        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit">
+        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit sidebar">
           <div
             className="overflow-hidden ease-out"
             style={{
@@ -605,8 +620,8 @@ export default function InkbenchEZMode() {
             }}
           >
             <div className="flex items-center gap-4 mb-3">
-              <img src="/assets/logos/inkbench.svg" alt="Inkbench" className="w-12 h-12" />
-              <span className="font-bold text-xl text-[#333]">Inkbench EZ Mode</span>
+              <img src="/assets/case-studies/inkbench/logo.svg" alt="Inkbench" className="w-12 h-12" />
+              <span className="font-bold text-xl text-[#333]">Inkbench</span>
             </div>
           </div>
 
@@ -666,7 +681,15 @@ export default function InkbenchEZMode() {
       </div>
 
       {/* Navigation Footer */}
-      <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
+          }
+        `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
           <Link href="/work/webster" className="flex flex-col items-start gap-3 p-6 border border-[#3b3668] transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(59,54,104,0.05)] w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#3b3668]">
@@ -706,7 +729,15 @@ export default function InkbenchEZMode() {
         </div>
       </div>
 
-      <div className="mx-auto px-12 mt-20" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto mt-20 px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
+          }
+        `}</style>
         <Footer />
       </div>
     </div>

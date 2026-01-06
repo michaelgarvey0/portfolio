@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+@layer base {
+  /* Force scrollbar to always show */
+  html {
+    overflow-y: scroll !important;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 12px !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #d1d5db !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6b7280 !important;
+    border-radius: 6px !important;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #374151 !important;
+  }
+
+  /* Firefox and Safari scrollbar */
+  html {
+    scrollbar-width: thin !important;
+    scrollbar-color: #4b5563 #e5e7eb !important;
+    color-scheme: light !important;
+  }
+
+  body {
+    scrollbar-width: thin !important;
+    scrollbar-color: #4b5563 #e5e7eb !important;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

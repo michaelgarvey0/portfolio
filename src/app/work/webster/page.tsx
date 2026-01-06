@@ -2,22 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CaseStudyHero from '@/components/CaseStudyHero';
 
 export default function Webster() {
   const [activeSection, setActiveSection] = useState('summary');
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
-  const { scrollYProgress } = useScroll();
   const brandColor = '#002d82';
-
-  const imageY = useTransform(scrollYProgress, [0, 0.3], [0, 300]);
-  const imageScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.7]);
-  const imageOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
-
-  const textY = useTransform(scrollYProgress, [0, 0.3], [0, -100]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   const sections = [
     { id: 'summary', title: 'Summary' },
@@ -90,51 +83,39 @@ export default function Webster() {
     <div className="min-h-screen bg-white relative">
       <Navbar />
 
-      {/* Hero */}
-      <motion.div
-        id="hero-section"
-        className="pt-20 pb-0 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #002d82 0%, #0047cc 100%)' }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <div className="mx-auto relative px-12" style={{ maxWidth: 'var(--max-width)' }}>
-          <div className="flex justify-between gap-12">
-            {/* Left: Text - 40% */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              style={{ y: textY, opacity: textOpacity }}
-              className="w-[40%] flex flex-col justify-center"
-            >
-              <h1 className="font-sans text-[clamp(2.5rem,5vw,4rem)] font-bold mb-6 text-white tracking-tight">
-                Webster Bank
-              </h1>
-              <p className="text-[clamp(1rem,2vw,1.25rem)] text-white leading-relaxed mb-10">
-                Revamping our design system for scalability and accessibility during its migration from Sketch to Figma.
-              </p>
-            </motion.div>
-
-            {/* Right: Image - 60% */}
-            <div className="w-[60%] flex flex-col">
-              <div className="h-20"></div>
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-                style={{ y: imageY, scale: imageScale, opacity: imageOpacity }}
-              >
-                <img src="/assets/case-studies/webster-feature.png" alt="Webster Design System" className="w-full block" style={{ aspectRatio: '16/10' }} />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+      <CaseStudyHero
+        title="Webster Bank"
+        description="Revamping our design system for scalability and accessibility during its migration from Sketch to Figma."
+        gradientFrom="#002d82"
+        gradientTo="#0047cc"
+        imageSrc="/assets/case-studies/webster/hero.png"
+        imageAlt="Webster Design System"
+      />
 
       {/* Content with Sidebar */}
-      <div className="mx-auto px-12 pt-20 flex gap-20" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto pt-20 flex gap-20 content-container" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          .content-container {
+            padding-left: 3rem;
+            padding-right: 3rem;
+          }
+          .sidebar {
+            width: 190px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 8rem;
+            height: fit-content;
+          }
+          @media (max-width: 767px) {
+            .content-container {
+              padding-left: 1.5rem;
+              padding-right: 1.5rem;
+            }
+            .sidebar {
+              display: none;
+            }
+          }
+        `}</style>
         <main className="flex-1">
         {/* Summary */}
         <motion.section
@@ -400,7 +381,7 @@ export default function Webster() {
         </main>
 
         {/* Sidebar */}
-        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit">
+        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit sidebar">
           <div
             className="overflow-hidden ease-out"
             style={{
@@ -413,7 +394,7 @@ export default function Webster() {
             }}
           >
             <div className="flex items-center gap-4 mb-3">
-              <img src="/assets/logos/webster.svg" alt="Webster Bank" className="w-12 h-12" />
+              <img src="/assets/case-studies/webster/logo.svg" alt="Webster Bank" className="w-12 h-12" />
               <span className="font-bold text-xl text-[#333]">Webster Bank</span>
             </div>
           </div>
@@ -473,7 +454,15 @@ export default function Webster() {
       </div>
 
       {/* Navigation Footer */}
-      <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
+          }
+        `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
           <Link href="/work/orgo" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
@@ -513,7 +502,15 @@ export default function Webster() {
         </div>
       </div>
 
-      <div className="mx-auto px-12 mt-20" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto mt-20 px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
+          }
+        `}</style>
         <Footer />
       </div>
     </div>

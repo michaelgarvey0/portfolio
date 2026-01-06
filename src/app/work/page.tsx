@@ -5,18 +5,12 @@ import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import ProjectCard from '@/components/ProjectCard';
 import FeaturedProjectCard from '@/components/FeaturedProjectCard';
+import Footer from '@/components/Footer';
 
 export default function Work() {
   const [showMore, setShowMore] = useState(false);
-  const [emailCopied, setEmailCopied] = useState(false);
   const [show404Toast, setShow404Toast] = useState(false);
   const [toast404Visible, setToast404Visible] = useState(false);
-
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText('michaelgarvey0@gmail.com');
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 2000);
-  };
 
   useEffect(() => {
     const shouldShow404 = sessionStorage.getItem('show404Toast');
@@ -46,16 +40,6 @@ export default function Work() {
         .projects-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-        .footer-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .footer-links {
-          display: flex;
-          align-items: center;
-          gap: 2rem;
-        }
         @media (max-width: 767px) {
           .main-container {
             padding-left: 1.5rem;
@@ -67,16 +51,6 @@ export default function Work() {
           }
           .projects-grid {
             grid-template-columns: 1fr;
-          }
-          .footer-container {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 2rem;
-          }
-          .footer-links {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
           }
         }
       `}</style>
@@ -117,7 +91,7 @@ export default function Work() {
               linkText="View project"
               delay={0.5}
               isExiting={false}
-              imageSrc="/assets/case-studies/orgo-header.png"
+              imageSrc="/assets/case-studies/orgo/preview.png"
             />
 
             {/* Secondary Projects */}
@@ -129,7 +103,7 @@ export default function Work() {
                 description="Migrated and enhanced their design system from Sketch to Figma."
                 delay={0.65}
                 isExiting={false}
-                imageSrc="/assets/case-studies/webster-feature-home.png"
+                imageSrc="/assets/case-studies/webster/preview.png"
               />
 
               <ProjectCard
@@ -139,6 +113,7 @@ export default function Work() {
                 description="Converting wireframes to high-fidelity designs."
                 delay={0.8}
                 isExiting={false}
+                imageSrc="/assets/case-studies/inkbench/preview.png"
               />
 
               {showMore && (
@@ -150,7 +125,7 @@ export default function Work() {
                     description="Defining a brand for a B2C mobile app."
                     delay={0}
                     isExiting={false}
-                    imageSrc="/assets/case-studies/orgo-brand-feature.png"
+                    imageSrc="/assets/case-studies/orgo-brand/preview.png"
                   />
 
                   <ProjectCard
@@ -160,6 +135,7 @@ export default function Work() {
                     description="Designing and developing a responsive website for a local nonprofit."
                     delay={0.15}
                     isExiting={false}
+                    imageSrc="/assets/case-studies/newport-in-bloom/preview.png"
                   />
 
                   <ProjectCard
@@ -169,6 +145,7 @@ export default function Work() {
                     description="A GPS for your grocery shopping experience."
                     delay={0.3}
                     isExiting={false}
+                    imageSrc="/assets/case-studies/beeline/preview.png"
                   />
                 </>
               )}
@@ -186,68 +163,13 @@ export default function Work() {
                 onClick={() => setShowMore(true)}
                 className="px-8 py-3 bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] text-[#333] font-bold text-base transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] cursor-pointer"
               >
-                Load more
+                Show more
               </button>
             </motion.div>
           )}
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-[rgba(0,0,0,0.08)] pt-12 pb-12">
-          <div className="text-sm text-[#666] footer-container">
-            <div className="footer-links">
-              <button
-                onClick={copyEmail}
-                className="hover:text-[#0066cc] transition-colors duration-300 cursor-pointer flex items-center gap-2 group"
-                title={emailCopied ? 'Copied!' : 'Click to copy email'}
-              >
-                <span>michaelgarvey0@gmail.com</span>
-                <span className="relative w-[14px] h-[14px] flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`absolute transition-opacity ${emailCopied ? 'opacity-0' : 'opacity-50 group-hover:opacity-100'}`}
-                  >
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`absolute transition-opacity ${emailCopied ? 'opacity-100' : 'opacity-0'} text-green-600`}
-                  >
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-              </button>
-              <a
-                href="https://www.linkedin.com/in/michaelgarvey0/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#0066cc] transition-colors duration-300"
-              >
-                LinkedIn
-              </a>
-            </div>
-            <div>
-              © 2025 Michael Garvey
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
 
       {/* 404 Toast Notification */}

@@ -33,12 +33,12 @@ export default function Navbar() {
   };
 
   const caseStudies = [
-    { href: '/work/orgo', title: 'Orgo: The App', tag: 'Mobile App Design + Development', logo: '/assets/logos/orgo.svg' },
-    { href: '/work/webster', title: 'Webster Bank', tag: 'Design System', logo: '/assets/logos/webster.svg' },
-    { href: '/work/inkbench-ez-mode', title: 'Inkbench EZ Mode', tag: 'Web App Design', logo: '/assets/logos/inkbench.svg' },
-    { href: '/work/orgo-brand', title: 'Orgo: The Brand', tag: 'Branding and Site Design', logo: '/assets/logos/orgo.svg' },
-    { href: '/work/newport-in-bloom', title: 'Newport in Bloom', tag: 'Site Design + Development', logo: null },
-    { href: '/work/beeline', title: 'Beeline', tag: 'Mobile App Concept', logo: null },
+    { href: '/work/orgo', title: 'Orgo: The App', tag: 'Mobile App Design + Development', logo: '/assets/case-studies/orgo/logo.svg' },
+    { href: '/work/webster', title: 'Webster Bank', tag: 'Design System', logo: '/assets/case-studies/webster/logo.svg' },
+    { href: '/work/inkbench-ez-mode', title: 'Inkbench EZ Mode', tag: 'Web App Design', logo: '/assets/case-studies/inkbench/logo.svg' },
+    { href: '/work/orgo-brand', title: 'Orgo: The Brand', tag: 'Branding and Site Design', logo: '/assets/case-studies/orgo/logo.svg' },
+    { href: '/work/newport-in-bloom', title: 'Newport in Bloom', tag: 'Site Design + Development', logo: '/assets/case-studies/newport-in-bloom/logo.png' },
+    { href: '/work/beeline', title: 'Beeline', tag: 'Mobile App Concept', logo: '/assets/case-studies/beeline/logo.svg' },
   ];
 
   return (
@@ -64,10 +64,14 @@ export default function Navbar() {
       />
 
       <motion.nav
-        initial={shouldAnimate ? { opacity: 0, y: -20 } : false}
-        animate={{ opacity: 1, y: 0 }}
+        initial={shouldAnimate ? { opacity: 0, y: -20, backgroundColor: 'rgba(249, 250, 251, 0)' } : false}
+        animate={{
+          opacity: 1,
+          y: 0,
+          backgroundColor: mobileMenuOpen ? 'rgb(255, 255, 255)' : 'rgba(249, 250, 251, 0.95)'
+        }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 bg-gray-50/95 border-b border-[rgba(0,0,0,0.08)] z-50"
+        className="fixed top-0 left-0 right-0 border-b border-[rgba(0,0,0,0.08)] z-50"
       >
         <div className="mx-auto flex justify-between items-center px-6 py-4 lg:px-12 lg:py-6" style={{ maxWidth: 'var(--max-width)' }}>
           <Link href="/work" className="text-2xl font-bold text-[#1e3f66] hover:text-[#0d243f] transition-colors" style={{ letterSpacing: 0 }}>

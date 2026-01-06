@@ -5,11 +5,12 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CaseStudyHero from '@/components/CaseStudyHero';
 
 export default function NewportInBloom() {
   const [activeSection, setActiveSection] = useState('summary');
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
-  const brandColor = '#0066cc';
+  const brandColor = '#00C49A';
 
   const sections = [
     { id: 'summary', title: 'Summary' },
@@ -87,25 +88,42 @@ export default function NewportInBloom() {
       <Navbar />
 
       {/* Hero */}
-      <div id="hero-section" className="pt-32 pb-16" style={{ backgroundColor: '#fafafa' }}>
-        <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          >
-            <h1 className="font-sans text-[clamp(3rem,6vw,5rem)] font-bold mb-6 text-[#333] tracking-tight">
-              Newport in Bloom
-            </h1>
-            <p className="text-[clamp(1rem,2vw,1.25rem)] text-[#666] leading-relaxed mb-10 max-w-[800px]">
-              Designing and developing a responsive website for two nonprofits.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+      <CaseStudyHero
+        title="Newport in Bloom"
+        description="Designing and developing a responsive website for two nonprofits."
+        gradientFrom="#00C49A"
+        gradientTo="#008c73"
+        imageSrc="/assets/case-studies/newport-in-bloom/hero.png"
+        imageAlt="Newport in Bloom Website"
+        ctaText="Visit the site"
+        ctaHref="https://newportinbloom.org"
+        ctaColor="#212121"
+      />
 
       {/* Content with Sidebar */}
-      <div className="mx-auto px-12 pt-20 flex gap-20" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto pt-20 flex gap-20 content-container" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          .content-container {
+            padding-left: 3rem;
+            padding-right: 3rem;
+          }
+          .sidebar {
+            width: 190px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 8rem;
+            height: fit-content;
+          }
+          @media (max-width: 767px) {
+            .content-container {
+              padding-left: 1.5rem;
+              padding-right: 1.5rem;
+            }
+            .sidebar {
+              display: none;
+            }
+          }
+        `}</style>
         <main className="flex-1">
         {/* Summary */}
         <motion.section
@@ -196,10 +214,10 @@ export default function NewportInBloom() {
           </p>
 
           <div className="flex gap-4 mb-12">
-            <a href="https://newportinbloom.org" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#0066cc] text-white font-semibold hover:bg-[#004499] transition-colors">
+            <a href="https://newportinbloom.org" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-white font-semibold transition-colors" style={{ backgroundColor: brandColor }}>
               View the live site
             </a>
-            <a href="https://www.figma.com/proto/xqTOYLNNVrtn7EHGsMA5Jl/Newport-in-Bloom---Portfolio-Prototype" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-[#0066cc] text-[#0066cc] font-semibold hover:bg-[rgba(0,102,204,0.05)] transition-colors">
+            <a href="https://www.figma.com/proto/xqTOYLNNVrtn7EHGsMA5Jl/Newport-in-Bloom---Portfolio-Prototype" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border font-semibold transition-colors" style={{ borderColor: brandColor, color: brandColor }}>
               Figma prototype
             </a>
           </div>
@@ -324,7 +342,7 @@ export default function NewportInBloom() {
 
           <div className="grid grid-cols-2 gap-8 mb-12">
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-              <div className="text-[2.5rem] font-bold text-[#0066cc] mb-4">1</div>
+              <div className="text-[2.5rem] font-bold mb-4" style={{ color: brandColor }}>1</div>
               <h4 className="text-[1.5rem] font-bold text-[#333] mb-4">
                 Minimize site clutter and streamline content across all pages.
               </h4>
@@ -334,7 +352,7 @@ export default function NewportInBloom() {
             </div>
 
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-              <div className="text-[2.5rem] font-bold text-[#0066cc] mb-4">2</div>
+              <div className="text-[2.5rem] font-bold mb-4" style={{ color: brandColor }}>2</div>
               <h4 className="text-[1.5rem] font-bold text-[#333] mb-4">
                 Design the site to be accessible on multiple devices.
               </h4>
@@ -552,7 +570,7 @@ export default function NewportInBloom() {
           <div className="grid grid-cols-1 gap-6 mb-12">
             <div className="p-8 border border-[rgba(0,0,0,0.08)] shadow-sm">
               <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#0066cc] text-white flex items-center justify-center font-bold text-xl">1</div>
+                <div className="flex-shrink-0 w-12 h-12 text-white flex items-center justify-center font-bold text-xl" style={{ backgroundColor: brandColor }}>1</div>
                 <div className="flex-1">
                   <h5 className="font-bold text-[#333] mb-3 text-lg">Improved navigation hierarchy</h5>
                   <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
@@ -572,7 +590,7 @@ export default function NewportInBloom() {
 
             <div className="p-8 border border-[rgba(0,0,0,0.08)] shadow-sm">
               <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#0066cc] text-white flex items-center justify-center font-bold text-xl">2</div>
+                <div className="flex-shrink-0 w-12 h-12 text-white flex items-center justify-center font-bold text-xl" style={{ backgroundColor: brandColor }}>2</div>
                 <div className="flex-1">
                   <h5 className="font-bold text-[#333] mb-3 text-lg">Larger mobile menu icon</h5>
                   <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
@@ -592,7 +610,7 @@ export default function NewportInBloom() {
 
             <div className="p-8 border border-[rgba(0,0,0,0.08)] shadow-sm">
               <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-12 h-12 bg-[#0066cc] text-white flex items-center justify-center font-bold text-xl">3</div>
+                <div className="flex-shrink-0 w-12 h-12 text-white flex items-center justify-center font-bold text-xl" style={{ backgroundColor: brandColor }}>3</div>
                 <div className="flex-1">
                   <h5 className="font-bold text-[#333] mb-3 text-lg">More prominent CTAs</h5>
                   <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
@@ -657,7 +675,7 @@ export default function NewportInBloom() {
         </main>
 
         {/* Sidebar */}
-        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit">
+        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit sidebar">
           <div
             className="overflow-hidden ease-out"
             style={{
@@ -670,9 +688,7 @@ export default function NewportInBloom() {
             }}
           >
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-12 h-12 bg-[#0066cc] flex items-center justify-center text-white font-bold text-xl">
-                N
-              </div>
+              <img src="/assets/case-studies/newport-in-bloom/logo.png" alt="Newport in Bloom" className="w-12 h-12" />
               <span className="font-bold text-xl text-[#333]">Newport in Bloom</span>
             </div>
           </div>
@@ -733,10 +749,18 @@ export default function NewportInBloom() {
       </div>
 
       {/* Navigation Footer */}
-      <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
+          }
+        `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/orgo-brand" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
-            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
+          <Link href="/work/orgo-brand" className="flex flex-col items-start gap-3 p-6 border shadow-sm transition-all duration-300 hover:-translate-y-[5px] w-1/2" style={{ borderColor: brandColor }}>
+            <div className="flex items-center gap-2 font-bold" style={{ color: brandColor }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -753,8 +777,8 @@ export default function NewportInBloom() {
             </span>
           </Link>
 
-          <Link href="/work/beeline" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
-            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
+          <Link href="/work/beeline" className="flex flex-col items-end gap-3 p-6 border shadow-sm transition-all duration-300 hover:-translate-y-[5px] w-1/2" style={{ borderColor: brandColor }}>
+            <div className="flex items-center gap-2 font-bold" style={{ color: brandColor }}>
               <span>Up next</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -773,7 +797,15 @@ export default function NewportInBloom() {
         </div>
       </div>
 
-      <div className="mx-auto px-12 mt-20" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto mt-20 px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
+        <style jsx>{`
+          @media (max-width: 767px) {
+            div {
+              padding-left: 1.5rem !important;
+              padding-right: 1.5rem !important;
+            }
+          }
+        `}</style>
         <Footer />
       </div>
     </div>
