@@ -152,8 +152,6 @@ export default function Webster() {
               </p>
             </div>
           </div>
-
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
         </motion.section>
 
         {/* Background */}
@@ -161,14 +159,14 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Background</h2>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            A design system revamp
+            A design system stuck in transition
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            After joining <a href="https://websterbank.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Webster Bank</a> in June of 2022, I noticed that they were in the process of migrating their design system from Sketch to Figma. However, progress on this migration had been limited, with the only step taken being a direct import of the Sketch design file into Figma.
+            When I joined <a href="https://websterbank.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Webster Bank</a> in June 2022, I discovered their design system was in the middle of a migration from Sketch to Figma. The problem? The migration had stalled. The only progress made was a direct import of the Sketch file into Figma, which meant we weren't taking advantage of any of Figma's powerful features.
           </p>
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Recognizing the potential benefits that a revamp of the design system could bring, I offered to lead the initiative and use my extensive knowledge of Figma, which I had gained through self-study. I jokingly called it the "Figmatization of Webster" and set out to give the team a design system we could be proud of.
+            I saw an opportunity to not just complete the migration, but to truly revamp the system. I offered to lead the initiative, using my Figma knowledge to build something the team could be proud of - a system that was scalable, accessible, and built with modern best practices.
           </p>
         </section>
 
@@ -177,17 +175,17 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Final product</h2>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Logical organization, scalability, and accessibility
+            A system built for scale
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            The design system is now fully integrated with Figma's capabilities, resulting in a more scalable and accessible system. A consistent naming convention and organization of colors and typography has been established, making it easier to identify, add, and categorize elements.
+            The revamped design system now takes full advantage of Figma's capabilities. With features like auto layout, variants, and boolean properties, the system is far more flexible and maintainable than before. We established consistent naming conventions for colors and typography, making it easy to identify and add new elements.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-8"></div>
+          <img src="/assets/case-studies/webster/final-state.png" alt="Final state of the Webster design system" className="w-full mb-8" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            For example, I standardized the buttons to align with industry best practices using features such as auto layout, constraints, absolute positioning, variants, and boolean properties. This made the system more adaptable and easy to update in response to future changes.
+            I standardized components like buttons to align with industry best practices, using constraints, absolute positioning, and other Figma features to make them pixel-perfect and adaptable to future changes.
           </p>
         </section>
 
@@ -195,28 +193,22 @@ export default function Webster() {
         <section id="previous-state" className="mb-32 scroll-mt-32">
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Previous state</h2>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            The design system in Sketch was a well-organized collection of nested symbols, but it didn't translate well to Figma. Despite the generally good setup, there were a few key areas that needed improvement.
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            The design system in Sketch was actually pretty well-organized - it had a solid collection of nested symbols. But when it came to Figma, it just didn't translate well. Despite the generally good setup, there were several areas that needed improvement:
           </p>
 
-          <div className="border border-[rgba(0,0,0,0.08)] shadow-md mb-12">
-            <div className="p-6 bg-[#fafafa] border-b border-[rgba(0,0,0,0.08)]">
-              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">The Sketch UI library</h5>
-              <p className="text-[#666]">Below is a view of some Symbols in the Sketch library.</p>
-            </div>
-            <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-          </div>
+          <img src="/assets/case-studies/webster/previous-state.png" alt="Previous state of the Webster design system in Sketch" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Firstly, there were a lot of redundant components due to Sketch's limitations. For example, there were two separate hero components - one with one link, and another with two, all other elements being identical. This meant that in order to change the hero's design, you would have to make identical edits to both components. By leveraging booleans properties in Figma, I could reduce the number of components and create a cleaner, more organized setup.
+            First, there were a lot of redundant components because of Sketch's limitations. For example, we had two separate hero components - one with one link, another with two - even though everything else about them was identical. This meant changing the hero design required making the same edit twice. With Figma's boolean properties, I could consolidate these into a single, smarter component.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Additionally, certain components had unnecessary layers, adding to the clutter in the layers panel. Furthermore, there was an excessive number of text and color styles, which presented a challenge when it came to making the design system more manageable. Some styles were simply listed as "New Color Variable" and others numbered with no apparent logic to the numbering convention.
+            Second, the styles were a mess. We had 143 text styles, and many colors were poorly named - things like "New Color Variable" or random numbers with no logic. This made the system really hard to manage.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Lastly, the design system lacked smart layout features, making it a bit of a hassle to resize and move elements around. To fix this, I wanted to take advantage of Figma's powerful auto layout feature to make the design process a lot smoother.
+            Finally, the system lacked smart layout features. Without auto layout, resizing and positioning elements was tedious and time-consuming. I knew Figma's auto layout could make this process much smoother.
           </p>
         </section>
 
@@ -225,14 +217,14 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Scope definition</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            When reviewing the existing design system components, I noticed that not all of them were being used. I created an Excel sheet listing all of the components to better assess which were necessary and which were not. I also noted inconsistencies in the naming conventions and usage of certain components, such as several that skipped directly from "medium" to "extra large" when it came to sizing.
+            Before diving into Figma, I needed to understand what we actually needed. I created an Excel spreadsheet listing every component in the existing system, noting which ones were actually being used and which had inconsistencies. For instance, several components jumped straight from "medium" to "extra large" sizing with nothing in between.
           </p>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            To address this, I used the spreadsheet to brainstorm and ideate on the necessary variants and property values for each component. This allowed me to create a set of necessary components and variants that were tailored to our specific needs. I also consulted with the other designers to ensure that my choices were in line with the overall design strategy.
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            Using this spreadsheet, I brainstormed the necessary variants and property values for each component. This planning phase was crucial - it gave me a clear roadmap and helped me identify what we could cut versus what needed to be built out. I also consulted with the other designers to make sure my decisions aligned with the overall design strategy.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <img src="/assets/case-studies/webster/planning-excel.png" alt="Excel spreadsheet used for planning component variants" className="w-full" />
         </section>
 
         {/* Styles */}
@@ -240,31 +232,33 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Styles</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            In this design system revamp project, we focused on updating our color palette and typography to ensure accessibility and scalability. We adopted a naming convention for colors and used a <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">contrast checker</a> to test for accessibility. For typography, we sorted through existing styles and created categories for consistency and ease of editing. These changes simplified the hierarchy and ensured consistency throughout the design system.
+            With the components scoped out, I turned my attention to the foundational styles - colors and typography. Getting these right was essential for building a consistent, accessible system.
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Colors: A colorful upgrade
+            Colors: Building an accessible palette
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            For styling, we wanted to update the color palette to make sure we had all the colors we needed and that they were accessible. To start this, we adopted a naming convention used by other well-established design systems where colors are defined by a letter representing their function (e.g., P = Primary) followed by a number. In our design system, the number 500 represents the base color, with lower numbers representing lighter shades and higher numbers representing darker shades.
+            For the color system, I wanted to make sure we had all the colors we needed and that they were accessible. I adopted a naming convention used by established design systems, where colors are defined by a letter representing their function (like P for Primary) followed by a number. The number 500 represents the base color, with lower numbers for lighter shades and higher numbers for darker shades.
           </p>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            To make sure our design system met accessibility standards, I used the contrast checker to test the neutral shades against our background colors. This helped us identify and implement color combinations that met these standards, something that wasn't given much attention before.
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            To ensure accessibility, I used a <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">contrast checker</a> to test our neutral shades against background colors. This helped us identify color combinations that met accessibility standards - something that hadn't been given much attention before.
           </p>
+
+          <img src="/assets/case-studies/webster/colors.png" alt="Webster color palette system" className="w-full mb-12" />
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Typography: Type-Rework
+            Typography: Organizing 143 text styles
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            In terms of typography, I sorted through the 143 Sketch styles and came up with four categories: Headings, Body, Body Sans, and Taxonomy. The usual body font was a serif font, but there were several places on the site where our heading font doubled as a body font (e.g., form text). In the previous design system, this alternate body font was spread out and ungrouped, making it hard to manage.
+            The typography situation was overwhelming at first - 143 text styles in Sketch with no clear organization. I sorted through them all and created four clear categories: Headings, Body, Body Sans, and Taxonomy.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            To fix this, I created the separate category "Body Sans," which not only simplified the hierarchy of text styles but also made it easier to design pages that used this font. I linked the styles to the components so that any change in a style would reflect across all components, ensuring consistency and making it easy to edit our design system.
+            The "Body Sans" category was particularly important. Our standard body font was a serif, but there were places on the site where our heading font was being used as a body font (like in forms). In the previous system, this alternate body font was spread out and ungrouped, making it hard to manage. Creating a dedicated category simplified the hierarchy and made it much easier to design pages that used this font.
           </p>
         </section>
 
@@ -273,23 +267,77 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Components</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            The bulk of the work I did had to do with organizing the components. In my scope definition, I had defined the components and their variants, which was a great starting point. From there, I knew I needed to leverage Figma's formatting capabilities to come up with components that were pixel-perfect.
+            The bulk of the work involved rebuilding the components. From my scope definition, I knew exactly which components and variants we needed. Now I had to leverage Figma's features to make them pixel-perfect and maintainable.
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Auto layout, constraints, and absolute positioning
+            Auto layout, constraints, and positioning
           </h3>
 
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            <a href="https://help.figma.com/hc/en-us/articles/5731482952599-Using-auto-layout" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Auto layout</a> in Figma simplifies responsive design by automatically resizing content based on the container or its contents. The old Sketch system wasn't using anything similar, so this was a great opportunity to finally implement it properly.
+          </p>
+
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            One example shows the difference clearly. The old card component had major issues when resized:
+          </p>
+
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div>
+              <p className="text-sm font-semibold text-[#999] mb-2">Before</p>
+              <video
+                src="/assets/case-studies/webster/auto-layout-before.mp4"
+                className="w-full border border-[rgba(0,0,0,0.08)] shadow-md"
+                autoPlay
+                playsInline
+                muted
+                loop
+              />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-[#999] mb-2">After</p>
+              <video
+                src="/assets/case-studies/webster/auto-layout-after.mp4"
+                className="w-full border border-[rgba(0,0,0,0.08)] shadow-md"
+                autoPlay
+                playsInline
+                muted
+                loop
+              />
+            </div>
+          </div>
+
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            <strong>The problems:</strong> The video thumbnail, play icon, and button would distort when resized. The "Learn more" text would stray from its line on vertical resize and from the play icon on horizontal resize. These issues mattered because cards needed to flex for different text lengths and row widths.
+          </p>
+
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            <a href="https://help.figma.com/hc/en-us/articles/5731482952599-Using-auto-layout" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Auto layout</a> in Figma simplifies responsive design by automatically resizing content based on the container or its own content, reducing tedious manual adjustments. In the old design system, we weren't using the similar feature in Sketch, so it was a great opportunity to finally implement it during the revamp.
+            <strong>The solution:</strong> I set the image to "fill" (maintaining aspect ratio), centered the play icon with constraints, and used absolute positioning for the "Learn more" link with "left and right" + "bottom" constraints. The line next to "Learn more" was set to fill container, so it stretches with the card width. Now everything resizes smoothly and predictably.
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Atomic design: Smaller building blocks
+            Breaking down components
           </h3>
 
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            I used atomic design principles to break components into smaller, modular parts. The input component is a perfect example - I split it into a label and a field, each with its own configurable properties. This modular approach made it possible to create countless variations of a single component without duplicating work.
+          </p>
+
+          <video
+            src="/assets/case-studies/webster/input.mov"
+            className="w-full border border-[rgba(0,0,0,0.08)] shadow-md mb-8"
+            autoPlay
+            playsInline
+            muted
+            loop
+          />
+
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            In the video above, I demonstrate how this works. I change the input's state to error, which makes the error message property available. I turn it on to display a configurable error message. Then I click into the label component and toggle on the info icon and tooltip properties. Next, I drill into the field component and add a left icon, then customize it by changing its type from "user" to "lock." Each nested component has its own set of properties that can be mixed and matched.
+          </p>
+
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            By breaking down our components into smaller, modular parts using the principles of atomic design, I was able to create a more flexible and efficient system. For example, our input component consisted of a label and a field, which allowed me to easily make changes that needed to be applied across multiple variants of the same component.
+            This was made possible by using boolean properties to control the visibility of specific layers - like error messages, icons, and tooltips. Each property is only available in the states where it makes sense (for example, only error states can show error messages). This modular design meant I could build one flexible input component instead of dozens of separate variants.
           </p>
         </section>
 
@@ -298,34 +346,78 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Fixes</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            I made several updates to the design system, but there were two updates that had the highest impact. The first pertains to the accessibility of our color palette, specifically addressing the issue of dark gray text on a yellow background. The second update concerns the primary button style, where we made the decision to switch to a solid button style, in line with general design practices.
+            While working on the system, I identified two major issues that needed immediate attention - one affecting accessibility, the other affecting usability.
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Accessibility: Ensuring we meet color contrast standards
+            Fixing color contrast for accessibility
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            An immediate fix I noticed had to do with the contrast ratio of some of our main components. Specifically, when we had what was called "Dark Gray" (#5F5F5F) on "Webster Yellow" (#FFD107), the text did not adequately contrast the background, and this had caused some accessibility issues on our public-facing site.
+            I noticed right away that some of our color combinations had accessibility issues. Specifically, when we used "Dark Gray" on "Webster Yellow" (#FFD107), the text didn't adequately contrast with the background. This was causing problems on our public-facing site.
           </p>
+
+          <div className="grid grid-cols-2 gap-6 mb-8">
+            <div className="border border-[rgba(0,0,0,0.08)] shadow-sm p-8">
+              <p className="text-sm font-semibold text-[#999] mb-6">Previous state</p>
+              <div className="bg-[#FFD107] p-6 mb-6 flex items-center justify-center" style={{ minHeight: '120px' }}>
+                <p className="text-[#5F5F5F] font-bold text-xl">Dark Gray Text</p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-[#666]">Contrast ratio</span>
+                  <span className="font-bold text-[#333]">4.37</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-[#666]">WCAG AA</span>
+                  <span className="font-bold text-red-600">Fail</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-[#666]">Color</span>
+                  <span className="font-mono text-sm text-[#333]">#5F5F5F</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="border border-[rgba(0,0,0,0.08)] shadow-sm p-8">
+              <p className="text-sm font-semibold text-[#999] mb-6">Revised state</p>
+              <div className="bg-[#FFD107] p-6 mb-6 flex items-center justify-center" style={{ minHeight: '120px' }}>
+                <p className="text-[#4B4B4B] font-bold text-xl">Dark Gray Text</p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-[#666]">Contrast ratio</span>
+                  <span className="font-bold text-[#333]">5.97</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-[#666]">WCAG AA</span>
+                  <span className="font-bold text-green-600">Pass</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-[#666]">Color</span>
+                  <span className="font-mono text-sm text-[#333]">#4B4B4B</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            To solve this, I decided to make a slight change to our "Dark Gray" color. I re-established it as N700 instead of N600, which increased the contrast ratio to meet accessibility requirements. This little tweak made a big difference in ensuring our website is accessible to all of our users.
+            The fix was simple but impactful: I changed our "Dark Gray" from N600 (#5F5F5F) to N700 (#4B4B4B), which increased the contrast ratio from 4.37 to 5.97 - exceeding the WCAG AA threshold of 4.5:1. A small tweak that made a big difference.
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Buttons: Building out our button component
+            Rethinking primary buttons
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Second, in the previous state, Webster had been using a button with an outline (commonly called a "<a href="https://uxplanet.org/ghost-buttons-in-ux-design-4cf3717334f8" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">ghost button</a>") as its primary button. This is inconsistent with general design practice - typically, primary buttons are solid colors.
+            In the previous system, Webster was using outline buttons (commonly called "<a href="https://uxplanet.org/ghost-buttons-in-ux-design-4cf3717334f8" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">ghost buttons</a>") as primary buttons. This is inconsistent with general design practice - typically, primary buttons should be solid colors to make them more prominent.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            The designers collectively made a decision that a solid blue button would be the primary one going forward. I took this opportunity to also define some hover, active, and focus states for the new buttons as there was no clear pattern to these states in the previous design system.
+            The design team collectively decided that a solid blue button would be our primary style going forward. I used this opportunity to also define clear hover, active, and focus states, which had been inconsistent in the previous system.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <img src="/assets/case-studies/webster/buttons.png" alt="Webster button variants showing primary, secondary, and different states" className="w-full" />
         </section>
 
         {/* Tokens */}
@@ -333,18 +425,83 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Tokens</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Now that all of the components had been updated, we wanted to research design tokens to make our design system more scalable. To brainstorm, I made a list of all of the possible tokens within the <a href="https://tokens.studio/" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Tokens Studio for Figma</a> plugin (formerly Figma Tokens; fonts, colors, border radius, sizing, etc.) using a mind map in <a href="https://miro.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Miro</a>.
+            With all the components updated, we wanted to take things a step further and research design tokens to make the system even more scalable. I used the <a href="https://tokens.studio/" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Tokens Studio for Figma</a> plugin to brainstorm all possible tokens - fonts, colors, border radius, sizing, and more.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Using this Miro board, I mapped our styles to specific tokens and aliases. For example, our primary blue color was labeled as "color-primary-dark" and also aliased as "color-background-dark" to specifically point out where that color is used throughout the design system.
+            I created a mind map in <a href="https://miro.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:text-[#004499] transition-all duration-100">Miro</a> to map our styles to specific tokens and aliases. For example, our primary blue was labeled "color-primary-dark" and also aliased as "color-background-dark" to specify where that color is used throughout the system.
           </p>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            As a first step in implementing these tokens, I organized our typography tokens, which are a composition of several other tokens such as font family and font size. This helped to simplify the hierarchy of text styles, making it easier to edit and maintain consistency throughout the design system.
+          <img src="/assets/case-studies/webster/miro-planning.png" alt="Miro mind map showing token planning and organization" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm mb-8" />
+
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            As a first step, I focused on organizing our typography tokens, which are compositions of several other tokens like font family and font size. This helped simplify the hierarchy of text styles and made the system easier to maintain.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <div className="border border-[rgba(0,0,0,0.08)] shadow-sm overflow-hidden mb-12">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]"></th>
+                    <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]">Heading 4<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-heading-4</code></th>
+                    <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]">Body<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body</code></th>
+                    <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]">Body Sans<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body-sans</code></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Font family</td>
+                    <td className="p-4 text-sm text-[#333]">Roboto<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-family-heading</code></td>
+                    <td className="p-4 text-sm text-[#333]">Source Serif Pro<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-family-body</code></td>
+                    <td className="p-4 text-sm text-[#333]">Roboto<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-family-heading</code></td>
+                  </tr>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Font size</td>
+                    <td className="p-4 text-sm text-[#333]">30px<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-size-7</code></td>
+                    <td className="p-4 text-sm text-[#333]">18px<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-size-4</code></td>
+                    <td className="p-4 text-sm text-[#333]">18px<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-size-4</code></td>
+                  </tr>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Font weight</td>
+                    <td className="p-4 text-sm text-[#333]">light<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-weight-light</code></td>
+                    <td className="p-4 text-sm text-[#333]">regular<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-weight-regular</code></td>
+                    <td className="p-4 text-sm text-[#333]">regular<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-weight-regular</code></td>
+                  </tr>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Letter spacing</td>
+                    <td className="p-4 text-sm text-[#333]">0<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$letter-spacing-default</code></td>
+                    <td className="p-4 text-sm text-[#333]">0<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$letter-spacing-default</code></td>
+                    <td className="p-4 text-sm text-[#333]">0<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$letter-spacing-default</code></td>
+                  </tr>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Line height</td>
+                    <td className="p-4 text-sm text-[#333]">1.2<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$line-height-short</code></td>
+                    <td className="p-4 text-sm text-[#333]">1.5<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$line-height-default</code></td>
+                    <td className="p-4 text-sm text-[#333]">1.5<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$line-height-default</code></td>
+                  </tr>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Paragraph spacing</td>
+                    <td className="p-4 text-sm text-[#333]">0<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$paragraph-spacing-none</code></td>
+                    <td className="p-4 text-sm text-[#333]">0<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$paragraph-spacing-none</code></td>
+                    <td className="p-4 text-sm text-[#333]">0<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$paragraph-spacing-none</code></td>
+                  </tr>
+                  <tr className="border-b border-[rgba(0,0,0,0.08)]">
+                    <td className="p-4 text-sm font-semibold text-[#666]">Text case</td>
+                    <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-case-none</code></td>
+                    <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-case-none</code></td>
+                    <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-case-none</code></td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 text-sm font-semibold text-[#666]">Text decoration</td>
+                    <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-decoration-none</code></td>
+                    <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-decoration-none</code></td>
+                    <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-decoration-none</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
 
         {/* Next Steps */}
@@ -352,28 +509,28 @@ export default function Webster() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Next steps</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            There's still a lot of work to do in terms of building out the tokens and getting our developers to adopt Figma. However, this process allowed me to familiarize myself with the design system and its complexities, and it was a valuable opportunity to further develop my Figma skills. I look forward to scaling the system and making continuous improvements as we implement it.
+            There's still work to do - building out the remaining tokens and getting developers fully onboarded with Figma. But this process taught me a lot about the complexities of design systems and gave me valuable hands-on experience with Figma's more advanced features.
           </p>
 
           <div className="space-y-8 mb-12">
             <div>
-              <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">Design systems, when executed well, are incredibly valuable</h3>
+              <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">Design systems, when done well, are incredibly powerful</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-                I found it interesting that by having a single input component, it could be applied to any input field needed. Additionally, utilizing tokens allows for easy scalability, and I'm excited to see them in action with our developers.
+                Having a single, well-built input component that can be applied to any input field is a game-changer. And tokens make scaling even easier - I'm excited to see how they work in practice with our development team.
               </p>
             </div>
 
             <div>
-              <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">Planning ahead was crucial for this process</h3>
+              <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">Planning was crucial</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-                By taking inventory of the existing design system and mapping out a plan for its revamp, I was able to gain a comprehensive understanding of all its parts and sort them in a logical manner.
+                Taking the time to inventory the existing system and map out a clear plan helped me understand all the pieces and organize them logically. It would have been much messier without that upfront work.
               </p>
             </div>
 
             <div>
-              <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">Test, test, test</h3>
+              <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">Iteration is key</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-                This is a great first iteration, but it's important to continue testing and using the design system to identify areas for improvement and optimize it for our workflow. While it's off to a strong start, it's important to keep in mind that design systems are constantly evolving and there is always room for improvement.
+                This is a strong first iteration, but design systems need continuous testing and refinement. As we use it more, we'll discover areas for improvement and ways to optimize it for our workflow. The work is never truly "done."
               </p>
             </div>
           </div>

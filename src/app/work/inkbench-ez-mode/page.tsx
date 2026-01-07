@@ -10,6 +10,7 @@ import CaseStudyHero from '@/components/CaseStudyHero';
 export default function InkbenchEZMode() {
   const [activeSection, setActiveSection] = useState('summary');
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
+  const [activeMockupTab, setActiveMockupTab] = useState('franchisor');
   const brandColor = '#3b3668';
 
   const sections = [
@@ -152,10 +153,6 @@ export default function InkbenchEZMode() {
                 </p>
               </div>
             </div>
-
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Inkbench dashboard mockup]
-            </div>
           </motion.section>
 
           {/* Background */}
@@ -165,15 +162,11 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              Inkbench is a now-defunct brand management SaaS startup I worked for from May 2020 until May 2022. The startup aimed to address a common pain point for marketing teams in multi-location franchise or enterprise systems, where those distributing the marketing materials - primarily, franchisees - often "go rogue" and distribute off-brand materials because they're easy to make (think two-sentence memos printed on an 8.5 x 11 using Microsoft Word).
+              Inkbench was a brand management SaaS startup I worked for from May 2020 until May 2022. We helped franchises maintain brand consistency by letting them store digital assets, create locked-down templates, and distribute them to franchisees - preventing the "off-brand materials" problem common in multi-location systems.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              In Inkbench, a franchise could store their digital assets (logos, images, etc.) and tag them so they're easy to find. Then, they could use these assets in an in-platform design canvas, where they could make templates where certain elements are locked down and others open for customization. Then, administrators could push these templates to standard users.
-            </p>
-
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              The Inkbench dashboard was the first screen post-login. However, there were issues with the dashboard that made it not as useful as it could be. I was tasked with the UI design portion of a dashboard redesign.
+              I was tasked with redesigning the dashboard, which was the first screen users saw after login. The existing version had usability issues that limited its effectiveness.
             </p>
           </section>
 
@@ -189,26 +182,32 @@ export default function InkbenchEZMode() {
               </a>
             </div>
 
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              Though the designs were never developed due to Inkbench's shutdown, it was clear that users desired a dashboard with these capabilities. For many, it would have greatly reduced stress related to the distribution of branded materials by providing pre-approved options and significantly speeding up their workflow. Additionally, it would have allowed each franchise location to customize materials to their specific needs, reducing the need for one-off creations.
-            </p>
-
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              You can explore the prototype above to gain a better understanding of each aspect of the design.
+              Though never developed due to Inkbench's shutdown, user research showed these features would have reduced stress around brand distribution and allowed franchises to customize materials without one-off requests.
             </p>
 
-            <div className="mb-12">
+            <div className="mb-20">
               <p className="text-[1.15rem] font-bold text-[#333] mb-6">For franchisors, a true analytics dashboard</p>
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: Franchisor dashboard]
-              </div>
+              <video
+                src="/assets/case-studies/inkbench/franchisor-dashboard.mov"
+                className="w-full border border-[rgba(0,0,0,0.08)] shadow-md"
+                autoPlay
+                playsInline
+                muted
+                loop
+              />
             </div>
 
-            <div className="mb-12">
+            <div className="mb-20">
               <p className="text-[1.15rem] font-bold text-[#333] mb-6">For franchisees, a form-powered, always-on-brand template editor</p>
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: Franchisee dashboard]
-              </div>
+              <video
+                src="/assets/case-studies/inkbench/franchisee-editor.mp4"
+                className="w-full border border-[rgba(0,0,0,0.08)] shadow-md"
+                autoPlay
+                playsInline
+                muted
+                loop
+              />
             </div>
 
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
@@ -232,7 +231,7 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Previous dashboard</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              I analyzed the previous dashboard to better understand the differences between that state and the wireframes that I had been given. It helped me identify areas for improvement and informed my decisions on future designs. I also used it to understand user needs and ensure the new design met their expectations.
+              I analyzed the previous dashboard to understand how it differed from the wireframes I'd been given, which helped me identify improvement areas and ensure the new design met user needs.
             </p>
           </section>
 
@@ -251,9 +250,7 @@ export default function InkbenchEZMode() {
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">THE PREVIOUS DASHBOARD</h5>
                 <p className="text-[#666]">A view of the dashboard in July of 2020.</p>
               </div>
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: Previous dashboard screenshot]
-              </div>
+              <img src="/assets/case-studies/inkbench/previous-dashboard.png" alt="Previous Inkbench dashboard from July 2020" className="w-full" />
             </div>
 
             <div className="grid grid-cols-2 gap-6 mb-12">
@@ -290,30 +287,8 @@ export default function InkbenchEZMode() {
               Untapped potential
             </h3>
 
-            <div className="border border-[rgba(0,0,0,0.08)] shadow-md mb-12">
-              <div className="p-6 bg-[#fafafa] border-b border-[rgba(0,0,0,0.08)]">
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">THE DESIGN CANVAS</h5>
-                <p className="text-[#666]">A screenshot of the design canvas, which many users thought was complex.</p>
-              </div>
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: Design canvas screenshot]
-              </div>
-            </div>
-
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              The initial dashboard design had good intentions but failed to meet user expectations. One major issue was that administrators and users were presented with the same screens despite having different goals.
-            </p>
-
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              For example, franchisees were looking for an easy way to customize a template and export it for distribution. However, many expressed frustration with the complex design canvas (pictured above). They often only needed to make small changes such as an address, color, or photo.
-            </p>
-
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              On the other hand, franchisors wanted to monitor franchisee activity and access analytics such as who had done what, when, and which templates were getting the most use. The current format did not provide these analytics even though they were available in the backend and sent out in weekly status reports to customer success employees. This led us to consider democratizing the data for administrator use in the redesign.
-            </p>
-
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              Overall, the dashboard redesign would be the largest single project in terms of added functionality and user impact that I had participated in yet.
+              The dashboard showed everyone the same screen despite franchisors and franchisees having different goals. Franchisees wanted simple template customization (not our complex design canvas), while franchisors wanted analytics on platform usage - data that existed in the backend but wasn't accessible to them.
             </p>
 
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
@@ -336,12 +311,8 @@ export default function InkbenchEZMode() {
           <section id="analyzing-wireframes" className="mb-32 scroll-mt-32">
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Analyzing the wireframes</h2>
 
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              I was tasked with converting wireframes to high-fidelity designs. Heather O'Neill, CEO of Pixels for Humans, created these wireframes after conducting in-depth interviews with our clients. To ensure a successful outcome, I needed to understand the design decisions made in the wireframes.
-            </p>
-
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              The wireframes consisted of two parts: the franchisor dashboard and the franchisee dashboard. The franchisee dashboard included a simpler templating functionality that avoided the need for using the more complex design canvas. The franchisor dashboard included a usage analytics section. In general, franchises were our target audience, but as a general use case, one dashboard is intended for administrators and the other for standard users.
+              I converted wireframes (created by Heather O'Neill after client interviews) into high-fidelity designs. The wireframes split into two dashboards: one for franchisors with analytics, and one for franchisees with simplified templating - essentially, one for administrators and one for standard users.
             </p>
 
             <div className="border border-[rgba(0,0,0,0.08)] shadow-md mb-12">
@@ -349,9 +320,7 @@ export default function InkbenchEZMode() {
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">FRANCHISOR DASHBOARD WIREFRAME</h5>
                 <p className="text-[#666]">The Franchisor Dashboard included three major upgrades: a messaging system, usage overview, and notifications.</p>
               </div>
-              <div className="bg-gray-200 h-[600px] flex items-center justify-center text-gray-500">
-                [Placeholder: Franchisor wireframe with annotations]
-              </div>
+              <img src="/assets/case-studies/inkbench/franchisor-dashboard-wire.png" alt="Franchisor dashboard wireframe with annotations" className="w-full" />
             </div>
 
             <div className="grid grid-cols-3 gap-6 mb-12">
@@ -414,12 +383,10 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              As Inkbench did not have an established design system in place, I took the initiative to create my own UI kit based on industry best practices and design principles. This helped ensure consistency and usability throughout the product, which is crucial for a positive user experience. Additionally, by following a set of design guidelines, I was able to create a more polished and user-friendly interface.
+              Since Inkbench didn't have an established design system, I created a UI kit based on industry best practices to ensure consistency throughout the product.
             </p>
 
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500 mb-12">
-              [Placeholder: UI kit with buttons, inputs, toggles]
-            </div>
+            <img src="/assets/case-studies/inkbench/ui-kit.png" alt="Inkbench UI kit showing buttons, inputs, and toggles" className="w-full mb-12" />
           </section>
 
           {/* Styling */}
@@ -429,18 +396,53 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              Below are mockups of the three areas depicted in the wireframes: the franchisor dashboard, the franchisee dashboard, and the (affectionately titled) "EZ" templating feature. These mockups were created to provide a clear visual representation of the final product.
+              High-fidelity mockups for the franchisor dashboard, franchisee dashboard, and "EZ" templating feature.
             </p>
 
-            <div className="grid grid-cols-1 gap-8 mb-12">
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: Franchisor dashboard mockup]
+            <div className="mb-12">
+              <div className="flex gap-2 mb-6 border-b border-[rgba(0,0,0,0.08)]">
+                <button
+                  onClick={() => setActiveMockupTab('franchisor')}
+                  className={`px-6 py-3 font-semibold transition-colors ${
+                    activeMockupTab === 'franchisor'
+                      ? 'text-[#3b3668] border-b-2 border-[#3b3668]'
+                      : 'text-[#999] hover:text-[#666]'
+                  }`}
+                >
+                  Franchisor Dashboard
+                </button>
+                <button
+                  onClick={() => setActiveMockupTab('franchisee')}
+                  className={`px-6 py-3 font-semibold transition-colors ${
+                    activeMockupTab === 'franchisee'
+                      ? 'text-[#3b3668] border-b-2 border-[#3b3668]'
+                      : 'text-[#999] hover:text-[#666]'
+                  }`}
+                >
+                  Franchisee Dashboard
+                </button>
+                <button
+                  onClick={() => setActiveMockupTab('ez')}
+                  className={`px-6 py-3 font-semibold transition-colors ${
+                    activeMockupTab === 'ez'
+                      ? 'text-[#3b3668] border-b-2 border-[#3b3668]'
+                      : 'text-[#999] hover:text-[#666]'
+                  }`}
+                >
+                  EZ Templating
+                </button>
               </div>
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: Franchisee dashboard mockup]
-              </div>
-              <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-                [Placeholder: EZ templating mockup]
+
+              <div>
+                {activeMockupTab === 'franchisor' && (
+                  <img src="/assets/case-studies/inkbench/franchisor-dashboard-full.png" alt="Franchisor dashboard high-fidelity mockup" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
+                )}
+                {activeMockupTab === 'franchisee' && (
+                  <img src="/assets/case-studies/inkbench/franchisee-dashboard-full.png" alt="Franchisee dashboard high-fidelity mockup" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
+                )}
+                {activeMockupTab === 'ez' && (
+                  <img src="/assets/case-studies/inkbench/ez-modal-full.png" alt="EZ templating feature mockup" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
+                )}
               </div>
             </div>
           </section>
@@ -452,7 +454,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              As I progressed through the UI design, I identified several opportunities to better meet user expectations and improve accessibility. As a result, certain areas of the high-fidelity UI differ from the wireframes. The two main changes I made involve EZ templating and the usage overview, and you can fully experience them in the prototype.
+              During design, I identified opportunities to improve usability and accessibility, leading to two main changes from the wireframes: EZ templating and the usage overview.
             </p>
 
             {/* Change 1 */}
@@ -464,9 +466,7 @@ export default function InkbenchEZMode() {
                 <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
                   Clickable fields (outlined with a dotted, pink border below) that allow users to customize a template.
                 </p>
-                <div className="bg-gray-200 h-64 flex items-center justify-center text-gray-500">
-                  [Placeholder: Wireframe with clickable fields]
-                </div>
+                <img src="/assets/case-studies/inkbench/ez-templating-wire.png" alt="EZ templating wireframe with clickable fields" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
               </div>
 
               <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-8">
@@ -476,7 +476,7 @@ export default function InkbenchEZMode() {
                     <strong className="font-bold text-[#212121]">Accessibility.</strong> The low visibility of these pink borders may cause confusion for users, as they may not be able to see the editable elements within the design.
                   </li>
                   <li className="text-[1.15rem] text-[#666] leading-[1.8]">
-                    <strong className="font-bold text-[#212121]">Potential overwhelm.</strong> The graphics that franchisees are often already detailed, and including borders on top of that could result in overwhelm and users contacting us to ask if the borders would be visible on export, creating additional workload for customer support.
+                    <strong className="font-bold text-[#212121]">Visual clutter.</strong> Graphics are already detailed - adding borders could overwhelm users and create support requests about export visibility.
                   </li>
                 </ul>
               </div>
@@ -492,9 +492,7 @@ export default function InkbenchEZMode() {
                 <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
                   Instead of having clickable fields embedded within the graphic, I implemented a form-like structure for editing.
                 </p>
-                <div className="bg-gray-200 h-64 flex items-center justify-center text-gray-500">
-                  [Placeholder: Hi-fi mockup with form]
-                </div>
+                <img src="/assets/case-studies/inkbench/ez-modal-full.png" alt="EZ templating high-fidelity mockup with form structure" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
               </div>
 
               <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
@@ -517,18 +515,16 @@ export default function InkbenchEZMode() {
               <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-8">
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">WIREFRAME STATE</h5>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-                  Each segment of the usage overview included a link to more in-depth analytics (inferred). No detailed screens showed these views.
+                  Links suggested in-depth analytics views, but no detailed screens existed.
                 </p>
-                <div className="bg-gray-200 h-64 flex items-center justify-center text-gray-500">
-                  [Placeholder: Wireframe usage overview]
-                </div>
+                <img src="/assets/case-studies/inkbench/franchisor-dashboard-wire.png" alt="Wireframe usage overview section" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
               </div>
 
               <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-8">
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">PROBLEMS</h5>
                 <ul className="space-y-4">
                   <li className="text-[1.15rem] text-[#666] leading-[1.8]">
-                    <strong className="font-bold text-[#212121]">Completeness.</strong> To provide our developers with these mockups, it was necessary to define the destinations of these links.
+                    <strong className="font-bold text-[#212121]">Completeness.</strong> I needed to define where these links would go for developer handoff.
                   </li>
                 </ul>
               </div>
@@ -544,9 +540,7 @@ export default function InkbenchEZMode() {
                 <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
                   Each button opens a modal containing more in-depth views of the data.
                 </p>
-                <div className="bg-gray-200 h-64 flex items-center justify-center text-gray-500">
-                  [Placeholder: Hi-fi usage overview modal]
-                </div>
+                <img src="/assets/case-studies/inkbench/franchisor-dashboard-full.png" alt="High-fidelity usage overview with analytics" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm" />
               </div>
 
               <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
@@ -585,9 +579,7 @@ export default function InkbenchEZMode() {
               </a>
             </div>
 
-            <div className="bg-gray-200 h-[600px] flex items-center justify-center text-gray-500 mb-12">
-              [Placeholder: Final UI dashboard screenshot]
-            </div>
+            <img src="/assets/case-studies/inkbench/franchisor-dashboard-full.png" alt="Final UI dashboard design" className="w-full border border-[rgba(0,0,0,0.08)] shadow-sm mb-12" />
 
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">TAKEAWAYS: FINAL UI</h5>

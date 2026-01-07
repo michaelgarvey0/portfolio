@@ -215,26 +215,26 @@ export default function OrgoBrand() {
             We centered our logomark on a circular shape, echoing the leading 'O' in Orgo. Our goal was to incorporate elements of time, driving, or movement within this form, reflecting our app's core functions. Through multiple iterations, we explored various designs, trying to balance simplicity with meaningful representation of Orgo's purpose.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+          <img src="/assets/case-studies/orgo-brand/logomark-ideation.png" alt="Logomark ideation and iterations" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             Parallel to logomark development, we crafted a complementary wordmark and color scheme. We tested various typographic styles, prioritizing readability based on user feedback. Simultaneously, we explored vibrant color combinations using orange, yellow, and blue to create an appealing palette that aligned with our brand vision.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+          <img src="/assets/case-studies/orgo-brand/wordmark-ideation.png" alt="Wordmark and color scheme iterations" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             Our breakthrough concept centered on the transition from chaos to order. We designed the 'O' in Orgo with a fragmented left side evolving into a whole right side, symbolizing this transformation. This design represented our app's purpose: bringing order to chaotic schedules.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+          <img src="/assets/case-studies/orgo-brand/breakthrough-concept.png" alt="Breakthrough concept showing chaos to order transformation" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             For the remaining letters 'rgo', we kept the design clean and whole, ensuring readability. This approach addressed user preferences for clarity while complementing the dynamic 'O' concept.
           </p>
 
           <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-12">
-            <div className="w-full aspect-[3/1] bg-gradient-to-br from-gray-200 to-gray-300 mb-8"></div>
+            <img src="/assets/case-studies/orgo-brand/final-logo.svg" alt="Final Orgo logo" className="w-full mb-8 px-12 py-8" />
             <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">THE FINAL LOGO</h5>
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
               The final Orgo logo embodies our core concept through its thoughtful design:
@@ -291,7 +291,7 @@ export default function OrgoBrand() {
             View the teaser site →
           </a>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+          <img src="/assets/case-studies/orgo-brand/teaser-site.png" alt="Initial teaser site screenshot" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
             The site proved highly effective in capturing attention. We received numerous compliments and observed audible laughs during the text buildup, as well as 'aha' moments when people realized the meaning behind Orgo. Over two months, we garnered over 300 signups, a satisfying result for our teaser site approach.
@@ -313,9 +313,9 @@ export default function OrgoBrand() {
           <div className="overflow-x-auto mb-12">
             <table className="w-full border-collapse border border-[rgba(0,0,0,0.08)]">
               <thead>
-                <tr className="bg-gradient-to-br from-gray-50 to-white">
-                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Goal</th>
-                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Action plan</th>
+                <tr className="bg-[#333]">
+                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Goal</th>
+                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Action plan</th>
                 </tr>
               </thead>
               <tbody>
@@ -339,7 +339,7 @@ export default function OrgoBrand() {
             With these goals in mind, we focused on designing an impactful hero section, recognizing it as the most crucial element for driving conversions. We mocked up several options to find the most effective approach.
           </p>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+          <img src="/assets/case-studies/orgo-brand/expanded-teaser-ideation.png" alt="Hero section ideation and mockups" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             Eventually, one concept emerged as the clear winner:
@@ -366,7 +366,7 @@ export default function OrgoBrand() {
             View the expanded teaser site →
           </a>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+          <img src="/assets/case-studies/orgo-brand/expanded-teaser-final.png" alt="Final expanded teaser site design" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
             This design resonated with our audience for several key reasons. The appealing color scheme caught viewers' attention, while a dynamic, rotating H1 headline maintained their interest. Our engaging storytelling approach effectively communicated our value proposition.
@@ -398,9 +398,9 @@ export default function OrgoBrand() {
           <div className="overflow-x-auto mb-12">
             <table className="w-full border-collapse border border-[rgba(0,0,0,0.08)]">
               <thead>
-                <tr className="bg-gradient-to-br from-gray-50 to-white">
-                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Goal</th>
-                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Action plan</th>
+                <tr className="bg-[#333]">
+                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Goal</th>
+                  <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Action plan</th>
                 </tr>
               </thead>
               <tbody>
@@ -445,7 +445,7 @@ export default function OrgoBrand() {
             View the current site →
           </a>
 
-          <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+          <img src="/assets/case-studies/orgo-brand/launch-site.png" alt="Current launch site design" className="w-full" />
         </section>
 
         {/* Next Steps */}

@@ -179,8 +179,6 @@ export default function OrgoCaseAlt() {
               Solo product designer who taught himself React Native to build it. Led all user research, designed every screen, coded the frontend, set up analytics infrastructure, managed app deployments, and handled everything from brand to monetization strategy.
             </p>
           </div>
-
-          <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300" />
         </motion.section>
 
         {/* The Problem */}
@@ -198,7 +196,7 @@ export default function OrgoCaseAlt() {
             <strong className="text-[#333]">30 million sports families</strong> in the US are drowning in this complexity. They're juggling Google Calendar, team apps like TeamSnap, group texts, and mental math—all while trying not to be late.
           </p>
 
-          <div className="w-full h-[350px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
+          <img src="/assets/case-studies/orgo/problem2.png" alt="The chaos of coordinating family schedules" className="w-full mb-12" />
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">What we heard from parents:</h3>
 
@@ -249,9 +247,7 @@ export default function OrgoCaseAlt() {
             I ran a focus group at Zoya's house with 12 parents. Then Zoya and I interviewed 20 more individually.
           </p>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
-
-          <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">The five pain points we heard repeatedly:</h3>
+          <h3 className="text-[1.8rem] font-bold text-[#333] mb-8 mt-12">The five pain points we heard repeatedly:</h3>
 
           <ol className="space-y-4 text-[1.1rem] text-[#666] leading-[1.8] mb-12">
             {[
@@ -294,13 +290,13 @@ export default function OrgoCaseAlt() {
             <li><strong className="text-[#333]">Calendar Views</strong> - See your day unfold realistically</li>
           </ol>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
+          <img src="/assets/case-studies/orgo/sketches.png" alt="Early sketches in FigJam" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             Then I moved to Figma to create detailed wireframes and user flows.
           </p>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
+          <img src="/assets/case-studies/orgo/wireframes.png" alt="Detailed wireframes in Figma" className="w-full mb-12" />
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">The First Big Decision: Activity Structure</h3>
 
@@ -315,27 +311,67 @@ export default function OrgoCaseAlt() {
             I designed events with multiple segments:
           </p>
           <ul className="space-y-3 text-[1.1rem] text-[#666] leading-[1.8] list-disc ml-6 mb-12">
-            <li><strong className="text-[#333]">Prep time</strong> (get ready at home)</li>
             <li><strong className="text-[#333]">Early arrival buffer</strong> (don't be late)</li>
-            <li><strong className="text-[#333]">Travel time</strong> (auto-calculated)</li>
+            <li><strong className="text-[#333]">Travel time</strong> (auto-calculated from home)</li>
             <li><strong className="text-[#333]">Event time</strong> (the actual activity)</li>
-            <li><strong className="text-[#333]">Return trip</strong> (home or next location)</li>
           </ul>
 
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
-
-          <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-            This meant building something fundamentally different from Google Calendar. It was riskier, but it solved the actual problem.
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
+            This meant building something fundamentally different from Google Calendar. It was riskier, but it solved the actual problem. Getting the activity addition screen right took three iterations—refining the structure, testing different UI approaches, and figuring out how much information to show without overwhelming users.
           </p>
+
+          <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-8 md:gap-[2.5%]">
+            {/* Iteration 1 */}
+            <div className="flex-1 max-w-[700px]">
+              <div className="flex justify-center items-center gap-3 mb-4">
+                <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                <NumberBadge number={1} color={brandColor} />
+              </div>
+              <img src="/assets/case-studies/orgo/iteration1.png" alt="Iteration 1 of the activity screen" className="w-full mb-4" />
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-8">
+                <li>Early arrival buffer</li>
+                <li>Role assignment (driving TO, AT, FROM)</li>
+              </ul>
+            </div>
+
+            {/* Iteration 2 */}
+            <div className="flex-1 max-w-[700px]">
+              <div className="flex justify-center items-center gap-3 mb-4">
+                <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                <NumberBadge number={2} color={brandColor} />
+              </div>
+              <img src="/assets/case-studies/orgo/iteration2.png" alt="Iteration 2 of the activity screen" className="w-full mb-4" />
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-8">
+                <li>Variant cards for recurring activities</li>
+                <li>Transportation method selection</li>
+              </ul>
+            </div>
+
+            {/* Iteration 3 */}
+            <div className="flex-1 max-w-[700px]">
+              <div className="flex justify-center items-center gap-3 mb-4">
+                <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                <NumberBadge number={3} color={brandColor} />
+              </div>
+              <img src="/assets/case-studies/orgo/iteration3.png" alt="Iteration 3 of the activity screen" className="w-full mb-4" />
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-8">
+                <li>Prep time field</li>
+                <li>Redesigned timing UI</li>
+                <li>Notes field</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* Alpha Launch */}
         <section id="alpha-launch" className="mb-32 scroll-mt-32">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">October 2023: Alpha Launch & Brutal Feedback</h2>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">October 2023: Alpha Launch</h2>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             We launched to 25 users via Expo (not even TestFlight yet—they had to scan QR codes to download).
           </p>
+
+          <img src="/assets/case-studies/orgo/alpha.png" alt="Alpha version of Orgo" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             <strong className="text-[#333]">The feedback was swift and humbling:</strong>
@@ -365,24 +401,34 @@ export default function OrgoCaseAlt() {
             </div>
           </div>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
             <strong className="text-[#333]">The hard truth:</strong> We'd built for our idealized version of the problem, not the messy reality of how families actually live.
+          </p>
+
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
+            We went back to the drawing board. Between October 2023 and April 2024, I redesigned the activity structure to support flexible origin and return locations. Users could now go from school → soccer → home, not just home → soccer → home.
+          </p>
+
+          <div className="flex justify-center mb-12">
+            <img src="/assets/case-studies/orgo/post-alpha-activity.png" alt="Redesigned activity screen with origin and return locations" className="max-w-[300px] w-full" />
+          </div>
+
+          <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+            We also knew Google Calendar integration was critical—it was the #1 request. But we considered Google a fast follower. If we waited to build everything perfectly, someone else would launch first. So we shipped what we had and planned to iterate fast.
           </p>
         </section>
 
         {/* Public Launch */}
         <section id="public-launch" className="mb-32 scroll-mt-32">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">April 2024: Public Launch (And Things Got Worse)</h2>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">April 2024: Public Launch</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            We pushed a public App Store release. Users flooded in organically—500 registered users, all from word of mouth.
+            We pushed a public App Store release with the updated activity structure. Users flooded in from our waitlist—500 registered users.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             For 8 months, we iterated within the constraints of our initial platform. Our developers were talented but moonlighting like we were, which meant limited bandwidth for the ambitious features users wanted.
           </p>
-
-          <div className="w-full h-[300px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
             By January 2025, we faced a strategic choice: continue incremental improvements or rebuild the foundation to unlock faster iteration. We chose the latter.
@@ -438,20 +484,20 @@ export default function OrgoCaseAlt() {
                   <NumberBadge number={1} color={brandColor} />
                 </div>
                 <div className="flex-1">
-                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 1: Adding Origin & Return Locations (April 2024)</h5>
+                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 1: Calendar Integration (June 2025)</h5>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                    <strong className="text-[#333]">The problem:</strong> Events assumed everything started and ended at home.
+                    <strong className="text-[#333]">The problem:</strong> Manual entry was killing adoption.
                   </p>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                    <strong className="text-[#333]">The solution:</strong> Let users specify origin, destination, and return addresses for each trip segment.
+                    <strong className="text-[#333]">The solution:</strong> Leveraged existing APIs, webhooks (Google), and ICS link parsing to automatically translate 2D calendar events into our 3D logistics model—capturing not just when events happen, but how families actually move through their day.
                   </p>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-8">
-                    <strong className="text-[#333]">Why it mattered:</strong> Parents needed to go from school → soccer → home, not just home → soccer → home.
+                    <strong className="text-[#333]">Why it mattered:</strong> This was the #1 user request. It went from "nice idea" to "actively using daily."
                   </p>
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 shadow-2xl" />
+                <img src="/assets/case-studies/orgo/import.png" alt="Calendar import integration" className="max-w-[400px] w-full" />
               </div>
             </div>
           </div>
@@ -464,33 +510,7 @@ export default function OrgoCaseAlt() {
                   <NumberBadge number={2} color={brandColor} />
                 </div>
                 <div className="flex-1">
-                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 2: Calendar Integration (June 2025)</h5>
-                  <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                    <strong className="text-[#333]">The problem:</strong> Manual entry was killing adoption.
-                  </p>
-                  <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                    <strong className="text-[#333]">The solution:</strong> Deep integration with Google Calendar, Apple Calendar, and TeamSnap. Events flow in automatically.
-                  </p>
-                  <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-8">
-                    <strong className="text-[#333]">Why it mattered:</strong> This was the #1 user request. It went from "nice idea" to "actively using daily."
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 shadow-2xl" />
-              </div>
-            </div>
-          </div>
-
-          {/* Round 3 */}
-          <div className="mb-16">
-            <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-10">
-              <div className="flex items-start gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <NumberBadge number={3} color={brandColor} />
-                </div>
-                <div className="flex-1">
-                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 3: Monetization Strategy (September 2025)</h5>
+                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 2: Monetization Strategy (September 2025)</h5>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                     <strong className="text-[#333]">The problem:</strong> App was entirely free until August. First attempt at monetization (free trial, no credit card) had only 10% conversion.
                   </p>
@@ -503,20 +523,20 @@ export default function OrgoCaseAlt() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 shadow-2xl" />
+                <img src="/assets/case-studies/orgo/monetization.png" alt="Monetization paywall" className="max-w-[300px] w-full" />
               </div>
             </div>
           </div>
 
-          {/* Round 4 */}
+          {/* Round 3 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-10">
               <div className="flex items-start gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <NumberBadge number={4} color={brandColor} />
+                  <NumberBadge number={3} color={brandColor} />
                 </div>
                 <div className="flex-1">
-                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 4: Import Rules (October 2025)</h5>
+                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 3: Import Rules (October 2025)</h5>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                     <strong className="text-[#333]">The problem:</strong> When 50 events imported from Google, they all defaulted to the user. But "Tommy's Soccer Practice" should auto-assign to Tommy.
                   </p>
@@ -529,20 +549,20 @@ export default function OrgoCaseAlt() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 shadow-2xl" />
+                <img src="/assets/case-studies/orgo/import-rules.png" alt="Smart import rules with AI name detection" className="max-w-[630px] w-full" />
               </div>
             </div>
           </div>
 
-          {/* Round 5 */}
+          {/* Round 4 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-10">
               <div className="flex items-start gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <NumberBadge number={5} color={brandColor} />
+                  <NumberBadge number={4} color={brandColor} />
                 </div>
                 <div className="flex-1">
-                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 5: Multi-Stop Trips (September 2025)</h5>
+                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 4: Multi-Stop Trips (September 2025)</h5>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                     <strong className="text-[#333]">The problem:</strong> Real life has stops. "Grab Starbucks on the way" or "Pick up Emma before practice."
                   </p>
@@ -555,20 +575,20 @@ export default function OrgoCaseAlt() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 shadow-2xl" />
+                <img src="/assets/case-studies/orgo/multi-stop.png" alt="Multi-stop trip functionality" className="max-w-[630px] w-full" />
               </div>
             </div>
           </div>
 
-          {/* Round 6 */}
+          {/* Round 5 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-10">
               <div className="flex items-start gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <NumberBadge number={6} color={brandColor} />
+                  <NumberBadge number={5} color={brandColor} />
                 </div>
                 <div className="flex-1">
-                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 6: Other Crews (November 2025)</h5>
+                  <h5 className="text-sm font-bold tracking-widest uppercase text-[#666] mb-6 leading-[40px]">Round 5: Other Crews (November 2025)</h5>
                   <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                     <strong className="text-[#333]">The problem:</strong> Carpooling required coordinating across families via endless texts.
                   </p>
@@ -581,7 +601,7 @@ export default function OrgoCaseAlt() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 shadow-2xl" />
+                <img src="/assets/case-studies/orgo/other-crews.png" alt="Other crews carpooling feature" className="max-w-[630px] w-full" />
               </div>
             </div>
           </div>
@@ -591,45 +611,49 @@ export default function OrgoCaseAlt() {
         <section id="current-product" className="mb-32 scroll-mt-32">
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Current Product: The Full Experience</h2>
 
-          <div className="w-full h-[600px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center mb-12">
-            <span className="text-white/20 text-2xl font-bold">Video Placeholder</span>
-          </div>
+          <video
+            src="/assets/case-studies/orgo/promo.mp4"
+            className="w-full mb-2"
+            controls
+            playsInline
+          />
+          <p className="text-[0.9rem] text-[#999] italic mb-12">
+            Video created from scratch in After Effects, including 3D phone model
+          </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">What makes Orgo different:</h3>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
               <h4 className="text-[1.2rem] font-bold text-[#333] mb-4">For Scheduling</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• Auto-calculated travel times using actual routes</li>
-                <li>• Prep time tracked separately from event time</li>
-                <li>• Early arrival buffers (show up 15 min before start)</li>
-                <li>• Multi-stop routing for errands and carpools</li>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>Auto-calculated travel times using actual routes</li>
+                <li>Prep time tracked separately from event time</li>
+                <li>Early arrival buffers (show up 15 min before start)</li>
+                <li>Multi-stop routing for errands and carpools</li>
               </ul>
             </div>
 
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
               <h4 className="text-[1.2rem] font-bold text-[#333] mb-4">For Coordination</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• Driver assignment for pickup, dropoff, and staying</li>
-                <li>• Cross-family crew connections for carpooling</li>
-                <li>• Smart notifications (only when you need to act)</li>
-                <li>• Three views: Calendar, Agenda, Text summary</li>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>Driver assignment for pickup, dropoff, and staying</li>
+                <li>Cross-family crew connections for carpooling</li>
+                <li>Smart notifications (only when you need to act)</li>
+                <li>Three views: Calendar, Agenda, Text summary</li>
               </ul>
             </div>
 
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
               <h4 className="text-[1.2rem] font-bold text-[#333] mb-4">For Accuracy</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• Import rules for bulk setup from existing calendars</li>
-                <li>• AI name detection in event titles</li>
-                <li>• Weather integrated per event location</li>
-                <li>• Conflict detection on a per-person basis</li>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>Import rules for bulk setup from existing calendars</li>
+                <li>AI name detection in event titles</li>
+                <li>Weather integrated per event location</li>
+                <li>Conflict detection on a per-person basis</li>
               </ul>
             </div>
           </div>
-
-          <div className="w-full h-[500px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
 
           <a
             href="https://www.orgohq.com/download"
@@ -659,42 +683,46 @@ export default function OrgoCaseAlt() {
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">From Launch to Traction</h3>
 
-          <div className="space-y-6 mb-12">
-            <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-3">April 2024 - Public Launch</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• 500 registered users in first few months, 100% organic</li>
-                <li>• 4.8 App Store rating</li>
-                <li>• Feature requests flooding in</li>
+          <div className="space-y-8 mb-12">
+            <div className="p-6 bg-[#fafafa] border-l-4 border-[#e63700] shadow-sm">
+              <p className="text-[0.9rem] font-semibold text-[#ff3e00] mb-2">April 2024</p>
+              <h4 className="text-[1.2rem] font-bold mb-3 text-[#333]">Public Launch</h4>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>500 registered users in first few months, 100% organic</li>
+                <li>4.8 App Store rating</li>
+                <li>Feature requests flooding in</li>
               </ul>
             </div>
 
-            <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-3">January 2025 - Platform Rewrite</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• Transitioned development teams</li>
-                <li>• Rebuilt on stronger technical foundation</li>
-                <li>• 3 months to ship V2 with calendar integrations</li>
+            <div className="p-6 bg-[#fafafa] border-l-4 border-[#e63700] shadow-sm">
+              <p className="text-[0.9rem] font-semibold text-[#ff3e00] mb-2">January 2025</p>
+              <h4 className="text-[1.2rem] font-bold mb-3 text-[#333]">Platform Rewrite</h4>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>Transitioned development teams</li>
+                <li>Rebuilt on stronger technical foundation</li>
+                <li>3 months to ship V2 with calendar integrations</li>
               </ul>
             </div>
 
-            <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-3">August 2025 - Monetization Launch</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• Switched from no-credit-card trial → upfront payment</li>
-                <li>• Conversion jumped from 10% → 40%</li>
-                <li>• Started first paid marketing campaigns</li>
+            <div className="p-6 bg-[#fafafa] border-l-4 border-[#e63700] shadow-sm">
+              <p className="text-[0.9rem] font-semibold text-[#ff3e00] mb-2">August 2025</p>
+              <h4 className="text-[1.2rem] font-bold mb-3 text-[#333]">Monetization Launch</h4>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>Switched from no-credit-card trial → upfront payment</li>
+                <li>Conversion jumped from 10% → 40%</li>
+                <li>Started first paid marketing campaigns</li>
               </ul>
             </div>
 
-            <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-3">Current (January 2026)</h4>
-              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6]">
-                <li>• 150 paid families in first 2 months ($6.95/month = ~$10K ARR)</li>
-                <li>• 1,100 weekly active users</li>
-                <li>• 4x daily opens per user (highly habitual)</li>
-                <li>• 400K notifications sent from 85K created events</li>
-                <li>• 2,500 beta users still active (grandfathered free)</li>
+            <div className="p-6 bg-[#fafafa] border-l-4 border-[#e63700] shadow-sm">
+              <p className="text-[0.9rem] font-semibold text-[#ff3e00] mb-2">January 2026</p>
+              <h4 className="text-[1.2rem] font-bold mb-3 text-[#333]">Current</h4>
+              <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
+                <li>150 paid families in first 2 months ($6.95/month = ~$10K ARR)</li>
+                <li>1,100 weekly active users</li>
+                <li>4x daily opens per user (highly habitual)</li>
+                <li>400K notifications sent from 85K created events</li>
+                <li>2,500 beta users still active (grandfathered free)</li>
               </ul>
             </div>
           </div>
@@ -705,8 +733,6 @@ export default function OrgoCaseAlt() {
             <li>Grew organically to 2,500 users before any paid marketing</li>
             <li>Started paid ads in August 2025, now at 250K+ monthly impressions</li>
           </ul>
-
-          <div className="w-full h-[400px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">What Users Say:</h3>
 
@@ -793,16 +819,14 @@ export default function OrgoCaseAlt() {
             </div>
           </div>
 
-          <div className="w-full h-[300px] bg-gradient-to-br from-gray-200 to-gray-300 mb-12" />
-
-          <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mt-12">
             But the core insight remains: <strong className="text-[#333]">Calendars should reflect reality, not just record events.</strong> That's what we built. That's what users love.
           </p>
         </section>
         </main>
 
         {/* Sidebar */}
-        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit sidebar">
+        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit sidebar pb-32">
           <div
             className="overflow-hidden ease-out"
             style={{
