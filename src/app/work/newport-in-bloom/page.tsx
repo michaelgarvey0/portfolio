@@ -828,7 +828,7 @@ export default function NewportInBloom() {
                       fontWeight: activeSection === section.id ? 700 : 500,
                       color: activeSection === section.id ? brandColor : '#666',
                       transitionProperty: 'opacity',
-                      paddingLeft: section.secondary ? '1.5rem' : '1.5rem'
+                      paddingLeft: '1.5rem'
                     }}
                     className="block w-full text-left pr-4 py-2 text-sm transition-opacity duration-300 hover:opacity-80"
                   >
