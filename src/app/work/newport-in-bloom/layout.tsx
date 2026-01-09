@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import { Raleway } from "next/font/google";
+
+const raleway = Raleway({
+  weight: ['400', '700'],
+  subsets: ["latin"],
+  variable: "--font-raleway",
+});
 
 export const metadata: Metadata = {
   title: "Newport in Bloom - Michael Garvey",
@@ -10,5 +17,5 @@ export default function NewportLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <div className={raleway.variable}>{children}</div>;
 }

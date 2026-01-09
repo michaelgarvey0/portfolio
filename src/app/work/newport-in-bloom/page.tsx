@@ -6,28 +6,20 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CaseStudyHero from '@/components/CaseStudyHero';
+import Accordion from '@/components/Accordion';
 
 export default function NewportInBloom() {
   const [activeSection, setActiveSection] = useState('summary');
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const brandColor = '#00C49A';
 
   const sections = [
     { id: 'summary', title: 'Summary' },
-    { id: 'background', title: 'Background', secondary: true },
-    { id: 'final-product', title: 'Final product', secondary: true },
     { id: 'research', title: 'Research' },
-    { id: 'stakeholder-interviews', title: 'Stakeholder interviews', secondary: true },
-    { id: 'user-interviews', title: 'User interviews', secondary: true },
-    { id: 'peer-analysis', title: 'Peer analysis', secondary: true },
     { id: 'define', title: 'Define' },
-    { id: 'content-structure', title: 'Content and structure', secondary: true },
     { id: 'design', title: 'Design' },
-    { id: 'wireframes', title: 'Wireframes', secondary: true },
-    { id: 'styling', title: 'Styling', secondary: true },
     { id: 'test', title: 'Test' },
-    { id: 'usability-testing', title: 'Usability testing', secondary: true },
-    { id: 'priority-fixes', title: 'Priority fixes', secondary: true },
     { id: 'final-ui', title: 'Final UI' }
   ];
 
@@ -114,7 +106,7 @@ export default function NewportInBloom() {
             top: 8rem;
             height: fit-content;
           }
-          @media (max-width: 767px) {
+          @media (max-width: 991px) {
             .content-container {
               padding-left: 1.5rem;
               padding-right: 1.5rem;
@@ -160,21 +152,17 @@ export default function NewportInBloom() {
             </div>
           </div>
 
-          <img
-            src="https://cdn.prod.website-files.com/63154f9ce7c1627c547a9773/63c8aa2e868edc2e9805c752_nib-header-v2.png"
-            alt="Newport in Bloom website mockup"
-            className="w-full"
-          />
+          <img src="/assets/case-studies/newport-in-bloom/final-website.png" alt="Newport in Bloom website mockup" className="w-full border border-[rgba(0,0,0,0.08)] shadow-md" />
         </motion.section>
 
-        {/* Background */}
-        <section id="background" className="mb-32 scroll-mt-32">
+        {/* Summary */}
+        <section id="summary" className="mb-32 scroll-mt-32">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             "Two" many sites
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Newport in Bloom and Daffodil Days are nonprofits committed to beautifying Newport, Rhode Island, with flowers. Newport in Bloom hosts city events, and Daffodil Days is a festival to celebrate the daffodils they plant in fall, which bloom every April. These two groups have significant membership overlap and wanted to combine their websites. Specifically, the Newport in Bloom site wanted to absorb Daffodil Days.
+            Newport in Bloom and Daffodil Days are nonprofits committed to <strong>beautifying Newport, Rhode Island, with flowers</strong>. Newport in Bloom hosts city events, and Daffodil Days is a festival to <strong>celebrate the daffodils they plant in fall</strong>, which bloom every April. These two groups have <strong>significant membership overlap</strong> and wanted to <strong>combine their websites</strong>. Specifically, the Newport in Bloom site wanted to <strong>absorb Daffodil Days</strong>.
           </p>
 
           <div className="grid grid-cols-2 gap-8 mb-12">
@@ -183,34 +171,25 @@ export default function NewportInBloom() {
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">newport in bloom: Before</h5>
                 <p className="text-[#666]">A screenshot of the Newport in Bloom home page in December 2020.</p>
               </div>
-              <img
-                src="https://cdn.prod.website-files.com/63154f9ce7c1627c547a9773/63ad90ab3ba6d1007af1e0d0_newport-in-bloom-before.png"
-                alt="Newport in Bloom before"
-                className="w-full"
-              />
+              <img src="/assets/case-studies/newport-in-bloom/nib-before.png" alt="Newport in Bloom website before redesign" className="w-full border border-[rgba(0,0,0,0.08)] shadow-md" />
             </div>
             <div className="border border-[rgba(0,0,0,0.08)] shadow-md">
               <div className="p-6 bg-[#fafafa] border-b border-[rgba(0,0,0,0.08)]">
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">daffodil days: Before</h5>
                 <p className="text-[#666]">A screenshot of the Daffodil Days home page in December 2020.</p>
               </div>
-              <img
-                src="https://cdn.prod.website-files.com/63154f9ce7c1627c547a9773/63ad90b532bfdb0db626b64d_daffodil-days-before.png"
-                alt="Daffodil Days before"
-                className="w-full"
-              />
+              <img src="/assets/case-studies/newport-in-bloom/daffy-before.png" alt="Daffodil Days website before redesign" className="w-full border border-[rgba(0,0,0,0.08)] shadow-md" />
             </div>
           </div>
-        </section>
 
-        {/* Final Product */}
-        <section id="final-product" className="mb-32 scroll-mt-32">
-          <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            A new brand, consolidation, intuitive structure, and responsivity
-          </h3>
+          {/* Final Product */}
+          <div className="mb-16">
+            <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
+              A new brand, consolidation, intuitive structure, and responsivity
+            </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            The design system is now fully integrated with modern web capabilities, resulting in a more scalable and accessible system.
+            The design system is now <strong>fully integrated with modern web capabilities</strong>, resulting in a <strong>more scalable and accessible system</strong>.
           </p>
 
           <div className="flex gap-4 mb-12">
@@ -239,6 +218,7 @@ export default function NewportInBloom() {
               </li>
             </ul>
           </div>
+        </div>
         </section>
 
         {/* Research */}
@@ -246,7 +226,7 @@ export default function NewportInBloom() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Research</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Before beginning the design process, I formulated a set of research questions to guide my investigation. These questions pertained to the current websites, the users, and the goals of the committees. The guiding questions were:
+            Before beginning the design process, I formulated a <strong>set of research questions</strong> to guide my investigation. These questions pertained to the <strong>current websites, the users, and the goals of the committees</strong>. The guiding questions were:
           </p>
 
           <ul className="space-y-3 mb-12 ml-6">
@@ -259,71 +239,165 @@ export default function NewportInBloom() {
         </section>
 
         {/* Stakeholder Interviews */}
-        <section id="stakeholder-interviews" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             Stakeholder interviews: Getting to know the organizations
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            First, I needed to understand who and what I was working with-- what do committee members want, why do they want it, and what are the sites like now? I talked to three committee members and the Newport in Bloom webmaster to figure this out.
+            First, I needed to <strong>understand who and what I was working with</strong>-- what do committee members want, why do they want it, and what are the sites like now? I talked to <strong>three committee members and the Newport in Bloom webmaster</strong> to figure this out.
           </p>
-        </section>
+        </div>
 
         {/* User Interviews */}
-        <section id="user-interviews" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             User interviews: Gathering user perspectives
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            With a clear understanding of the committees' goals, I conducted user research by interviewing 6 individuals, evenly divided between those who had participated in Newport in Bloom events (gardeners) and those who had not (non-gardeners). The aim was to gain insights into their goals and needs.
+            With a clear understanding of the committees' goals, I conducted <strong>user research by interviewing 6 individuals</strong>, evenly divided between those who had participated in Newport in Bloom events (gardeners) and those who had not (non-gardeners). The aim was to <strong>gain insights into their goals and needs</strong>.
           </p>
-        </section>
+        </div>
 
         {/* Peer Analysis */}
-        <section id="peer-analysis" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
-            Peer analysis: Analyzing navigation and site structure
+            What are other nonprofits doing?
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            I analyzed 20 nonprofit websites to understand the common components and site structures. I found two common approaches to designing nonprofit homepages.
+            I also <strong>researched other nonprofit organizations</strong> as part of my investigation. I examined the websites of <strong>nonprofits in Newport, national-level organizations, and other local garden and flower-related nonprofits or festivals</strong>. This broad research helped me <strong>identify patterns across categories</strong>.
           </p>
 
-          <div className="grid grid-cols-2 gap-8 mb-12">
-            <div className="border border-[rgba(0,0,0,0.08)] shadow-md">
-              <div className="p-6 bg-[#fafafa] border-b border-[rgba(0,0,0,0.08)]">
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">Strategy 1</h5>
-                <p className="text-[#666]">Blatant call to action, not much information</p>
-              </div>
-              <div className="p-8">
-                <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
-                  This strategy presents a blatant call to action (donate, volunteer, etc.) without giving you much information about the organization. It's a more visual experience-- the site "grabs you" with imagery and a lack of words.
-                </p>
-                <div className="bg-gray-200 h-48 flex items-center justify-center text-gray-500">
-                  [Placeholder: Strategy 1 example screenshot]
-                </div>
-              </div>
-            </div>
+          <h4 className="text-[1.4rem] font-bold text-[#333] mb-6">Newport nonprofits</h4>
 
-            <div className="border border-[rgba(0,0,0,0.08)] shadow-md">
-              <div className="p-6 bg-[#fafafa] border-b border-[rgba(0,0,0,0.08)]">
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">Strategy 2</h5>
-                <p className="text-[#666]">More info about the organization</p>
-              </div>
-              <div className="p-8">
-                <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
-                  This strategy provides more information about the organization. More words, more sections, more info that might be found in the "about" page. Calls to action are usually in the navigation bar and less obvious on the page itself.
-                </p>
-                <div className="bg-gray-200 h-48 flex items-center justify-center text-gray-500">
-                  [Placeholder: Strategy 2 example screenshot]
-                </div>
-              </div>
-            </div>
+          <div className="grid md:grid-cols-2 gap-4 mb-8 items-start">
+            <Accordion
+              id="preservation"
+              title="Newport Preservation Society"
+              logoSrc="/assets/case-studies/newport-in-bloom/preservation-society.png"
+              url="https://www.newportmansions.org"
+              description="The Preservation Society of Newport County preserves and protects the area's architectural, decorative arts, landscape, and social history. They run the Newport Mansions, which primarily make Newport a tourist destination."
+              bulletPoints={[
+                "Significant amount of information",
+                "All pages are accessible from the primary navigation menu— some have four levels of dropdowns",
+                "Photo-heavy (pictures of mansion interiors, exteriors, gardens, etc.)",
+                "On specific pages, they employ secondary navigation in the form of a sidebar",
+                "Primary CTAs are for member login, ticket purchase, and donations",
+                "Several auto-rotating carousels with full-page pictures"
+              ]}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+              brandColor={brandColor}
+            />
+            <Accordion
+              id="ymca"
+              title="Newport County YMCA"
+              logoSrc="/assets/case-studies/newport-in-bloom/ymca.png"
+              url="https://www.newportymca.org"
+              description="The Newport County YMCA is an organization that tries to bring together the community through programs and activities that help develop spiritual, mental, and physical well-being."
+              bulletPoints={[
+                "Photo-heavy; includes several photos of happy children and employees",
+                "Also a significant amount of information, structured within the primary navigation",
+                "For particular events, a good reusable template: hero image, title, program contact, related programs, and action items",
+                "Primary navigation takes up a significant portion of the page real estate",
+                "Primary CTAs are to view upcoming events and to register for particular programs",
+                "Several different places to donate"
+              ]}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+              brandColor={brandColor}
+            />
+          </div>
+
+          <h4 className="text-[1.4rem] font-bold text-[#333] mb-6">Garden and flower nonprofits</h4>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-8 items-start">
+            <Accordion
+              id="portland"
+              title="Portland Rose Festival"
+              logoSrc="/assets/case-studies/newport-in-bloom/rose-festival.png"
+              url="https://www.rosefestival.org"
+              description="The Portland Rose Festival is an event held every June in Portland, Oregon, with lots of parades and activities promoting both Portland and its beautiful flowers."
+              bulletPoints={[
+                "Simple, flowery monochrome logo",
+                "Calendar of upcoming events",
+                "Primary CTAs are donate and purchase tickets",
+                "Lots of focus on the directly upcoming event (even a live countdown)",
+                "Several full-page images",
+                "Event pages include a hero image, title, and a sidebar with relevant information",
+                "Can search through events and filter them",
+                "Whole-site search functionality"
+              ]}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+              brandColor={brandColor}
+            />
+            <Accordion
+              id="cherry"
+              title="Cherry Blossom Festival"
+              logoSrc="/assets/case-studies/newport-in-bloom/cherry-blossom.png"
+              url="https://www.nationalcherryblossomfestival.org"
+              description="The National Cherry Blossom Festival is an organization devoted to hosting activities to promote and educate about the environment, arts, and culture in Washington, DC. The primary event promotes cherry blossoms, which bloom in late March and early April."
+              bulletPoints={[
+                "Brand color (pink) extends throughout site",
+                "An autoplaying carousel is the main focal point of the homepage",
+                "The primary CTA is donate",
+                "For each event, there's a sidebar with general important information",
+                "Lots of cards with a similar format (title, picture, subtext, learn more button)",
+                "Two navigation bars at the top, one sticky, one not"
+              ]}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+              brandColor={brandColor}
+            />
+          </div>
+
+          <h4 className="text-[1.4rem] font-bold text-[#333] mb-6">National nonprofits</h4>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-12 items-start">
+            <Accordion
+              id="aclu"
+              title="American Civil Liberties Union"
+              logoSrc="/assets/case-studies/newport-in-bloom/aclu.png"
+              url="https://www.aclu.org"
+              description="ACLU is an organization devoted to preserving people's constitutional rights by offering legal assistance in cases where civil liberties are at risk."
+              bulletPoints={[
+                'Primary CTA is very clearly "Donate"',
+                "Carousel of images is general hero; includes the option to stop autoplaying",
+                "Sticky email subscription input",
+                "Site is organized by issue",
+                "Search and filter available for particularly long results pages"
+              ]}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+              brandColor={brandColor}
+            />
+            <Accordion
+              id="bgc"
+              title="Boys and Girls Club"
+              logoSrc="/assets/case-studies/newport-in-bloom/bgc.png"
+              url="https://www.bgca.org"
+              description="The Boys & Girls Club of America provides programs for kids and young adults across the country."
+              bulletPoints={[
+                "Carousel hero with images of happy children; similar to Newport County YMCA",
+                '"I am a <dropdown>" form field which brings you to a specific page dependent on the option you choose',
+                "Various types of templates used, generally lacking a consistent format across the site",
+                "Breadcrumbs to facilitate user navigation",
+                "Some reused templates, especially for programs"
+              ]}
+              openAccordion={openAccordion}
+              setOpenAccordion={setOpenAccordion}
+              brandColor={brandColor}
+            />
           </div>
 
           <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
             <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">TAKEAWAYS</h5>
+            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
+              I found two common approaches to designing nonprofit homepages: one that presents a blatant call to action without much information (a more visual, grabbing experience), and another that provides more information about the organization with CTAs less obvious on the page.
+            </p>
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
               While both types of sites displayed the information users were likely to want to find, they differed in the amount of clutter. I knew from stakeholders that Newport in Bloom wanted their site to be image-heavy, but I also knew from the research that they wanted to share their story and mission with everyone who landed on the site.
             </p>
@@ -331,13 +405,13 @@ export default function NewportInBloom() {
               It was important to <strong className="font-bold text-[#212121]">find a balance where the home page could tell their story but also avoid text-heavy chunks.</strong>
             </p>
           </div>
-        </section>
+        </div>
 
         <section id="define" className="mb-32 scroll-mt-32">
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Define</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            The goals were ambitious: I had to combine two nonprofit websites, make a better user experience, implement Newport in Bloom's new brand, and make the site responsive to tablet and phone screens. Once the research was concluded, I synthesized the results to define two design goals. These goals specifically targeted the aspects I wanted to prioritize in order to create a more user-friendly site.
+            The goals were ambitious: I had to <strong>combine two nonprofit websites</strong>, make a <strong>better user experience</strong>, implement <strong>Newport in Bloom's new brand</strong>, and make the site <strong>responsive to tablet and phone screens</strong>. Once the research was concluded, I <strong>synthesized the results to define two design goals</strong>. These goals specifically targeted the aspects I wanted to prioritize in order to <strong>create a more user-friendly site</strong>.
           </p>
 
           <div className="grid grid-cols-2 gap-8 mb-12">
@@ -363,13 +437,13 @@ export default function NewportInBloom() {
           </div>
         </section>
 
-        <section id="content-structure" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             Content and structure: Merging and reorganizing
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            I evaluated the existing content to find what should stay and what should go. This was very collaborative with the stakeholders: I made some recommendations, they made some recommendations, and we worked toward a final site map.
+            I <strong>evaluated the existing content</strong> to find what should stay and what should go. This was <strong>very collaborative with the stakeholders</strong>: I made some recommendations, they made some recommendations, and we <strong>worked toward a final site map</strong>.
           </p>
 
           <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
@@ -416,112 +490,113 @@ export default function NewportInBloom() {
             </ul>
           </div>
 
-          <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500 mb-12">
-            [Placeholder: Site map diagram]
-          </div>
-        </section>
+          <img src="/assets/case-studies/newport-in-bloom/sitemap-v2.png" alt="Site map diagram showing information architecture" className="w-full mb-12" />
+        </div>
 
         <section id="design" className="mb-32 scroll-mt-32">
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Design</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            With a clear understanding of the goals, I began the design process. I started with wireframes to establish the structure and flow, then moved into high-fidelity mockups that incorporated Newport in Bloom's new branding.
+            With a clear understanding of the goals, I began the <strong>design process</strong>. I started with <strong>wireframes to establish the structure and flow</strong>, then moved into <strong>high-fidelity mockups</strong> that incorporated <strong>Newport in Bloom's new branding</strong>.
           </p>
         </section>
 
-        <section id="wireframes" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             Wireframes: Establishing information hierarchy
           </h3>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            I started by sketching out initial ideas for the home page layout. These rough sketches helped me quickly iterate on different approaches to organizing the content.
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
+            I started by <strong>sketching out initial ideas</strong> for the home page layout. These rough sketches helped me <strong>quickly iterate on different approaches</strong> to organizing the content.
           </p>
 
-          <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500 mb-12">
-            [Placeholder: Paper wireframe sketches]
-          </div>
-
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            After sketching, I created digital wireframes in Figma. I focused on mobile-first design to ensure the site would work well on all devices.
+            After sketching, I created <strong>digital wireframes in Figma</strong>. I focused on <strong>mobile-first design</strong> to ensure the site would <strong>work well on all devices</strong>.
           </p>
 
-          <div className="grid grid-cols-3 gap-6 mb-12">
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile wireframe 1]
-            </div>
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile wireframe 2]
-            </div>
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile wireframe 3]
-            </div>
-          </div>
+        </div>
 
-          <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500 mb-12">
-            [Placeholder: Desktop wireframe]
-          </div>
-        </section>
-
-        <section id="styling" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             Styling: Implementing the new brand
           </h3>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Newport in Bloom had recently worked with a graphic designer to create a new logo and brand identity. My task was to take this new branding and apply it to the website design.
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
+            Newport in Bloom had recently worked with a graphic designer to <strong>create a new logo and brand identity</strong>. My task was to <strong>take this new branding and apply it to the website design</strong>. Their font remained the same but was paired with a <strong>new color palette, featuring colors that complement plants and flowers</strong>.
           </p>
 
-          <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
-            <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">BRAND ELEMENTS</h5>
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <p className="font-bold text-[#333] mb-3">Colors</p>
-                <div className="flex gap-4 mb-6">
-                  <div className="w-20 h-20 bg-[#0066cc] flex items-center justify-center text-white text-xs">#0066cc</div>
-                  <div className="w-20 h-20 bg-[#FFD700] flex items-center justify-center text-xs">#FFD700</div>
-                  <div className="w-20 h-20 bg-[#228B22] flex items-center justify-center text-white text-xs">#228B22</div>
+          <div className="p-8 bg-white border border-[rgba(0,0,0,0.08)] mb-12">
+            <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">COLORS AND TYPOGRAPHY</h5>
+
+            <div className="mb-8">
+              <p className="font-bold text-[#333] mb-4">Color Palette</p>
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <div>
+                  <div className="w-full h-24 mb-2" style={{ backgroundColor: '#00C49A' }}></div>
+                  <p className="text-sm font-bold text-[#212121]">Primary</p>
+                  <p className="text-sm text-[#212121]">#00C49A</p>
+                </div>
+                <div>
+                  <div className="w-full h-24 mb-2" style={{ backgroundColor: '#FFD203' }}></div>
+                  <p className="text-sm font-bold text-[#212121]">Secondary</p>
+                  <p className="text-sm text-[#212121]">#FFD203</p>
+                </div>
+                <div>
+                  <div className="w-full h-24 mb-2" style={{ background: 'linear-gradient(to right, #FFC58D, #FF8266)' }}></div>
+                  <p className="text-sm font-bold text-[#212121]">Primary Decorative</p>
+                  <p className="text-sm text-[#212121]">#FFC58D ➞ #FF8266</p>
+                </div>
+                <div>
+                  <div className="w-full h-24 mb-2" style={{ backgroundColor: '#062F3D' }}></div>
+                  <p className="text-sm font-bold text-[#212121]">Accent Dark</p>
+                  <p className="text-sm text-[#212121]">#062F3D</p>
+                </div>
+                <div>
+                  <div className="w-full h-24 mb-2" style={{ backgroundColor: '#333333' }}></div>
+                  <p className="text-sm font-bold text-[#212121]">Dark</p>
+                  <p className="text-sm text-[#212121]">#333333</p>
+                </div>
+                <div>
+                  <div className="w-full h-24 mb-2 border border-[rgba(0,0,0,0.1)]" style={{ backgroundColor: '#FBFEFF' }}></div>
+                  <p className="text-sm font-bold text-[#212121]">Light</p>
+                  <p className="text-sm text-[#212121]">#FBFEFF</p>
                 </div>
               </div>
-              <div>
-                <p className="font-bold text-[#333] mb-3">Typography</p>
-                <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-                  Primary: Montserrat<br />
-                  Secondary: Open Sans
-                </p>
+            </div>
+
+            <div>
+              <p className="font-bold text-[#333] mb-4">Typography</p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-[2rem] font-bold text-[#212121]" style={{ fontFamily: 'var(--font-raleway)' }}>Aa Raleway Bold</p>
+                  <p className="text-[#666] font-bold" style={{ fontFamily: 'var(--font-raleway)' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                  <p className="text-[2rem] text-[#212121]" style={{ fontFamily: 'var(--font-raleway)' }}>Aa Raleway Regular</p>
+                  <p className="text-[#666]" style={{ fontFamily: 'var(--font-raleway)' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500 mb-12">
-            [Placeholder: High-fidelity mockup - Home page]
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-200 h-64 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile mockup]
-            </div>
-            <div className="bg-gray-200 h-64 flex items-center justify-center text-gray-500">
-              [Placeholder: Tablet mockup]
-            </div>
-          </div>
-        </section>
+          <img src="/assets/case-studies/newport-in-bloom/final-website.png" alt="High-fidelity mockup of home page" className="w-full mb-12 border border-[rgba(0,0,0,0.08)] shadow-md" />
+        </div>
 
         <section id="test" className="mb-32 scroll-mt-32">
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Test</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Before finalizing the design, I conducted usability testing to identify any issues and ensure the site met user needs. I tested with both gardeners and non-gardeners to get a comprehensive understanding of the user experience.
+            Before finalizing the design, I conducted <strong>usability testing</strong> to <strong>identify any issues</strong> and ensure the site <strong>met user needs</strong>. I tested with both <strong>gardeners and non-gardeners</strong> to get a <strong>comprehensive understanding of the user experience</strong>.
           </p>
         </section>
 
-        <section id="usability-testing" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             Usability testing: Finding pain points
           </h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            I conducted moderated usability tests with 5 participants (3 gardeners, 2 non-gardeners). Each participant was given a series of tasks to complete while thinking aloud. I observed their behavior and noted any points of confusion or frustration.
+            I conducted <strong>moderated usability tests with 5 participants</strong> (3 gardeners, 2 non-gardeners). Each participant was given a <strong>series of tasks to complete while thinking aloud</strong>. I <strong>observed their behavior</strong> and noted any <strong>points of confusion or frustration</strong>.
           </p>
 
           <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
@@ -535,9 +610,6 @@ export default function NewportInBloom() {
             </ul>
           </div>
 
-          <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500 mb-12">
-            [Placeholder: Usability testing session photo]
-          </div>
 
           <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
             <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">KEY FINDINGS</h5>
@@ -556,111 +628,132 @@ export default function NewportInBloom() {
               </li>
             </ul>
           </div>
-        </section>
+        </div>
 
-        <section id="priority-fixes" className="mb-32 scroll-mt-32">
+        <div className="mb-16">
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
             Priority fixes: Addressing usability issues
           </h3>
 
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Based on the usability testing results, I prioritized the issues and made the following changes:
+          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
+            After <strong>reviewing usability testing notes</strong>, re-watching the Zoom recordings, and <strong>consulting with committee members</strong>, I identified <strong>three main issues to address</strong>, along with several additional minor improvements.
           </p>
 
-          <div className="grid grid-cols-1 gap-6 mb-12">
-            <div className="p-8 border border-[rgba(0,0,0,0.08)] shadow-sm">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-12 h-12 text-white flex items-center justify-center font-bold text-xl" style={{ backgroundColor: brandColor }}>1</div>
-                <div className="flex-1">
-                  <h5 className="font-bold text-[#333] mb-3 text-lg">Improved navigation hierarchy</h5>
-                  <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
-                    Made "Daffodil Days Festival" a top-level navigation item instead of hiding it under "Events".
-                  </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-sm">
-                      [Before: Hidden menu item]
-                    </div>
-                    <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-sm">
-                      [After: Top-level menu item]
-                    </div>
-                  </div>
-                </div>
-              </div>
+          {/* Fix 1: Happening Now Section */}
+          <div className="mb-20">
+            <h4 className="text-[1.5rem] font-bold text-[#333] mb-6">Fix 1: "Happening Now" section</h4>
+
+            <div className="mb-8">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PREVIOUS STATE</h5>
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
+                An auto-rotating carousel of events and updates.
+              </p>
+              <img src="/assets/case-studies/newport-in-bloom/nib-carousel-v1.png" alt="Previous carousel design" className="w-full mb-8 border border-[rgba(0,0,0,0.08)] shadow-md" />
+
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PROBLEMS</h5>
+              <ul className="space-y-3 mb-8 ml-6 list-disc">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">People don't love automatically moving parts.</strong> Moving parts can detract attention and cause overwhelm.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Only one update was visible at a time.</strong> People like to see all their options, so the initial design violated the "recognition rather than recall" heuristic.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">The system was in control.</strong> The autoplay takes control from the user.</li>
+              </ul>
             </div>
 
-            <div className="p-8 border border-[rgba(0,0,0,0.08)] shadow-sm">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-12 h-12 text-white flex items-center justify-center font-bold text-xl" style={{ backgroundColor: brandColor }}>2</div>
-                <div className="flex-1">
-                  <h5 className="font-bold text-[#333] mb-3 text-lg">Larger mobile menu icon</h5>
-                  <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
-                    Increased the hamburger menu icon size from 24px to 40px for better tap targets on mobile.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-sm">
-                      [Before: 24px icon]
-                    </div>
-                    <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-sm">
-                      [After: 40px icon]
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="mb-8">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">REVISED STATE</h5>
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
+                The updates are placed into vertical tabs, with each update summarized in the tab title.
+              </p>
+              <img src="/assets/case-studies/newport-in-bloom/nib-carousel-v2.png" alt="Revised vertical tabs design" className="w-full mb-8 border border-[rgba(0,0,0,0.08)] shadow-md" />
 
-            <div className="p-8 border border-[rgba(0,0,0,0.08)] shadow-sm">
-              <div className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-12 h-12 text-white flex items-center justify-center font-bold text-xl" style={{ backgroundColor: brandColor }}>3</div>
-                <div className="flex-1">
-                  <h5 className="font-bold text-[#333] mb-3 text-lg">More prominent CTAs</h5>
-                  <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
-                    Added larger, more colorful buttons for key actions like "Get Involved" and "Donate" on the homepage.
-                  </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-sm">
-                      [Before: Subtle links]
-                    </div>
-                    <div className="bg-gray-200 h-32 flex items-center justify-center text-gray-500 text-sm">
-                      [After: Prominent buttons]
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">HOW IT ADDRESSES THE PROBLEMS</h5>
+              <ul className="space-y-3 ml-6 list-disc">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">No moving parts.</strong> The new section is static by default.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">All update headlines are visible.</strong> If a user is interested in one, all they have to do is click to learn more.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">The user is in control.</strong> They can click whichever update they'd like to see.</li>
+              </ul>
             </div>
           </div>
-        </section>
+
+          {/* Fix 2: Event Page Details */}
+          <div className="mb-20">
+            <h4 className="text-[1.5rem] font-bold text-[#333] mb-6">Fix 2: Event page details</h4>
+
+            <div className="mb-8">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PREVIOUS STATE</h5>
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
+                The header had action buttons in the header picture, and event information was below, separated by headings.
+              </p>
+              <img src="/assets/case-studies/newport-in-bloom/event-details-v1.png" alt="Previous event page design" className="w-full mb-8 border border-[rgba(0,0,0,0.08)] shadow-md" />
+
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PROBLEMS</h5>
+              <ul className="space-y-3 mb-8 ml-6 list-disc">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">People didn't know what else was on the page.</strong> Scrolling down allowed you to see photos and competition results. The header didn't tell them that.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">The visual hierarchy was off.</strong> Participants described the headers as difficult to follow; they weren't sure where to look.</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">REVISED STATE</h5>
+              <img src="/assets/case-studies/newport-in-bloom/event-details-v2.png" alt="Revised event page design with numbered annotations" className="w-full mb-4 border border-[rgba(0,0,0,0.08)] shadow-md" />
+              <ul className="space-y-3 mb-8 ml-6">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">1.</strong> Location and date information replaced the action items (which, for most events, will not exist). The header serves as a quick summary of the event.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">2.</strong> Quick links for a) action items and b) section links (e.g., clicking "photos" scrolls to the photos section below)</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">3.</strong> General description of the event</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">4.</strong> "Latest news" ➞ "Updates" and boxed in a separate area</li>
+              </ul>
+
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">HOW IT ADDRESSES THE PROBLEM</h5>
+              <ul className="space-y-3 ml-6 list-disc">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">The section links inform the users what information they can access from this page.</strong> This was a problem during usability testing, and some quick re-testing on that particular task proved this to be an effective solution.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Improved visual hierarchy.</strong> There aren't as many homogenous blocks of text— the intention here is to drive the user's attention to the header, then to the update, and then to the rest of the copy.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Fix 3: Reconfigured Sitemap */}
+          <div className="mb-12">
+            <h4 className="text-[1.5rem] font-bold text-[#333] mb-6">Fix 3: Reconfigured sitemap</h4>
+
+            <div className="mb-8">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PREVIOUS STATE</h5>
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-4">
+                Six event pages, and Daffy Days as a primary menu item.
+              </p>
+              <img src="/assets/case-studies/newport-in-bloom/sitemap-v1.png" alt="Sitemap v1" className="w-full mb-8" />
+
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PROBLEMS</h5>
+              <ul className="space-y-3 mb-8 ml-6 list-disc">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Committee members wanted to include pages for NIB-sponsored events.</strong> Now, these were not accessible in the site.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Daffodil Days needed a restructure.</strong> Certain changes were requested by the committee. For example, the Daffodil Bulb Giveaway, while technically a "Daffy" event, took place in October, while the actual festival (called "Daffodil Days") takes places in April, and they decided this distinction was important.</li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">REVISED STATE</h5>
+              <img src="/assets/case-studies/newport-in-bloom/sitemap-v2.png" alt="Sitemap v2" className="w-full mb-4" />
+              <ul className="space-y-3 mb-8 ml-6">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">1.</strong> Four additional event pages, including those that are sponsored by Newport in Bloom.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">2.</strong> Daffodil days nested into a "Let's Get Daffy" header, with Daffodil Days specific events as tertiary items.</li>
+              </ul>
+
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">HOW IT ADDRESSES THE PROBLEM</h5>
+              <ul className="space-y-3 ml-6 list-disc">
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Inclusion of NIB-sponsored events.</strong> Previously, these were inaccessible, so the fix was simply to add them in.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Daffodil Days structure more closely resembles the organization's structure.</strong> While not necessarily a UX fix, this was required by the committee and allowed them to rest easy at night.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <section id="final-ui" className="mb-32 scroll-mt-32">
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Final UI</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            After incorporating feedback from usability testing, I finalized the design and developed the site using WordPress and Elementor Pro. The final product is a fully responsive, accessible website that successfully combines Newport in Bloom and Daffodil Days.
+            After <strong>incorporating feedback from usability testing</strong>, I <strong>finalized the design and developed the site</strong> using WordPress and Elementor Pro. The final product is a <strong>fully responsive, accessible website</strong> that <strong>successfully combines Newport in Bloom and Daffodil Days</strong>.
           </p>
 
-          <div className="bg-gray-200 h-[600px] flex items-center justify-center text-gray-500 mb-12">
-            [Placeholder: Final home page desktop]
-          </div>
+          <img src="/assets/case-studies/newport-in-bloom/final-website.png" alt="Final home page desktop design" className="w-full mb-12 border border-[rgba(0,0,0,0.08)] shadow-md" />
 
-          <div className="grid grid-cols-3 gap-6 mb-12">
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile home]
-            </div>
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile about]
-            </div>
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Mobile festival]
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Desktop about page]
-            </div>
-            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-500">
-              [Placeholder: Desktop festival page]
-            </div>
-          </div>
 
           <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
             <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">REFLECTION</h5>
@@ -759,8 +852,8 @@ export default function NewportInBloom() {
           }
         `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/orgo-brand" className="flex flex-col items-start gap-3 p-6 border shadow-sm transition-all duration-300 hover:-translate-y-[5px] w-1/2" style={{ borderColor: brandColor }}>
-            <div className="flex items-center gap-2 font-bold" style={{ color: brandColor }}>
+          <Link href="/work/orgo-brand" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -777,8 +870,8 @@ export default function NewportInBloom() {
             </span>
           </Link>
 
-          <Link href="/work/beeline" className="flex flex-col items-end gap-3 p-6 border shadow-sm transition-all duration-300 hover:-translate-y-[5px] w-1/2" style={{ borderColor: brandColor }}>
-            <div className="flex items-center gap-2 font-bold" style={{ color: brandColor }}>
+          <Link href="/work/beeline" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <span>Up next</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

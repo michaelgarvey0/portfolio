@@ -6,10 +6,12 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CaseStudyHero from '@/components/CaseStudyHero';
+import Accordion from '@/components/Accordion';
 
 export default function Beeline() {
   const [activeSection, setActiveSection] = useState('summary');
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const brandColor = '#003049';
 
   const sections = [
@@ -106,7 +108,7 @@ export default function Beeline() {
           .sidebar {
             display: block;
           }
-          @media (max-width: 767px) {
+          @media (max-width: 991px) {
             .content-with-sidebar {
               padding-left: 1.5rem;
               padding-right: 1.5rem;
@@ -193,7 +195,15 @@ export default function Beeline() {
               Figma prototype →
             </a>
 
-            <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300 mb-12"></div>
+            <video
+              src="/assets/case-studies/beeline/final-product-video.mov"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full mb-12 mx-auto"
+              style={{ maxWidth: '400px' }}
+            />
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
               In this example, I have to do my <strong>Thanksgiving shopping at Stop and Shop</strong>. I've already made a list, and I'm in the store, but <strong>I'm having trouble finding the flour.</strong> I use the app to look at the store map to <strong>find that item's location.</strong>
@@ -276,6 +286,115 @@ export default function Beeline() {
               <strong>I couldn't find anyone who alleviated the exact pain point</strong> I was trying to target. Still, <strong>I found some awesome apps</strong> (some of which I will undoubtedly use in the future) that gave me insight into what's already out there.
             </p>
 
+            <div className="grid md:grid-cols-2 gap-4 mb-12 items-start">
+              <Accordion
+                id="anylist"
+                title="AnyList"
+                logoSrc="/assets/case-studies/beeline/anylist.svg"
+                url="https://www.anylist.com"
+                description="AnyList is a list-making app for groceries that auto-organizes items by category and allows recipe storage with shareable lists."
+                bulletPoints={[
+                  "Auto-organizes grocery items by nutrition categories",
+                  "Allows you to store recipes",
+                  "Lists are shareable with and without an account",
+                  "No pictures, brands, or store links",
+                  "Simple but slightly outdated UI",
+                  "More of an organizer than a shopping solution"
+                ]}
+                openAccordion={openAccordion}
+                setOpenAccordion={setOpenAccordion}
+                brandColor={brandColor}
+              />
+              <Accordion
+                id="target"
+                title="Target"
+                logoSrc="/assets/case-studies/beeline/target.svg"
+                url="https://www.target.com"
+                description="Target's app shows item locations using a virtual store map with aisle numbers and stock information, but prioritizes online purchasing over in-store shopping."
+                bulletPoints={[
+                  "Shows store layout and item location on a map",
+                  "Notes stock levels and specific aisle numbers",
+                  "Organizes items in alphabetical aisle order",
+                  "Supports Siri for adding items on iOS",
+                  "Prioritizes purchasing online vs. using as shopping list",
+                  "List view doesn't show prices or totals"
+                ]}
+                openAccordion={openAccordion}
+                setOpenAccordion={setOpenAccordion}
+                brandColor={brandColor}
+              />
+              <Accordion
+                id="stopshop"
+                title="Stop & Shop"
+                logoSrc="/assets/case-studies/beeline/stop-and-shop.svg"
+                url="https://stopandshop.com"
+                description="Stop & Shop's app features bold visual design with auto-sorted items by section, clear pricing, and extensive product details."
+                bulletPoints={[
+                  "Auto-sorts items by store section",
+                  "Cart shows prices very clearly",
+                  "Bold visual design with strong use of red",
+                  "Shows past purchases and nutrition details",
+                  "Doesn't note aisle numbers, just general sections",
+                  "Heavy focus on coupons and rewards"
+                ]}
+                openAccordion={openAccordion}
+                setOpenAccordion={setOpenAccordion}
+                brandColor={brandColor}
+              />
+              <Accordion
+                id="kroger"
+                title="Kroger"
+                logoSrc="/assets/case-studies/beeline/kroger.svg"
+                url="https://www.kroger.com"
+                description="Kroger's app provides basic list functionality with item pictures, prices, and aisle numbers, alongside heavy coupon advertising."
+                bulletPoints={[
+                  "Pictures of items along with prices",
+                  "Item information includes aisle numbers",
+                  "Basic grocery list with total price calculation",
+                  "Information architecture matches general store layout",
+                  "Heavy focus on coupons, savings, and deals"
+                ]}
+                openAccordion={openAccordion}
+                setOpenAccordion={setOpenAccordion}
+                brandColor={brandColor}
+              />
+              <Accordion
+                id="basket"
+                title="Basket"
+                logoSrc="/assets/case-studies/beeline/basket.svg"
+                url="https://www.basketapp.com"
+                description="Basket compares prices across stores and allows dietary preferences, but lacks location information and requires specific product searches."
+                bulletPoints={[
+                  "Compares prices at multiple stores",
+                  "Can create different types of lists",
+                  "Allows users to set dietary preferences",
+                  "Has no location information within stores",
+                  "Cannot search generically—requires specific product names",
+                  "Focuses on achieving lowest price"
+                ]}
+                openAccordion={openAccordion}
+                setOpenAccordion={setOpenAccordion}
+                brandColor={brandColor}
+              />
+              <Accordion
+                id="totalwine"
+                title="Total Wine & More"
+                logoSrc="/assets/case-studies/beeline/total-wine.svg"
+                url="https://www.totalwine.com"
+                description="Total Wine's site includes aisle numbers with left/right directions and standard product photos, but lacks robust list-keeping features."
+                bulletPoints={[
+                  "Clear, standard photos of products",
+                  "Item pages include aisle number and side (left/right)",
+                  "No dedicated list-keeping mechanism",
+                  "Functions more like a shopping cart than a list",
+                  "Recommended by interview participants for its location features"
+                ]}
+                openAccordion={openAccordion}
+                setOpenAccordion={setOpenAccordion}
+                brandColor={brandColor}
+              />
+            </div>
+
             <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-12">
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">TAKEAWAYS: COMPETITOR ANALYSIS</h5>
               <ul className="space-y-4 text-[1.1rem] text-[#666] leading-[1.8] list-disc ml-6">
@@ -311,7 +430,7 @@ export default function Beeline() {
               <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
                 The flow allows users to either <strong>shop with a pre-made list</strong> or <strong>search for a specific item</strong> and ends when all items on the list have been located or when the user has found the item they were searching for.
               </p>
-              <div className="w-full aspect-[3/1] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+              <img src="/assets/case-studies/beeline/user-flow.svg" alt="Beeline user flow diagram" className="w-full" />
             </div>
 
             <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">Product requirements</h3>
@@ -324,9 +443,9 @@ export default function Beeline() {
             <div className="overflow-x-auto mb-12">
               <table className="w-full border-collapse border border-[rgba(0,0,0,0.08)]">
                 <thead>
-                  <tr className="bg-gradient-to-br from-gray-50 to-white">
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Area</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">High-level requirements</th>
+                  <tr style={{ backgroundColor: brandColor }}>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Area</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">High-level requirements</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -401,10 +520,7 @@ export default function Beeline() {
               My wireframes served as a <strong>blueprint for the final product</strong> and as a <strong>tool to test and iterate</strong> on the user flow and interface design.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-            </div>
+            <img src="/assets/case-studies/beeline/wireframes.png" alt="Beeline wireframes" className="w-full mb-12 mx-auto" style={{ maxWidth: '630px' }} />
 
             <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">Styling</h3>
             <h4 className="text-[1.5rem] font-bold text-[#333] mb-8">Creating the brand</h4>
@@ -418,44 +534,85 @@ export default function Beeline() {
               <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
                 The three hexagons represent a beehive, and the colors are meant to be warm but also clean.
               </p>
-              <div className="w-full aspect-[2/1] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+              <div className="w-full flex items-center justify-center py-12">
+                <img src="/assets/case-studies/beeline/beeline-logo.svg" alt="Beeline logo" className="h-64" />
+              </div>
             </div>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
               I made a <strong>general UI kit</strong> following the logo creation based on common elements from my wireframes.
             </p>
 
-            <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-12">
-              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">COLORS AND TYPOGRAPHY</h5>
+            <div className="p-8 bg-white border border-[rgba(0,0,0,0.08)] mb-12">
+              <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">COLORS AND TYPOGRAPHY</h5>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
                 <strong>I considered using yellow as the primary color</strong> to match the "bee" theme, but I realized that <strong>it could be challenging</strong> to use consistently and may not always look great. Instead, <strong>I decided to use a dark blue instead</strong> and use yellow as an accent color for a more cohesive and visually pleasing design. I also chose a <strong>clean, sans-serif font</strong> to look good on mobile devices.
               </p>
-              <div className="w-full aspect-[3/1] bg-gradient-to-br from-gray-200 to-gray-300"></div>
+
+              <div className="mb-8">
+                <p className="font-bold text-[#333] mb-4">Color Palette</p>
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div>
+                    <div className="w-full h-24 mb-2" style={{ backgroundColor: '#003049' }}></div>
+                    <p className="text-sm font-bold text-[#212121]">Primary</p>
+                    <p className="text-sm text-[#212121]">#003049</p>
+                  </div>
+                  <div>
+                    <div className="w-full h-24 mb-2" style={{ backgroundColor: '#C8004E' }}></div>
+                    <p className="text-sm font-bold text-[#212121]">Secondary</p>
+                    <p className="text-sm text-[#212121]">#C8004E</p>
+                  </div>
+                  <div>
+                    <div className="w-full h-24 mb-2" style={{ backgroundColor: '#5B7B89' }}></div>
+                    <p className="text-sm font-bold text-[#212121]">Outline</p>
+                    <p className="text-sm text-[#212121]">#5B7B89</p>
+                  </div>
+                  <div>
+                    <div className="w-full h-24 mb-2 border border-[rgba(0,0,0,0.1)]" style={{ backgroundColor: '#FFFFFF' }}></div>
+                    <p className="text-sm font-bold text-[#212121]">White</p>
+                    <p className="text-sm text-[#212121]">#FFFFFF</p>
+                  </div>
+                  <div>
+                    <div className="w-full h-24 mb-2" style={{ background: 'linear-gradient(to right, #FEC106, #FEA104)' }}></div>
+                    <p className="text-sm font-bold text-[#212121]">Primary Decorative</p>
+                    <p className="text-sm text-[#212121]">#FEC106 ➞ #FEA104</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p className="font-bold text-[#333] mb-4">Typography</p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[2rem] font-bold text-[#212121]" style={{ fontFamily: 'var(--font-dm-sans)' }}>Aa DM Sans 700</p>
+                    <p className="text-[#666] font-bold" style={{ fontFamily: 'var(--font-dm-sans)' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                  </div>
+                  <div>
+                    <p className="text-[2rem] text-[#212121]" style={{ fontFamily: 'var(--font-dm-sans)' }}>Aa DM Sans 400</p>
+                    <p className="text-[#666]" style={{ fontFamily: 'var(--font-dm-sans)' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
+            <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
               <strong>I applied the UI kit to the wireframes</strong> to come up with a first-round version of how the app may look.
             </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-            </div>
 
             {/* Design Decisions */}
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
               Below is a mockup of <strong>a single list</strong> and its <strong>associated map view</strong>. Annotated are a few design decisions I made in the process.
             </p>
 
-            <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-8">
+            <div className="p-10 bg-white border border-[rgba(0,0,0,0.08)] shadow-md mb-8">
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">DESIGN DECISIONS</h5>
-              <div className="w-full aspect-[16/9] bg-gradient-to-br from-gray-200 to-gray-300 mb-8"></div>
-              <ul className="space-y-4 text-[1.1rem] text-[#666] leading-[1.8] list-disc ml-6">
+              <img src="/assets/case-studies/beeline/applied-styling.png" alt="Annotated design decisions for Beeline app" className="w-full mb-8" />
+              <ol className="space-y-4 text-[1.1rem] text-[#666] leading-[1.8] list-decimal ml-6">
                 <li>The primary blue was used for buttons and the bottom navigation. Because it was a dark color, it generally stood out from the rest of the design.</li>
                 <li>I chose to use a variation of a ghost button for the secondary button style to keep some contrast but to not overtake the primary actions.</li>
                 <li>I found it difficult to incorporate the accent color into the design; one place I did was to represent the active tab.</li>
                 <li>One change I made from the wireframes was to include a swipe-to-view (similar to Photos in iOS) of the grocery items on their list.</li>
-              </ul>
+              </ol>
             </div>
           </section>
 
@@ -477,60 +634,60 @@ export default function Beeline() {
             <div className="overflow-x-auto mb-12">
               <table className="w-full border-collapse border border-[rgba(0,0,0,0.08)]">
                 <thead>
-                  <tr className="bg-gradient-to-br from-gray-50 to-white">
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Task</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Direct success</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Indirect success</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Gave up</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-[#333]">Notes</th>
+                  <tr style={{ backgroundColor: brandColor }}>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Task</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Direct success</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Indirect success</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Gave up</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Notes</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Add list</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">100%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#15803d' }}>100%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">All participants immediately did the expected behavior (tap the "New List" button) and understood that each list must be associated with a store</td>
                   </tr>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Add item to list</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">100%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#15803d' }}>100%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">Feedback was that search was quick and familiar</td>
                   </tr>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Locate item in store (from list)</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">33%</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">50%</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">16%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(234, 179, 8, 0.15)', color: '#a16207' }}>33%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(234, 179, 8, 0.15)', color: '#a16207' }}>50%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(239, 68, 68, 0.15)', color: '#b91c1c' }}>16%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">Participants went to map view and had trouble performing the right interaction (swipe); the participant who gave up reported not thinking they could drag on the computer</td>
                   </tr>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Locate item in store (from search)</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">100%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#15803d' }}>100%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">Involved searching and tapping map view; no dragging</td>
                   </tr>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Look over list</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">100%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#15803d' }}>100%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">Involved tapping a list</td>
                   </tr>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Change store (from search)</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">100%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#15803d' }}>100%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">Participants reported that this made sense (no issues)</td>
                   </tr>
                   <tr>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold text-[#666]">Check off item</td>
-                    <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">100%</td>
+                    <td className="border border-[rgba(0,0,0,0.08)] p-4 font-bold" style={{ backgroundColor: 'rgba(34, 197, 94, 0.15)', color: '#15803d' }}>100%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">0%</td>
                     <td className="border border-[rgba(0,0,0,0.08)] p-4 text-[#666]">Intuitive; same flow as other list applications (tapping a checkbox)</td>
@@ -552,7 +709,14 @@ export default function Beeline() {
               I tested these hypotheses by recruiting a few in-person volunteers to perform that specific task on a mobile device. They passed with flying colors, so I determined that it was not a priority fix.
             </p>
 
-            <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300 mb-12 mx-auto max-w-md"></div>
+            <video
+              src="/assets/case-studies/beeline/expected-drag.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full mb-12 mx-auto max-w-md"
+            />
 
             <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-16">
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">TAKEAWAYS: USABILITY TESTING</h5>
@@ -572,12 +736,12 @@ export default function Beeline() {
             {/* Fix 1 */}
             <h5 className="text-[1.3rem] font-bold text-[#333] mb-8">Fix 1: Show auto-sort more visibly</h5>
 
-            <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-8">
+            <div className="p-10 bg-white border border-[rgba(0,0,0,0.08)] shadow-md mb-8">
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PREVIOUS STATE</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
                 Users believed that the items were listed in the order in which they were added to the list, like a queue.
               </p>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300 mb-6 mx-auto max-w-md"></div>
+              <img src="/assets/case-studies/beeline/auto-sort-before.png" alt="Before: List view without path visualization" className="w-full mb-6 mx-auto max-w-md" />
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PROBLEMS</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                 Users were not aware that the list was already sorted in an efficient shopping order. They saw a collection of location icons but didn't understand that the order had been optimized for them.
@@ -588,16 +752,16 @@ export default function Beeline() {
               <div className="text-4xl text-[#999]">↓</div>
             </div>
 
-            <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-16">
+            <div className="p-10 bg-white border border-[rgba(0,0,0,0.08)] shadow-md mb-16">
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">REVISED STATE</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
                 I included a "path" toggle in the map view, which would highlight the path to take to find the items in their list, from the store entrance.
               </p>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300 mb-6 mx-auto max-w-md"></div>
-              <ul className="space-y-3 text-[1.1rem] text-[#666] leading-[1.8] list-disc ml-6 mb-6">
+              <img src="/assets/case-studies/beeline/auto-sort-after.png" alt="After: Map view with highlighted path and directional arrows" className="w-full mb-6 mx-auto max-w-md" />
+              <ol className="space-y-3 text-[1.1rem] text-[#666] leading-[1.8] list-decimal ml-6 mb-6">
                 <li>Added "path" toggle that turns on or off the highlighted path</li>
                 <li>Highlighted path with directional arrows</li>
-              </ul>
+              </ol>
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">HOW IT ADDRESSES THE PROBLEM</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                 The path guides users through the store as they would see on a map, using arrows to show them the most efficient route and making it clear which item they should pick up next.
@@ -607,12 +771,16 @@ export default function Beeline() {
             {/* Fix 2 */}
             <h5 className="text-[1.3rem] font-bold text-[#333] mb-8">Fix 2: Item checkoff in each view</h5>
 
-            <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-8">
+            <div className="p-10 bg-white border border-[rgba(0,0,0,0.08)] shadow-md mb-8">
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PREVIOUS STATE</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
                 Users can only view - not check off - items once they expand the map.
               </p>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300 mb-6 mx-auto max-w-md"></div>
+              <img
+                src="/assets/case-studies/beeline/checkoff-before.png"
+                alt="Item checkoff before - users cannot check off items in expanded map view"
+                className="w-full mb-6 mx-auto max-w-md"
+              />
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">PROBLEM</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                 General inconsistency caused confusion. Users expected to be able to check off items in this view.
@@ -623,12 +791,16 @@ export default function Beeline() {
               <div className="text-4xl text-[#999]">↓</div>
             </div>
 
-            <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] mb-16">
+            <div className="p-10 bg-white border border-[rgba(0,0,0,0.08)] shadow-md mb-16">
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">REVISED STATE</h6>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300 mb-6 mx-auto max-w-md"></div>
-              <ul className="space-y-3 text-[1.1rem] text-[#666] leading-[1.8] list-disc ml-6 mb-6">
+              <img
+                src="/assets/case-studies/beeline/checkout-after.png"
+                alt="Item checkoff after - users can now check off items in expanded map view"
+                className="w-full mb-6 mx-auto max-w-md"
+              />
+              <ol className="space-y-3 text-[1.1rem] text-[#666] leading-[1.8] list-decimal ml-6 mb-6">
                 <li>Added checkbox in expanded map view to facilitate item check-off</li>
-              </ul>
+              </ol>
               <h6 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">HOW IT ADDRESSES THE PROBLEM</h6>
               <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                 Increases consistency. This better aligned with user expectations and didn't unnecessarily restrict functionality.
@@ -666,10 +838,7 @@ export default function Beeline() {
               Here's a preview of the final UI after integrating the priority fixes. Because this is a concept, there are no next steps. But I do believe that this is a significant pain point and would love to have this solved. It would be interesting to see it become part of some existing grocery store shopping initiatives, such as Amazon Go. Although, I think if I showed a developer this, they may cry once they see the map view, and I'd love to ideate alternatives to my first priority fix. I share some more concrete takeaways below.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-              <div className="w-full aspect-[9/16] bg-gradient-to-br from-gray-200 to-gray-300"></div>
-            </div>
+            <img src="/assets/case-studies/beeline/final-ui.png" alt="Final UI screens of Beeline app" className="w-full mb-12" />
 
             <div className="p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">TAKEAWAYS: FINAL UI</h5>
@@ -765,7 +934,7 @@ export default function Beeline() {
           }
         `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/orgo-brand" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+          <Link href="/work/newport-in-bloom" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -779,11 +948,11 @@ export default function Beeline() {
               <span>Previous</span>
             </div>
             <span className="text-[1.5rem] text-[#666] transition-colors font-bold">
-              Orgo: The Brand
+              Newport in Bloom
             </span>
           </Link>
 
-          <Link href="/work/inkbench-ez-mode" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+          <Link href="/work/orgo" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <span>Up next</span>
               <svg
@@ -797,7 +966,7 @@ export default function Beeline() {
               </svg>
             </div>
             <span className="text-[1.5rem] text-[#666] transition-colors font-bold">
-              Inkbench EZ Mode
+              Orgo: The App
             </span>
           </Link>
         </div>

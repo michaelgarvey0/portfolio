@@ -5,11 +5,11 @@ interface NumberBadgeProps {
 
 export default function NumberBadge({ number, color }: NumberBadgeProps) {
   return (
-    <span
-      className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-white text-lg"
-      style={{ backgroundColor: color, fontWeight: 900 }}
+    <div
+      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-[1.25rem] font-bold mb-3"
+      style={{ backgroundColor: color }}
     >
       {number}
-    </span>
+    </div>
   );
 }

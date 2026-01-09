@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CaseStudyHero from '@/components/CaseStudyHero';
+import NumberBadge from '@/components/NumberBadge';
 
 export default function InkbenchEZMode() {
   const [activeSection, setActiveSection] = useState('summary');
@@ -19,8 +20,8 @@ export default function InkbenchEZMode() {
     { id: 'final-product', title: 'Final product', secondary: true },
     { id: 'previous-dashboard', title: 'Previous dashboard' },
     { id: 'functionality', title: 'Functionality', secondary: true },
-    { id: 'areas-of-opportunity', title: 'Areas of opportunity', secondary: true },
-    { id: 'analyzing-wireframes', title: 'Analyzing the wireframes' },
+    { id: 'areas-of-opportunity', title: 'Opportunities', secondary: true },
+    { id: 'analyzing-wireframes', title: 'Wireframe analysis' },
     { id: 'ui-design', title: 'UI design' },
     { id: 'ui-kit', title: 'UI kit', secondary: true },
     { id: 'styling', title: 'Styling', secondary: true },
@@ -108,7 +109,7 @@ export default function InkbenchEZMode() {
             top: 8rem;
             height: fit-content;
           }
-          @media (max-width: 767px) {
+          @media (max-width: 991px) {
             .content-container {
               padding-left: 1.5rem;
               padding-right: 1.5rem;
@@ -162,16 +163,18 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              Inkbench was a brand management SaaS startup I worked for from May 2020 until May 2022. We helped franchises maintain brand consistency by letting them store digital assets, create locked-down templates, and distribute them to franchisees - preventing the "off-brand materials" problem common in multi-location systems.
+              Inkbench was a <strong>brand management SaaS startup</strong> I worked for from May 2020 until May 2022. We helped <strong>franchises maintain brand consistency</strong> by letting them <strong>store digital assets, create locked-down templates, and distribute them to franchisees</strong> - preventing the <strong>"off-brand materials" problem</strong> common in multi-location systems.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              I was tasked with redesigning the dashboard, which was the first screen users saw after login. The existing version had usability issues that limited its effectiveness.
+              I was tasked with <strong>redesigning the dashboard</strong>, which was the <strong>first screen users saw after login</strong>. The existing version had <strong>usability issues</strong> that limited its effectiveness.
             </p>
           </section>
 
           {/* Final Product */}
           <section id="final-product" className="mb-32 scroll-mt-32">
+            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Final product</h2>
+
             <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">
               Analytics and simplified template editing
             </h3>
@@ -183,7 +186,7 @@ export default function InkbenchEZMode() {
             </div>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              Though never developed due to Inkbench's shutdown, user research showed these features would have reduced stress around brand distribution and allowed franchises to customize materials without one-off requests.
+              Though <strong>never developed due to Inkbench's shutdown</strong>, user research showed these features would have <strong>reduced stress around brand distribution</strong> and allowed franchises to <strong>customize materials without one-off requests</strong>.
             </p>
 
             <div className="mb-20">
@@ -242,7 +245,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              The previous dashboard's goal was to provide the user with the most relevant items to them when they logged in. Administrators could pin certain brand assets or design templates to the dashboard for everyone to see, and support articles could be accessed at the bottom of the screen.
+              The previous dashboard's goal was to <strong>provide the user with the most relevant items</strong> to them when they logged in. <strong>Administrators could pin certain brand assets or design templates</strong> to the dashboard for everyone to see, and <strong>support articles could be accessed at the bottom of the screen</strong>.
             </p>
 
             <div className="border border-[rgba(0,0,0,0.08)] shadow-md mb-12">
@@ -255,25 +258,25 @@ export default function InkbenchEZMode() {
 
             <div className="grid grid-cols-2 gap-6 mb-12">
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">1</div>
+                <NumberBadge number={1} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Action buttons.</strong> Search or open the Brand Library, or create a new project.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">2</div>
+                <NumberBadge number={2} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Tabs setup.</strong> The Home tab is the same across the Enterprise (i.e., everyone sees the same stuff). Approvals are projects pending approval, and favorites are assets or projects you've marked as special to you.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">3</div>
+                <NumberBadge number={3} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Pinned items.</strong> Administrators can "pin" items to the dashboard for everyone to see, access, and use.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">4</div>
+                <NumberBadge number={4} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Support links.</strong> Helpful Center articles to get started on the platform
                 </p>
@@ -288,7 +291,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              The dashboard showed everyone the same screen despite franchisors and franchisees having different goals. Franchisees wanted simple template customization (not our complex design canvas), while franchisors wanted analytics on platform usage - data that existed in the backend but wasn't accessible to them.
+              The dashboard <strong>showed everyone the same screen</strong> despite franchisors and franchisees having <strong>different goals</strong>. Franchisees wanted <strong>simple template customization</strong> (not our complex design canvas), while franchisors wanted <strong>analytics on platform usage</strong> - data that <strong>existed in the backend but wasn't accessible to them</strong>.
             </p>
 
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
@@ -312,7 +315,7 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Analyzing the wireframes</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              I converted wireframes (created by Heather O'Neill after client interviews) into high-fidelity designs. The wireframes split into two dashboards: one for franchisors with analytics, and one for franchisees with simplified templating - essentially, one for administrators and one for standard users.
+              I <strong>converted wireframes</strong> (created by Heather O'Neill after client interviews) <strong>into high-fidelity designs</strong>. The wireframes <strong>split into two dashboards</strong>: one for franchisors with <strong>analytics</strong>, and one for franchisees with <strong>simplified templating</strong> - essentially, <strong>one for administrators and one for standard users</strong>.
             </p>
 
             <div className="border border-[rgba(0,0,0,0.08)] shadow-md mb-12">
@@ -325,37 +328,37 @@ export default function InkbenchEZMode() {
 
             <div className="grid grid-cols-3 gap-6 mb-12">
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">1</div>
+                <NumberBadge number={1} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Communication with franchisees.</strong> Administrators can push content to users, such as messages and "recommendations" they can customize.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">2</div>
+                <NumberBadge number={2} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Active users.</strong> Active = has signed in and made one export, download, or print, for today, the last week, and the last month.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">3</div>
+                <NumberBadge number={3} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Most active users.</strong> (Excludes administrators) Who's done the most of the actions?
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">4</div>
+                <NumberBadge number={4} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Most active projects and templates.</strong> What projects have the greatest number of unique users exporting them?
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">5</div>
+                <NumberBadge number={5} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Recently used projects and templates.</strong> What is the most recent activity on the platform?
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <div className="text-[2rem] font-bold text-[#3b3668] mb-3">6</div>
+                <NumberBadge number={6} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Notifications.</strong> A hub for updates about usage statistics, approval workflow requests, and messages from franchisees.
                 </p>
@@ -363,7 +366,7 @@ export default function InkbenchEZMode() {
             </div>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              The wireframes were designed with two main principles in mind: 1) to enable franchisors to provide franchisees with all the necessary materials while monitoring their activity, and 2) to make it as simple as possible for franchisees to customize their designs. With this understanding, and armed with valuable insights gathered through customer success conversations, I proceeded with the UI design.
+              The wireframes were designed with <strong>two main principles</strong> in mind: 1) to <strong>enable franchisors to provide franchisees with all the necessary materials while monitoring their activity</strong>, and 2) to <strong>make it as simple as possible for franchisees to customize their designs</strong>. With this understanding, and armed with <strong>valuable insights gathered through customer success conversations</strong>, I proceeded with the UI design.
             </p>
           </section>
 
@@ -372,7 +375,7 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">UI Design</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              The UI design process was the majority of my work, and it required me to define a set of styles and apply them consistently throughout the product. By making adjustments to some functionality represented in the wireframes, I was able to better align the design with user expectations and incorporate any missing features.
+              The <strong>UI design process was the majority of my work</strong>, and it required me to <strong>define a set of styles and apply them consistently</strong> throughout the product. By <strong>making adjustments to some functionality</strong> represented in the wireframes, I was able to <strong>better align the design with user expectations</strong> and <strong>incorporate any missing features</strong>.
             </p>
           </section>
 
@@ -383,7 +386,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              Since Inkbench didn't have an established design system, I created a UI kit based on industry best practices to ensure consistency throughout the product.
+              Since Inkbench <strong>didn't have an established design system</strong>, I created <strong>a UI kit based on industry best practices</strong> to <strong>ensure consistency throughout the product</strong>.
             </p>
 
             <img src="/assets/case-studies/inkbench/ui-kit.png" alt="Inkbench UI kit showing buttons, inputs, and toggles" className="w-full mb-12" />
@@ -454,7 +457,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              During design, I identified opportunities to improve usability and accessibility, leading to two main changes from the wireframes: EZ templating and the usage overview.
+              During design, I identified <strong>opportunities to improve usability and accessibility</strong>, leading to <strong>two main changes from the wireframes</strong>: EZ templating and the usage overview.
             </p>
 
             {/* Change 1 */}
@@ -562,15 +565,15 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Final UI</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              Below, you'll find a screenshot of the final UI design. To fully experience the product, I recommend exploring the prototype. The "user preview" button allows you to toggle between the franchisor and franchisee dashboard views.
+              Below, you'll find a screenshot of the final UI design. To <strong>fully experience the product</strong>, I recommend <strong>exploring the prototype</strong>. The <strong>"user preview" button allows you to toggle between the franchisor and franchisee dashboard views</strong>.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              It is worth noting that if Inkbench were still with us, I would have loved to conduct usability tests with our clients to validate some of the changes I made. This would have provided valuable insights and feedback and helped ensure that the final product met the needs of our users.
+              It is worth noting that if Inkbench were still with us, I would have loved to <strong>conduct usability tests with our clients</strong> to <strong>validate some of the changes I made</strong>. This would have provided <strong>valuable insights and feedback</strong> and helped ensure that the <strong>final product met the needs of our users</strong>.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              Overall, my goal was to create a user-friendly, efficient, and accessible product that would meet the needs of both franchisors and franchisees. I believe that the changes I made and the final UI design achieved this goal and would have been well-received by our clients.
+              Overall, my goal was to create a <strong>user-friendly, efficient, and accessible product</strong> that would meet the needs of both franchisors and franchisees. I believe that the changes I made and the final UI design <strong>achieved this goal and would have been well-received by our clients</strong>.
             </p>
 
             <div className="flex gap-4 mb-12">
@@ -683,8 +686,8 @@ export default function InkbenchEZMode() {
           }
         `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/webster" className="flex flex-col items-start gap-3 p-6 border border-[#3b3668] transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(59,54,104,0.05)] w-1/2">
-            <div className="flex items-center gap-2 font-bold text-[#3b3668]">
+          <Link href="/work/webster" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -701,8 +704,8 @@ export default function InkbenchEZMode() {
             </span>
           </Link>
 
-          <Link href="/work/orgo-brand" className="flex flex-col items-end gap-3 p-6 border border-[#3b3668] transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(59,54,104,0.05)] w-1/2">
-            <div className="flex items-center gap-2 font-bold text-[#3b3668]">
+          <Link href="/work/orgo-brand" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <span>Up next</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

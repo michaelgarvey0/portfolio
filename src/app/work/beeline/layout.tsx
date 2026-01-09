@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
+
+const dmSans = DM_Sans({
+  weight: ['400', '700'],
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+});
 
 export const metadata: Metadata = {
   title: "Beeline - Michael Garvey",
@@ -10,5 +17,5 @@ export default function BeelineLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <div className={dmSans.variable}>{children}</div>;
 }

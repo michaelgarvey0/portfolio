@@ -112,7 +112,7 @@ export default function OrgoBrand() {
           .sidebar {
             display: block;
           }
-          @media (max-width: 767px) {
+          @media (max-width: 991px) {
             .content-with-sidebar {
               padding-left: 1.5rem;
               padding-right: 1.5rem;
@@ -161,11 +161,11 @@ export default function OrgoBrand() {
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Orgo is a mobile app that streamlines personal logistics—ensuring the right people get to the right places on time. While our initial focus is on busy families, the app's utility extends to various scheduling scenarios. As a co-founder, I contributed across multiple areas: brand creation, marketing site design, and app design and development.
+            Orgo is a mobile app that <strong>streamlines personal logistics</strong>—ensuring the <strong>right people get to the right places on time</strong>. While our initial focus is on <strong>busy families</strong>, the app's utility extends to various scheduling scenarios. As a co-founder, I contributed across multiple areas: <strong>brand creation, marketing site design, and app design and development</strong>.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            This case study outlines the journey of creating Orgo's brand identity and web presence from scratch. I created the original logo files, and, using Webflow, I personally designed and built each iteration of our site. The process unfolded in several key stages:
+            This case study outlines the <strong>journey of creating Orgo's brand identity and web presence from scratch</strong>. I created the <strong>original logo files</strong>, and, using Webflow, I <strong>personally designed and built each iteration of our site</strong>. The process unfolded in several key stages:
           </p>
 
           <ol className="space-y-4 text-[1.1rem] text-[#666] leading-[1.8] mb-12 list-decimal ml-8">
@@ -176,7 +176,7 @@ export default function OrgoBrand() {
           </ol>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Throughout this process, I adapted our online presence to match Orgo's development stages, from building anticipation to driving app adoption. My hands-on approach ensured consistency across our brand and web presence at every step.
+            Throughout this process, I <strong>adapted our online presence to match Orgo's development stages</strong>, from <strong>building anticipation to driving app adoption</strong>. My hands-on approach ensured <strong>consistency across our brand and web presence at every step</strong>.
           </p>
 
           <a
@@ -206,13 +206,13 @@ export default function OrgoBrand() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Brand creation</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Our journey began with finding the perfect name. After exploring various options, we landed on 'Orgo'. This name resonated as a clever derivative of 'organization on the go', and our target audience found it appealing and memorable. Importantly, both the domain and App Store names were available. We deliberately avoided terms like 'fam' or 'kids' to ensure our brand could expand beyond our initial family-oriented use case. Feedback from potential users described the name as 'super cute', which we saw as a positive sign for its broader appeal. With our name in place, we moved on to the crucial task of logo design.
+            Our journey began with <strong>finding the perfect name</strong>. After exploring various options, we landed on <strong>'Orgo'</strong>. This name resonated as a <strong>clever derivative of 'organization on the go'</strong>, and our target audience found it <strong>appealing and memorable</strong>. Importantly, both the <strong>domain and App Store names were available</strong>. We deliberately <strong>avoided terms like 'fam' or 'kids'</strong> to ensure our brand could <strong>expand beyond our initial family-oriented use case</strong>. Feedback from potential users described the name as 'super cute', which we saw as a positive sign for its broader appeal. With our name in place, we moved on to the crucial task of logo design.
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">Logo development</h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            We centered our logomark on a circular shape, echoing the leading 'O' in Orgo. Our goal was to incorporate elements of time, driving, or movement within this form, reflecting our app's core functions. Through multiple iterations, we explored various designs, trying to balance simplicity with meaningful representation of Orgo's purpose.
+            We centered our logomark on a <strong>circular shape</strong>, echoing the leading 'O' in Orgo. Our goal was to <strong>incorporate elements of time, driving, or movement</strong> within this form, <strong>reflecting our app's core functions</strong>. Through <strong>multiple iterations</strong>, we explored various designs, trying to <strong>balance simplicity with meaningful representation of Orgo's purpose</strong>.
           </p>
 
           <img src="/assets/case-studies/orgo-brand/logomark-ideation.png" alt="Logomark ideation and iterations" className="w-full mb-12" />
@@ -224,7 +224,7 @@ export default function OrgoBrand() {
           <img src="/assets/case-studies/orgo-brand/wordmark-ideation.png" alt="Wordmark and color scheme iterations" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Our breakthrough concept centered on the transition from chaos to order. We designed the 'O' in Orgo with a fragmented left side evolving into a whole right side, symbolizing this transformation. This design represented our app's purpose: bringing order to chaotic schedules.
+            Our <strong>breakthrough concept centered on the transition from chaos to order</strong>. We designed the 'O' in Orgo with a <strong>fragmented left side evolving into a whole right side</strong>, <strong>symbolizing this transformation</strong>. This design represented our app's purpose: <strong>bringing order to chaotic schedules</strong>.
           </p>
 
           <img src="/assets/case-studies/orgo-brand/breakthrough-concept.png" alt="Breakthrough concept showing chaos to order transformation" className="w-full mb-12" />
@@ -252,7 +252,7 @@ export default function OrgoBrand() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Initial teaser site</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Our initial web presence aimed to generate interest and build a waitlist while maintaining a level of stealth. We created a flashy, exciting, and professional site without revealing app images, using animations to engage visitors and lead them to the waitlist. Our target audience was primarily our professional network and potential consumers, reached through LinkedIn and Facebook groups.
+            Our initial web presence aimed to <strong>generate interest and build a waitlist</strong> while <strong>maintaining a level of stealth</strong>. We created a <strong>flashy, exciting, and professional site</strong> without revealing app images, using <strong>animations to engage visitors</strong> and lead them to the waitlist. Our target audience was primarily our <strong>professional network and potential consumers</strong>, reached through LinkedIn and Facebook groups.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
@@ -294,7 +294,7 @@ export default function OrgoBrand() {
           <img src="/assets/case-studies/orgo-brand/teaser-site.png" alt="Initial teaser site screenshot" className="w-full mb-12" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-            The site proved highly effective in capturing attention. We received numerous compliments and observed audible laughs during the text buildup, as well as 'aha' moments when people realized the meaning behind Orgo. Over two months, we garnered over 300 signups, a satisfying result for our teaser site approach.
+            The site proved <strong>highly effective in capturing attention</strong>. We received <strong>numerous compliments</strong> and observed audible laughs during the text buildup, as well as <strong>'aha' moments</strong> when people realized the meaning behind Orgo. Over two months, we garnered <strong>over 300 signups</strong>, a satisfying result for our teaser site approach.
           </p>
         </section>
 
@@ -303,7 +303,7 @@ export default function OrgoBrand() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Expanded teaser site</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            As we approached launch, we recognized the need to evolve our web presence. This new iteration had two primary objectives: provide more detailed information to our waitlist members and capture the interest of potential investors. While not actively fundraising, we aimed to establish a meaningful presence in the investment community. This expanded site allowed us to build upon our initial narrative and showcase more of Orgo's potential.
+            As we approached launch, we recognized the need to <strong>evolve our web presence</strong>. This new iteration had <strong>two primary objectives</strong>: provide <strong>more detailed information to our waitlist members</strong> and <strong>capture the interest of potential investors</strong>. While not actively fundraising, we aimed to <strong>establish a meaningful presence in the investment community</strong>. This expanded site allowed us to <strong>build upon our initial narrative and showcase more of Orgo's potential</strong>.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
@@ -453,11 +453,11 @@ export default function OrgoBrand() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Next steps</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Our launch site is effectively driving downloads and showcasing Orgo. However, we're aware that for mobile apps, websites aren't typically the primary conversion driver. With this in mind, we're content with the site's current performance and are now focusing on other channels for user acquisition.
+            Our launch site is <strong>effectively driving downloads and showcasing Orgo</strong>. However, we're aware that for mobile apps, <strong>websites aren't typically the primary conversion driver</strong>. With this in mind, we're content with the site's current performance and are now <strong>focusing on other channels for user acquisition</strong>.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-            We periodically review the site to ensure it aligns with our evolving product and brand. This includes updating app screenshots and feature descriptions to accurately reflect Orgo's current functionality. While no longer our primary focus, the website remains a valuable component of our overall marketing strategy, serving as a reliable information source for potential users and partners.
+            We <strong>periodically review the site</strong> to ensure it <strong>aligns with our evolving product and brand</strong>. This includes <strong>updating app screenshots and feature descriptions</strong> to accurately reflect Orgo's current functionality. While no longer our primary focus, the website remains a <strong>valuable component of our overall marketing strategy</strong>, serving as a reliable information source for potential users and partners.
           </p>
         </section>
         </main>
@@ -546,7 +546,7 @@ export default function OrgoBrand() {
           }
         `}</style>
         <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/orgo" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+          <Link href="/work/inkbench-ez-mode" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -560,7 +560,7 @@ export default function OrgoBrand() {
               <span>Previous</span>
             </div>
             <span className="text-[1.5rem] text-[#666] transition-colors font-bold">
-              Orgo: The App
+              Inkbench EZ Mode
             </span>
           </Link>
 
