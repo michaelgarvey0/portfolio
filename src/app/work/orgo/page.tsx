@@ -261,12 +261,10 @@ export default function OrgoCaseAlt() {
               { title: 'Collaborating across families', desc: 'for carpools without endless texts' },
               { title: 'Maintaining an accurate view', desc: 'of what the day actually looks like' }
             ].map((item, i) => (
-              <li key={i} className="flex gap-4 mb-3">
+              <li key={i} className="flex gap-4 mb-3 items-start">
                 <NumberBadge number={i + 1} color={brandColor} />
-                <div className="flex items-center h-8">
-                  <div>
-                    <strong className="text-[#333]">{item.title}</strong> {item.desc}
-                  </div>
+                <div className="pt-[0.1rem]">
+                  <strong className="text-[#333]">{item.title}</strong> {item.desc}
                 </div>
               </li>
             ))}
@@ -330,9 +328,9 @@ export default function OrgoCaseAlt() {
             This meant building something fundamentally different from Google Calendar. It was riskier, but it solved the actual problem. Getting the activity addition screen right took three iterations—refining the structure, testing different UI approaches, and figuring out how much information to show without overwhelming users.
           </p>
 
-          <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-8 md:gap-[2.5%]">
+          <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-20 md:gap-[2.5%]">
             {/* Iteration 1 */}
-            <div className="flex-1 max-w-[700px]">
+            <div className="flex-1 max-w-[300px] md:max-w-[700px] mx-auto md:mx-0">
               <div className="flex justify-center items-center gap-3 mb-4">
                 <div className="h-8 flex items-center">
                   <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
@@ -347,7 +345,7 @@ export default function OrgoCaseAlt() {
             </div>
 
             {/* Iteration 2 */}
-            <div className="flex-1 max-w-[700px]">
+            <div className="flex-1 max-w-[300px] md:max-w-[700px] mx-auto md:mx-0">
               <div className="flex justify-center items-center gap-3 mb-4">
                 <div className="h-8 flex items-center">
                   <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
@@ -362,7 +360,7 @@ export default function OrgoCaseAlt() {
             </div>
 
             {/* Iteration 3 */}
-            <div className="flex-1 max-w-[700px]">
+            <div className="flex-1 max-w-[300px] md:max-w-[700px] mx-auto md:mx-0">
               <div className="flex justify-center items-center gap-3 mb-4">
                 <div className="h-8 flex items-center">
                   <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
@@ -493,13 +491,13 @@ export default function OrgoCaseAlt() {
           {/* Round 1 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-8">
-              <div className="flex gap-6 mb-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
                 <NumberBadge number={1} color={brandColor} />
-                <div className="flex items-center h-8">
+                <div className="flex items-center md:h-8">
                   <h5 className="text-sm font-bold tracking-widest uppercase text-[#666]">Round 1: Calendar Integration (June 2025)</h5>
                 </div>
               </div>
-              <div className="ml-[56px]">
+              <div className="md:ml-[56px]">
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                   <strong className="text-[#333]">The problem:</strong> Manual entry was limiting adoption.
                 </p>
@@ -519,13 +517,13 @@ export default function OrgoCaseAlt() {
           {/* Round 2 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-8">
-              <div className="flex gap-6 mb-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
                 <NumberBadge number={2} color={brandColor} />
-                <div className="flex items-center h-8">
+                <div className="flex items-center md:h-8">
                   <h5 className="text-sm font-bold tracking-widest uppercase text-[#666]">Round 2: Monetization Strategy (September 2025)</h5>
                 </div>
               </div>
-              <div className="ml-[56px]">
+              <div className="md:ml-[56px]">
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                   <strong className="text-[#333]">The problem:</strong> App was entirely free until August. First attempt at monetization (free trial, no credit card) had only 10% conversion.
                 </p>
@@ -545,13 +543,13 @@ export default function OrgoCaseAlt() {
           {/* Round 3 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-8">
-              <div className="flex gap-6 mb-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
                 <NumberBadge number={3} color={brandColor} />
-                <div className="flex items-center h-8">
+                <div className="flex items-center md:h-8">
                   <h5 className="text-sm font-bold tracking-widest uppercase text-[#666]">Round 3: Import Rules (October 2025)</h5>
                 </div>
               </div>
-              <div className="ml-[56px]">
+              <div className="md:ml-[56px]">
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                   <strong className="text-[#333]">The problem:</strong> When 50 events imported from Google, they all defaulted to the user. But "Tommy's Soccer Practice" should auto-assign to Tommy.
                 </p>
@@ -571,13 +569,13 @@ export default function OrgoCaseAlt() {
           {/* Round 4 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-8">
-              <div className="flex gap-6 mb-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
                 <NumberBadge number={4} color={brandColor} />
-                <div className="flex items-center h-8">
+                <div className="flex items-center md:h-8">
                   <h5 className="text-sm font-bold tracking-widest uppercase text-[#666]">Round 4: Multi-Stop Trips (September 2025)</h5>
                 </div>
               </div>
-              <div className="ml-[56px]">
+              <div className="md:ml-[56px]">
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                   <strong className="text-[#333]">The problem:</strong> Real life has stops. "Grab Starbucks on the way" or "Pick up Emma before practice."
                 </p>
@@ -597,13 +595,13 @@ export default function OrgoCaseAlt() {
           {/* Round 5 */}
           <div className="mb-16">
             <div className="bg-white border border-[rgba(0,0,0,0.08)] shadow-md p-8">
-              <div className="flex gap-6 mb-6">
+              <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-6">
                 <NumberBadge number={5} color={brandColor} />
-                <div className="flex items-center h-8">
+                <div className="flex items-center md:h-8">
                   <h5 className="text-sm font-bold tracking-widest uppercase text-[#666]">Round 5: Other Crews (November 2025)</h5>
                 </div>
               </div>
-              <div className="ml-[56px]">
+              <div className="md:ml-[56px]">
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
                   <strong className="text-[#333]">The problem:</strong> Carpooling required coordinating across families via endless texts.
                 </p>
@@ -639,8 +637,8 @@ export default function OrgoCaseAlt() {
 
           <div className="space-y-6 mb-12">
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <div className="flex items-center gap-3 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
+              <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
                   <path d="M16 3v4" />
@@ -660,8 +658,8 @@ export default function OrgoCaseAlt() {
             </div>
 
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <div className="flex items-center gap-3 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
+              <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                   <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
                   <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
@@ -679,8 +677,8 @@ export default function OrgoCaseAlt() {
             </div>
 
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <div className="flex items-center gap-3 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
+              <div className="flex flex-col md:flex-row md:items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
                   <path d="M9 12l2 2l4 -4" />
@@ -821,35 +819,35 @@ export default function OrgoCaseAlt() {
           <div className="space-y-8">
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">1. Start with validation, not vision</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-8">
                 Running that first focus group was the best decision we made. It prevented us from building in a vacuum.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">2. Users will tell you what's broken—listen</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-8">
                 Every major feature came from user feedback. Google Calendar integration, origin/return locations, import rules—all user-driven.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">3. Being designer + developer = better product decisions</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-8">
                 Learning React Native let me make real-time tradeoffs between ideal design and technical feasibility. No "hand it off and hope" friction.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">4. Bootstrapping requires strategic tradeoffs</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-8">
                 Working unpaid for 2.5 years while freelancing taught me to ruthlessly prioritize. Limited time meant every feature decision had to count. When we finally raised funding, the difference in velocity was significant.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">5. Operational skills matter as much as design skills</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8]">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-8">
                 Setting up analytics, monetization, ad tracking, database queries—these aren't "design" but they're essential to shipping real products.
               </p>
             </div>
