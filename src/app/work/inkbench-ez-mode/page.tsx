@@ -93,6 +93,9 @@ export default function InkbenchEZMode() {
         gradientTo="#3b3668"
         imageSrc="/assets/case-studies/inkbench/hero.png"
         imageAlt="Inkbench Dashboard"
+        ctaText="View prototype"
+        ctaHref="https://www.figma.com/proto/JXG6FasDkwTBcNDmkYSOcI/Inkbench-EZ-Mode---Portfolio-Prototype?page-id=0%3A1&node-id=4%3A508&viewport=370%2C2%2C0.09&scaling=scale-down-width&starting-point-node-id=4%3A508"
+        ctaColor="#588cfa"
       />
 
       {/* Content with Sidebar */}
@@ -180,7 +183,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <div className="flex gap-4 mb-12">
-              <a href="https://www.figma.com/proto/xqTOYLNNVrtn7EHGsMA5Jl/Inkbench-Prototype" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#3b3668] text-white font-semibold hover:bg-[#2d2850] transition-colors">
+              <a href="https://www.figma.com/proto/JXG6FasDkwTBcNDmkYSOcI/Inkbench-EZ-Mode---Portfolio-Prototype?page-id=0%3A1&node-id=4%3A508&viewport=370%2C2%2C0.09&scaling=scale-down-width&starting-point-node-id=4%3A508" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#3b3668] text-white font-semibold hover:bg-[#2d2850] transition-colors">
                 View the final prototype
               </a>
             </div>
@@ -597,7 +600,7 @@ export default function InkbenchEZMode() {
             </p>
 
             <div className="flex gap-4 mb-12">
-              <a href="https://www.figma.com/proto/xqTOYLNNVrtn7EHGsMA5Jl/Inkbench-Prototype" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#3b3668] text-white font-semibold hover:bg-[#2d2850] transition-colors">
+              <a href="https://www.figma.com/proto/JXG6FasDkwTBcNDmkYSOcI/Inkbench-EZ-Mode---Portfolio-Prototype?page-id=0%3A1&node-id=4%3A508&viewport=370%2C2%2C0.09&scaling=scale-down-width&starting-point-node-id=4%3A508" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-[#3b3668] text-white font-semibold hover:bg-[#2d2850] transition-colors">
                 View the final prototype
               </a>
             </div>

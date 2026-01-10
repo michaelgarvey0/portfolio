@@ -196,7 +196,7 @@ export default function NewportInBloom() {
             <a href="https://newportinbloom.org" target="_blank" rel="noopener noreferrer" className="px-6 py-3 text-white font-semibold transition-colors" style={{ backgroundColor: brandColor }}>
               View the live site
             </a>
-            <a href="https://www.figma.com/proto/xqTOYLNNVrtn7EHGsMA5Jl/Newport-in-Bloom---Portfolio-Prototype" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border font-semibold transition-colors" style={{ borderColor: brandColor, color: brandColor }}>
+            <a href="https://www.figma.com/proto/xqTOYLNNVrtn7EHGsMA5Jl/Newport-in-Bloom---Portfolio-Prototype?page-id=126%3A2088&node-id=126%3A2421&viewport=1205%2C970%2C0.28&scaling=scale-down-width&starting-point-node-id=126%3A2421" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border font-semibold transition-colors" style={{ borderColor: brandColor, color: brandColor }}>
               Figma prototype
             </a>
           </div>
