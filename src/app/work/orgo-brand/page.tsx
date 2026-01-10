@@ -536,15 +536,7 @@ export default function OrgoBrand() {
       </div>
 
       {/* Navigation Footer */}
-      <div className="mx-auto px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
-        <style jsx>{`
-          @media (max-width: 767px) {
-            div {
-              padding-left: 1.5rem !important;
-              padding-right: 1.5rem !important;
-            }
-          }
-        `}</style>
+      <div className="mx-auto px-6 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
         <div className="flex flex-col md:flex-row justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
           <Link href="/work/inkbench-ez-mode" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
