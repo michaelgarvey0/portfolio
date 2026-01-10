@@ -73,7 +73,7 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 border-b border-[rgba(0,0,0,0.08)] z-50"
       >
-        <div className="mx-auto flex justify-between items-center px-6 py-4 lg:px-12 lg:py-6" style={{ maxWidth: 'var(--max-width)' }}>
+        <div className="mx-auto flex justify-between items-center px-6 py-3 lg:px-12 lg:py-6" style={{ maxWidth: 'var(--max-width)' }}>
           <Link href="/work" className="text-2xl font-bold text-[#1e3f66] hover:text-[#0d243f] transition-colors" style={{ letterSpacing: 0 }}>
             Michael Garvey
           </Link>
