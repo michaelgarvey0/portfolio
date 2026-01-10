@@ -8,7 +8,6 @@ import FeaturedProjectCard from '@/components/FeaturedProjectCard';
 import Footer from '@/components/Footer';
 
 export default function Work() {
-  const [showMore, setShowMore] = useState(false);
   const [show404Toast, setShow404Toast] = useState(false);
   const [toast404Visible, setToast404Visible] = useState(false);
 
@@ -116,57 +115,37 @@ export default function Work() {
                 imageSrc="/assets/case-studies/inkbench/preview.png"
               />
 
-              {showMore && (
-                <>
-                  <ProjectCard
-                    href="/work/orgo-brand"
-                    title="Orgo: The Brand"
-                    tag="Branding and Site Design"
-                    description="Defining a brand for a B2C mobile app."
-                    delay={0}
-                    isExiting={false}
-                    imageSrc="/assets/case-studies/orgo-brand/preview.png"
-                  />
+              <ProjectCard
+                href="/work/orgo-brand"
+                title="Orgo: The Brand"
+                tag="Branding and Site Design"
+                description="Defining a brand for a B2C mobile app."
+                delay={0.95}
+                isExiting={false}
+                imageSrc="/assets/case-studies/orgo-brand/preview.png"
+              />
 
-                  <ProjectCard
-                    href="/work/newport-in-bloom"
-                    title="Newport in Bloom"
-                    tag="Site Design + Development"
-                    description="Designing and developing a responsive website for a local nonprofit."
-                    delay={0.15}
-                    isExiting={false}
-                    imageSrc="/assets/case-studies/newport-in-bloom/preview.png"
-                  />
+              <ProjectCard
+                href="/work/newport-in-bloom"
+                title="Newport in Bloom"
+                tag="Site Design + Development"
+                description="Designing and developing a responsive website for a local nonprofit."
+                delay={1.1}
+                isExiting={false}
+                imageSrc="/assets/case-studies/newport-in-bloom/preview.png"
+              />
 
-                  <ProjectCard
-                    href="/work/beeline"
-                    title="Beeline"
-                    tag="Mobile App Concept"
-                    description="A GPS for your grocery shopping experience."
-                    delay={0.3}
-                    isExiting={false}
-                    imageSrc="/assets/case-studies/beeline/preview.png"
-                  />
-                </>
-              )}
+              <ProjectCard
+                href="/work/beeline"
+                title="Beeline"
+                tag="Mobile App Concept"
+                description="A GPS for your grocery shopping experience."
+                delay={1.25}
+                isExiting={false}
+                imageSrc="/assets/case-studies/beeline/preview.png"
+              />
             </div>
           </div>
-
-          {!showMore && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.95 }}
-              className="flex justify-center my-20"
-            >
-              <button
-                onClick={() => setShowMore(true)}
-                className="px-8 py-3 bg-white border border-[rgba(0,0,0,0.08)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] text-[#333] font-bold text-base transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] cursor-pointer"
-              >
-                Show more
-              </button>
-            </motion.div>
-          )}
         </section>
 
         <Footer />
