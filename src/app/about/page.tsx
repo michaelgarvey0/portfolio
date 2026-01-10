@@ -11,7 +11,7 @@ export default function About() {
       <Navbar />
 
       {/* Content */}
-      <div className="mx-auto px-12 pt-32 pb-32" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto px-6 md:px-12 pt-32 pb-32" style={{ maxWidth: 'var(--max-width)' }}>
         {/* Hero with Image */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -181,7 +181,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      <div className="mx-auto px-12" style={{ maxWidth: 'var(--max-width)' }}>
+      <div className="mx-auto px-6 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
         <Footer />
       </div>
     </div>
