@@ -18,7 +18,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="mb-20"
         >
-          <div className="flex items-center gap-16 mb-20">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20">
             <img
               src="/assets/case-studies/michael-headshot.jpeg"
               alt="Michael Garvey"
