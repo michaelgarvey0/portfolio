@@ -119,7 +119,7 @@ export default function InkbenchEZMode() {
             }
           }
         `}</style>
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
           {/* Summary */}
           <motion.section
             initial={{ opacity: 0, y: 30 }}
@@ -403,10 +403,10 @@ export default function InkbenchEZMode() {
             </p>
 
             <div className="mb-12">
-              <div className="flex gap-2 mb-6 border-b border-[rgba(0,0,0,0.08)]">
+              <div className="flex gap-2 mb-6 border-b border-[rgba(0,0,0,0.08)] overflow-auto">
                 <button
                   onClick={() => setActiveMockupTab('franchisor')}
-                  className={`px-6 py-3 font-semibold transition-colors ${
+                  className={`px-6 py-3 font-semibold transition-colors whitespace-nowrap ${
                     activeMockupTab === 'franchisor'
                       ? 'text-[#3b3668] border-b-2 border-[#3b3668]'
                       : 'text-[#999] hover:text-[#666]'
@@ -416,7 +416,7 @@ export default function InkbenchEZMode() {
                 </button>
                 <button
                   onClick={() => setActiveMockupTab('franchisee')}
-                  className={`px-6 py-3 font-semibold transition-colors ${
+                  className={`px-6 py-3 font-semibold transition-colors whitespace-nowrap ${
                     activeMockupTab === 'franchisee'
                       ? 'text-[#3b3668] border-b-2 border-[#3b3668]'
                       : 'text-[#999] hover:text-[#666]'
@@ -426,7 +426,7 @@ export default function InkbenchEZMode() {
                 </button>
                 <button
                   onClick={() => setActiveMockupTab('ez')}
-                  className={`px-6 py-3 font-semibold transition-colors ${
+                  className={`px-6 py-3 font-semibold transition-colors whitespace-nowrap ${
                     activeMockupTab === 'ez'
                       ? 'text-[#3b3668] border-b-2 border-[#3b3668]'
                       : 'text-[#999] hover:text-[#666]'
