@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 export default function Work() {
   const [show404Toast, setShow404Toast] = useState(false);
   const [toast404Visible, setToast404Visible] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const shouldShow404 = sessionStorage.getItem('show404Toast');
@@ -23,6 +24,29 @@ export default function Work() {
       // Remove from DOM after fade completes
       setTimeout(() => setShow404Toast(false), 2000);
     }
+
+    // Preload all images
+    const imagePaths = [
+      '/assets/case-studies/orgo/preview.png',
+      '/assets/case-studies/webster/preview.png',
+      '/assets/case-studies/inkbench/preview.png',
+      '/assets/case-studies/orgo-brand/preview.png',
+      '/assets/case-studies/newport-in-bloom/preview.png',
+      '/assets/case-studies/beeline/preview.png'
+    ];
+
+    const imagePromises = imagePaths.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => setImagesLoaded(true))
+      .catch(() => setImagesLoaded(true)); // Still show content even if some images fail
   }, []);
 
   return (
@@ -69,7 +93,7 @@ export default function Work() {
         <section className="relative hero-section">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: imagesLoaded ? 1 : 0, y: imagesLoaded ? 0 : 30 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             <h1 className="font-sans text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-[1.4] text-[#333] tracking-tight">
@@ -89,7 +113,7 @@ export default function Work() {
               description="B2C mobile app for managing daily life. End-to-end product design from research to launch."
               linkText="View project"
               delay={0.5}
-              isExiting={false}
+              isExiting={!imagesLoaded}
               imageSrc="/assets/case-studies/orgo/preview.png"
             />
 
@@ -101,7 +125,7 @@ export default function Work() {
                 tag="Design System"
                 description="Migrated and enhanced their design system from Sketch to Figma."
                 delay={0.65}
-                isExiting={false}
+                isExiting={!imagesLoaded}
                 imageSrc="/assets/case-studies/webster/preview.png"
               />
 
@@ -111,7 +135,7 @@ export default function Work() {
                 tag="Web App Design"
                 description="Converting wireframes to high-fidelity designs."
                 delay={0.8}
-                isExiting={false}
+                isExiting={!imagesLoaded}
                 imageSrc="/assets/case-studies/inkbench/preview.png"
               />
 
@@ -121,7 +145,7 @@ export default function Work() {
                 tag="Branding and Site Design"
                 description="Defining a brand for a B2C mobile app."
                 delay={0.95}
-                isExiting={false}
+                isExiting={!imagesLoaded}
                 imageSrc="/assets/case-studies/orgo-brand/preview.png"
               />
 
@@ -131,7 +155,7 @@ export default function Work() {
                 tag="Site Design + Development"
                 description="Designing and developing a responsive website for a local nonprofit."
                 delay={1.1}
-                isExiting={false}
+                isExiting={!imagesLoaded}
                 imageSrc="/assets/case-studies/newport-in-bloom/preview.png"
               />
 
@@ -141,7 +165,7 @@ export default function Work() {
                 tag="Mobile App Concept"
                 description="A GPS for your grocery shopping experience."
                 delay={1.25}
-                isExiting={false}
+                isExiting={!imagesLoaded}
                 imageSrc="/assets/case-studies/beeline/preview.png"
               />
             </div>
