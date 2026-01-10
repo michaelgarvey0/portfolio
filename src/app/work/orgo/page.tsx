@@ -819,35 +819,35 @@ export default function OrgoCaseAlt() {
           <div className="space-y-8">
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">1. Start with validation, not vision</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-6">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
                 Running that first focus group was the best decision we made. It prevented us from building in a vacuum.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">2. Users will tell you what's broken - listen</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-6">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
                 Every major feature came from user feedback. Google Calendar integration, origin/return locations, import rules - all user-driven.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">3. Being designer + developer = better product decisions</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-6">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
                 Learning React Native let me make real-time tradeoffs between ideal design and technical feasibility. No "hand it off and hope" friction.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">4. Bootstrapping requires strategic tradeoffs</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-6">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
                 Working unpaid for 2.5 years while freelancing taught me to ruthlessly prioritize. Limited time meant every feature decision had to count. When we finally raised funding, the difference in velocity was significant.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">5. Operational skills matter as much as design skills</h3>
-              <p className="text-[1.15rem] text-[#666] leading-[1.8] ml-6">
+              <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
                 Setting up analytics, monetization, ad tracking, database queries - these aren't "design" but they're essential to shipping real products.
               </p>
             </div>
