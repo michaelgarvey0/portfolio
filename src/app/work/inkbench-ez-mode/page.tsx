@@ -685,8 +685,8 @@ export default function InkbenchEZMode() {
             }
           }
         `}</style>
-        <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/webster" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+        <div className="flex flex-col md:flex-row justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
+          <Link href="/work/webster" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -704,7 +704,7 @@ export default function InkbenchEZMode() {
             </span>
           </Link>
 
-          <Link href="/work/orgo-brand" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+          <Link href="/work/orgo-brand" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <span>Up next</span>
               <svg

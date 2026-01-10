@@ -931,8 +931,8 @@ export default function OrgoCaseAlt() {
             }
           }
         `}</style>
-        <div className="flex justify-end pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20">
-          <Link href="/work/webster" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+        <div className="flex flex-col md:flex-row justify-end pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20">
+          <Link href="/work/webster" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <span>Up next</span>
               <svg
