@@ -438,14 +438,15 @@ export default function Webster() {
             As a first step, I focused on <strong>organizing our typography tokens</strong>, which are <strong>compositions of several other tokens</strong> like font family and font size. This helped <strong>simplify the hierarchy of text styles</strong> and made the system <strong>easier to maintain</strong>.
           </p>
 
-          <div className="w-full overflow-x-auto border border-[rgba(0,0,0,0.08)] shadow-sm mb-12">
-            <table className="w-full" style={{ minWidth: '400px' }}>
+          <div className="-mx-12 md:mx-0 mb-12">
+            <div className="overflow-x-auto border border-[rgba(0,0,0,0.08)] shadow-sm" style={{ WebkitOverflowScrolling: 'touch' }}>
+              <table style={{ width: '100%', minWidth: '600px' }}>
               <thead>
                 <tr className="bg-gray-50">
-                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}></th>
-                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}>Heading 4<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-heading-4</code></th>
-                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}>Body<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body</code></th>
-                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}>Body Sans<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body-sans</code></th>
+                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '120px' }}></th>
+                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '150px' }}>Heading 4<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-heading-4</code></th>
+                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '150px' }}>Body<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body</code></th>
+                  <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '150px' }}>Body Sans<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body-sans</code></th>
                 </tr>
               </thead>
                 <tbody>
@@ -498,7 +499,8 @@ export default function Webster() {
                     <td className="p-4 text-sm text-[#333]">none<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$text-decoration-none</code></td>
                   </tr>
               </tbody>
-            </table>
+              </table>
+            </div>
           </div>
         </section>
 
