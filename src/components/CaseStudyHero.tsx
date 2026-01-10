@@ -105,7 +105,7 @@ export default function CaseStudyHero({
                   e.currentTarget.style.transform = 'scale(1)';
                 }}
               >
-                {ctaText} →
+                {ctaText} &nbsp;&nbsp;→
               </a>
             )}
           </motion.div>

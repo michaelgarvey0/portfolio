@@ -94,7 +94,7 @@ export default function OrgoCaseAlt() {
         gradientTo="#ff8c00"
         imageSrc="/assets/case-studies/orgo/hero.png"
         imageAlt="Orgo App"
-        ctaText="Download on the App Store"
+        ctaText="Download the App"
         ctaHref="https://www.orgohq.com/download"
         ctaColor="#212121"
       />
@@ -334,7 +334,9 @@ export default function OrgoCaseAlt() {
             {/* Iteration 1 */}
             <div className="flex-1 max-w-[700px]">
               <div className="flex justify-center items-center gap-3 mb-4">
-                <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                <div className="h-8 flex items-center">
+                  <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                </div>
                 <NumberBadge number={1} color={brandColor} />
               </div>
               <img src="/assets/case-studies/orgo/iteration1.png" alt="Iteration 1 of the activity screen" className="w-full mb-4" />
@@ -347,7 +349,9 @@ export default function OrgoCaseAlt() {
             {/* Iteration 2 */}
             <div className="flex-1 max-w-[700px]">
               <div className="flex justify-center items-center gap-3 mb-4">
-                <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                <div className="h-8 flex items-center">
+                  <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                </div>
                 <NumberBadge number={2} color={brandColor} />
               </div>
               <img src="/assets/case-studies/orgo/iteration2.png" alt="Iteration 2 of the activity screen" className="w-full mb-4" />
@@ -360,7 +364,9 @@ export default function OrgoCaseAlt() {
             {/* Iteration 3 */}
             <div className="flex-1 max-w-[700px]">
               <div className="flex justify-center items-center gap-3 mb-4">
-                <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                <div className="h-8 flex items-center">
+                  <h4 className="text-[1.1rem] font-bold text-[#333]">Iteration</h4>
+                </div>
                 <NumberBadge number={3} color={brandColor} />
               </div>
               <img src="/assets/case-studies/orgo/iteration3.png" alt="Iteration 3 of the activity screen" className="w-full mb-4" />
@@ -381,7 +387,7 @@ export default function OrgoCaseAlt() {
             We launched to 25 users via Expo (not even TestFlight yet—they had to scan QR codes to download). The alpha group used the app for a couple of weeks, and we had a GroupMe where they could report bugs, feedback, and issues.
           </p>
 
-          <img src="/assets/case-studies/orgo/alpha.png" alt="Alpha version of Orgo" className="w-full mb-12" />
+          <img src="/assets/case-studies/orgo/alpha.png" alt="Alpha version of Orgo" className="w-full mb-12 shadow-lg" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             <strong className="text-[#333]">The feedback was swift and humbling:</strong>
@@ -633,7 +639,18 @@ export default function OrgoCaseAlt() {
 
           <div className="space-y-6 mb-12">
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-4">For Scheduling</h4>
+              <div className="flex items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z" />
+                  <path d="M16 3v4" />
+                  <path d="M8 3v4" />
+                  <path d="M4 11h16" />
+                  <path d="M11 15h1" />
+                  <path d="M12 15v3" />
+                </svg>
+                <h4 className="text-[1.2rem] font-bold text-[#333]">For Scheduling</h4>
+              </div>
               <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
                 <li>Auto-calculated travel times using actual routes</li>
                 <li>Prep time tracked separately from event time</li>
@@ -643,7 +660,16 @@ export default function OrgoCaseAlt() {
             </div>
 
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-4">For Coordination</h4>
+              <div className="flex items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                  <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                </svg>
+                <h4 className="text-[1.2rem] font-bold text-[#333]">For Coordination</h4>
+              </div>
               <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
                 <li>Driver assignment for pickup, dropoff, and staying</li>
                 <li>Cross-family crew connections for carpooling</li>
@@ -653,7 +679,14 @@ export default function OrgoCaseAlt() {
             </div>
 
             <div className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
-              <h4 className="text-[1.2rem] font-bold text-[#333] mb-4">For Accuracy</h4>
+              <div className="flex items-center gap-3 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff3e00]">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                  <path d="M9 12l2 2l4 -4" />
+                </svg>
+                <h4 className="text-[1.2rem] font-bold text-[#333]">For Accuracy</h4>
+              </div>
               <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
                 <li>Import rules for bulk setup from existing calendars</li>
                 <li>AI name detection in event titles</li>
@@ -681,7 +714,7 @@ export default function OrgoCaseAlt() {
               e.currentTarget.style.transform = 'scale(1)';
             }}
           >
-            Download on the App Store
+            Download the App
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -761,11 +794,19 @@ export default function OrgoCaseAlt() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { quote: "Orgo allowed me to have a single version of the truth.", author: "Brosseau Family, 5-star review" },
-              { quote: "I never thought that type of reminder would be so useful until now.", author: "Ammlswcc, 5-star review" },
-              { quote: "My husband and I know exactly what is happening each day!", author: "Kstap4, 5-star review" }
+              { quote: "Orgo allowed me to have a single version of the truth.", author: "Brosseau Family" },
+              { quote: "I never thought that type of reminder would be so useful until now.", author: "Ammlswcc" },
+              { quote: "My husband and I know exactly what is happening each day!", author: "Kstap4" }
             ].map((item, i) => (
               <div key={i} className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <svg key={starIndex} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#ff3e00" stroke="#ff3e00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                    </svg>
+                  ))}
+                </div>
                 <p className="text-[1.1rem] text-[#333] italic mb-6 leading-relaxed">"{item.quote}"</p>
                 <p className="text-sm text-[#666] font-bold">— {item.author}</p>
               </div>
@@ -843,7 +884,7 @@ export default function OrgoCaseAlt() {
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mt-12">
-            But the core insight remains: Calendars should reflect reality, not just record events. That's what we built. That's what users love.
+            The core insight remains: Calendars should reflect reality, not just record events. We built that, and we're continuing to refine it as we grow.
           </p>
         </section>
         </main>

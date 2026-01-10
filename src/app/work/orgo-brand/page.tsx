@@ -95,7 +95,7 @@ export default function OrgoBrand() {
         gradientTo="#ff8c00"
         imageSrc="/assets/case-studies/orgo-brand/hero.png"
         imageAlt="Orgo Brand"
-        ctaText="Download on the App Store"
+        ctaText="Download the App"
         ctaHref="https://www.orgohq.com/download"
         ctaColor="#212121"
       />
