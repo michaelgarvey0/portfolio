@@ -116,7 +116,7 @@ export default function Webster() {
             }
           }
         `}</style>
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
         {/* Summary */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -438,8 +438,8 @@ export default function Webster() {
             As a first step, I focused on <strong>organizing our typography tokens</strong>, which are <strong>compositions of several other tokens</strong> like font family and font size. This helped <strong>simplify the hierarchy of text styles</strong> and made the system <strong>easier to maintain</strong>.
           </p>
 
-          <div style={{ maxWidth: '100%', overflowX: 'auto' }} className="border border-[rgba(0,0,0,0.08)] shadow-sm mb-12">
-            <table>
+          <div style={{ width: '100%', overflow: 'auto' }} className="border border-[rgba(0,0,0,0.08)] shadow-sm mb-12">
+            <table className="w-[1000px]">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}></th>
@@ -448,7 +448,7 @@ export default function Webster() {
                   <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}>Body Sans<br/><code className="inline-block mt-2 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs font-normal rounded">$font-body-sans</code></th>
                 </tr>
               </thead>
-                <tbody>
+                <tbody >
                   <tr className="border-b border-[rgba(0,0,0,0.08)]">
                     <td className="p-4 text-sm font-semibold text-[#666]">Font family</td>
                     <td className="p-4 text-sm text-[#333]">Roboto<br/><code className="inline-block mt-1 px-2 py-1 bg-black text-[#39ff14] font-mono text-xs rounded">$font-family-heading</code></td>
