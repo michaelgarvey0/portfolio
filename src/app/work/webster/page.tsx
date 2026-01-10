@@ -439,7 +439,7 @@ export default function Webster() {
           </p>
 
           <div style={{ maxWidth: '100%', overflowX: 'auto' }} className="border border-[rgba(0,0,0,0.08)] shadow-sm mb-12">
-            <table style={{ width: '100%' }}>
+            <table>
               <thead>
                 <tr className="bg-gray-50">
                   <th className="text-left p-4 text-sm font-bold text-[#333] border-b border-[rgba(0,0,0,0.08)]" style={{ minWidth: '100px' }}></th>
