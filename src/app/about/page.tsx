@@ -19,7 +19,11 @@ export default function About() {
           className="mb-20"
         >
           <div className="flex items-center gap-16 mb-20">
-            <div className="w-[240px] h-[240px] bg-gradient-to-br from-gray-200 to-gray-300 flex-shrink-0" />
+            <img
+              src="/assets/case-studies/michael-headshot.jpeg"
+              alt="Michael Garvey"
+              className="w-[240px] h-[240px] object-cover flex-shrink-0"
+            />
             <div>
               <h2 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">IN A NUTSHELL</h2>
               <p className="text-[1.75rem] text-[#333] leading-[1.4] font-bold">

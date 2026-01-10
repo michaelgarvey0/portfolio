@@ -21,7 +21,7 @@ export default function OrgoCaseAlt() {
     { id: 'alpha-launch', title: 'Alpha Testing' },
     { id: 'public-launch', title: 'Public Launch' },
     { id: 'pivot', title: 'The Pivot' },
-    { id: 'iteration-cycle', title: 'Iteration Cycle' },
+    { id: 'iteration-cycle', title: 'Feature Evolution' },
     { id: 'current-product', title: 'Current Product' },
     { id: 'results', title: 'The Results' },
     { id: 'learned', title: 'What I Learned' },
@@ -478,7 +478,7 @@ export default function OrgoCaseAlt() {
 
         {/* Iteration Cycle */}
         <section id="iteration-cycle" className="mb-32 scroll-mt-32">
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">The Iteration Cycle: Building the Features That Mattered</h2>
+          <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Feature Evolution: Building What Mattered</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             Once we had a solid foundation, we moved fast. Here's how the product evolved through user feedback:
