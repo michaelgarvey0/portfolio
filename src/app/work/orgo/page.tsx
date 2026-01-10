@@ -203,7 +203,7 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Background</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            In March 2023, my boss's boss at Webster Bank quit to solve a problem. Zoya had been a tech exec for 20+ years but became a sports mom and realized the logistics were impossible.
+            In March 2023, my boss's boss at Webster Bank quit to solve a problem. Zoya had been a tech exec for 20+ years but became a sports mom and realized that managing the logistics of her daily life - simply getting the right people, to the right places, on time - had become untenable. 
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
@@ -230,7 +230,8 @@ export default function OrgoCaseAlt() {
             30 million sports families in the US manage this complexity daily. They're juggling Google Calendar, team apps like TeamSnap, group texts, and carpools, all while simply trying to be on time.
           </p>
 
-          <img src="/assets/case-studies/orgo/problem2.png" alt="The chaos of coordinating family schedules" className="w-full mb-12" />
+          <img src="/assets/case-studies/orgo/problem-mobile.png" alt="The chaos of coordinating family schedules" className="w-full mb-12 md:hidden" />
+          <img src="/assets/case-studies/orgo/problem2.png" alt="The chaos of coordinating family schedules" className="w-full mb-12 hidden md:block" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
             I facilitated a focus group with 20 parents, and we individually interviewed 12 more.
@@ -253,7 +254,7 @@ export default function OrgoCaseAlt() {
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8 mt-12">Five core pain points:</h3>
 
-          <ol className="space-y-4 text-[1.1rem] text-[#666] leading-[1.8] mb-12 md:ml-6">
+          <ol className="space-y-8 md:space-y-4 text-[1.1rem] text-[#666] leading-[1.8] mb-12 md:ml-6">
             {[
               { title: 'Coordinating people, places, and times', desc: 'across multiple kids and activities' },
               { title: 'Reverse-calculating departure times', desc: 'and forgetting prep steps' },
@@ -261,7 +262,7 @@ export default function OrgoCaseAlt() {
               { title: 'Collaborating across families', desc: 'for carpools without endless texts' },
               { title: 'Maintaining an accurate view', desc: 'of what the day actually looks like' }
             ].map((item, i) => (
-              <li key={i} className="flex gap-4 mb-3 items-start">
+              <li key={i} className="flex gap-4 items-start">
                 <NumberBadge number={i + 1} color={brandColor} />
                 <div className="pt-[0.1rem]">
                   <strong className="text-[#333]">{item.title}</strong> {item.desc}
