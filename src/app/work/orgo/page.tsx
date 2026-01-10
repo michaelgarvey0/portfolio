@@ -162,7 +162,7 @@ export default function OrgoCaseAlt() {
           </div>
 
           <div className="mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="text-center p-6 bg-[rgba(255,62,0,0.08)] border-2 border-[#ff3e00] shadow-sm">
                 <div className="text-[3rem] font-bold text-[#ff3e00] mb-2">150</div>
                 <p className="text-[1rem] text-[#666] leading-relaxed">Paying families in 2 months of monetization</p>
