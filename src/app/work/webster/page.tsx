@@ -85,7 +85,7 @@ export default function Webster() {
 
       <CaseStudyHero
         title="Webster Bank"
-        description="Revamping our design system for scalability and accessibility during its migration from Sketch to Figma."
+        description="Revamping our design system for scalability and accessibility<br className='md:hidden' /> during its migration from Sketch to Figma."
         gradientFrom="#002d82"
         gradientTo="#0047cc"
         imageSrc="/assets/case-studies/webster/hero.png"

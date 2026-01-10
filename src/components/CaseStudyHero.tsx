@@ -85,9 +85,7 @@ export default function CaseStudyHero({
             <h1 className="font-sans text-[clamp(2.5rem,5vw,4rem)] font-bold mb-6 tracking-tight hero-title" style={{ color: textColor }}>
               {title}
             </h1>
-            <p className="text-[clamp(1rem,2vw,1.25rem)] leading-relaxed mb-10 hero-description" style={{ color: textColor }}>
-              {description}
-            </p>
+            <p className="text-[clamp(1rem,2vw,1.25rem)] leading-relaxed mb-10 hero-description" style={{ color: textColor }} dangerouslySetInnerHTML={{ __html: description }} />
             {ctaText && ctaHref && ctaColor && (
               <a
                 href={ctaHref}
