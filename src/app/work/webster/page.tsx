@@ -127,7 +127,7 @@ export default function Webster() {
         >
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Summary</h2>
 
-          <div className="grid grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
             <div>
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TEAM</h5>
               <p className="text-[#666] leading-relaxed">
@@ -282,7 +282,7 @@ export default function Webster() {
             One example shows the difference clearly. The old card component had <strong>major issues when resized</strong>:
           </p>
 
-          <div className="grid grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div>
               <p className="text-sm font-semibold text-[#999] mb-2">Before</p>
               <video
@@ -357,7 +357,7 @@ export default function Webster() {
             I noticed right away that <strong>some of our color combinations had accessibility issues</strong>. Specifically, when we used "Dark Gray" on "Webster Yellow" (#FFD107), the text <strong>didn't adequately contrast with the background</strong>. This was <strong>causing problems on our public-facing site</strong>.
           </p>
 
-          <div className="grid grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="border border-[rgba(0,0,0,0.08)] shadow-sm p-8">
               <p className="text-sm font-semibold text-[#999] mb-6">Previous state</p>
               <div className="bg-[#FFD107] p-6 mb-6 flex items-center justify-center" style={{ minHeight: '120px' }}>

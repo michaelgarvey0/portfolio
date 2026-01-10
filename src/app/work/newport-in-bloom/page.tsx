@@ -127,7 +127,7 @@ export default function NewportInBloom() {
         >
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Summary</h2>
 
-          <div className="grid grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
             <div>
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TEAM</h5>
               <p className="text-[#666] leading-relaxed">
@@ -165,7 +165,7 @@ export default function NewportInBloom() {
             Newport in Bloom and Daffodil Days are nonprofits committed to <strong>beautifying Newport, Rhode Island, with flowers</strong>. Newport in Bloom hosts city events, and Daffodil Days is a festival to <strong>celebrate the daffodils they plant in fall</strong>, which bloom every April. These two groups have <strong>significant membership overlap</strong> and wanted to <strong>combine their websites</strong>. Specifically, the Newport in Bloom site wanted to <strong>absorb Daffodil Days</strong>.
           </p>
 
-          <div className="grid grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="border border-[rgba(0,0,0,0.08)] shadow-md">
               <div className="p-6 bg-[#fafafa] border-b border-[rgba(0,0,0,0.08)]">
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-2">newport in bloom: Before</h5>
@@ -414,7 +414,7 @@ export default function NewportInBloom() {
             The goals were ambitious: I had to <strong>combine two nonprofit websites</strong>, make a <strong>better user experience</strong>, implement <strong>Newport in Bloom's new brand</strong>, and make the site <strong>responsive to tablet and phone screens</strong>. Once the research was concluded, I <strong>synthesized the results to define two design goals</strong>. These goals specifically targeted the aspects I wanted to prioritize in order to <strong>create a more user-friendly site</strong>.
           </p>
 
-          <div className="grid grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
               <div className="text-[2.5rem] font-bold mb-4" style={{ color: brandColor }}>1</div>
               <h4 className="text-[1.5rem] font-bold text-[#333] mb-4">
@@ -448,7 +448,7 @@ export default function NewportInBloom() {
 
           <div className="p-8 bg-[#fafafa] border border-[rgba(0,0,0,0.08)] mb-12">
             <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6">BEFORE: TWO SITES</h5>
-            <div className="grid grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
                 <p className="font-bold text-[#333] mb-3">Newport in Bloom</p>
                 <ul className="space-y-2 text-[1.15rem] text-[#666]">
@@ -530,7 +530,7 @@ export default function NewportInBloom() {
 
             <div className="mb-8">
               <p className="font-bold text-[#333] mb-4">Color Palette</p>
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div>
                   <div className="w-full h-24 mb-2" style={{ backgroundColor: '#00C49A' }}></div>
                   <p className="text-sm font-bold text-[#212121]">Primary</p>

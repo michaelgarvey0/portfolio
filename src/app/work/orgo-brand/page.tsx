@@ -133,7 +133,7 @@ export default function OrgoBrand() {
         >
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Summary</h2>
 
-          <div className="grid grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
             <div>
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TEAM</h5>
               <p className="text-[#666] leading-relaxed">

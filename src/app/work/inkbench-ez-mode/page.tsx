@@ -130,7 +130,7 @@ export default function InkbenchEZMode() {
           >
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Summary</h2>
 
-            <div className="grid grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
               <div>
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TEAM</h5>
                 <p className="text-[#666] leading-relaxed">
@@ -256,7 +256,7 @@ export default function InkbenchEZMode() {
               <img src="/assets/case-studies/inkbench/previous-dashboard.png" alt="Previous Inkbench dashboard from July 2020" className="w-full" />
             </div>
 
-            <div className="grid grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
                 <NumberBadge number={1} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
@@ -326,7 +326,7 @@ export default function InkbenchEZMode() {
               <img src="/assets/case-studies/inkbench/franchisor-dashboard-wire.png" alt="Franchisor dashboard wireframe with annotations" className="w-full" />
             </div>
 
-            <div className="grid grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
                 <NumberBadge number={1} color="#3b3668" />
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">

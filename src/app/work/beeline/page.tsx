@@ -129,7 +129,7 @@ export default function Beeline() {
           >
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Summary</h2>
 
-            <div className="grid grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
               <div>
                 <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TEAM</h5>
                 <p className="text-[#666] leading-relaxed">
@@ -551,7 +551,7 @@ export default function Beeline() {
 
               <div className="mb-8">
                 <p className="font-bold text-[#333] mb-4">Color Palette</p>
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <div>
                     <div className="w-full h-24 mb-2" style={{ backgroundColor: '#003049' }}></div>
                     <p className="text-sm font-bold text-[#212121]">Primary</p>
