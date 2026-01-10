@@ -203,7 +203,7 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Background</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            In March 2023, my boss's boss at Webster Bank quit to solve a problem. Zoya had been a tech exec for 20+ years but became a sports mom and realized that managing the logistics of her daily life - simply getting the right people, to the right places, on time - had become untenable. 
+            In March 2023, my boss's boss at Webster Bank quit to solve a problem. Zoya had been a tech exec for 20+ years but became a sports mom and realized that <strong>managing the logistics of her daily life - simply getting the right people, to the right places, on time - had become untenable.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
@@ -211,7 +211,7 @@ export default function OrgoCaseAlt() {
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-            My first question: "How do we know this is actually a problem?" Zoya had experienced it firsthand, but one person's frustration doesn't validate a market. We needed to talk to real families before building anything. So we got to work recruiting parents and setting up interviews.
+            My first question: <strong>"How do we know this is actually a problem?"</strong> Zoya had experienced it firsthand, but one person's frustration doesn't validate a market. <strong>We needed to talk to real families before building anything.</strong> So we got to work recruiting parents and setting up interviews.
           </p>
         </section>
 
@@ -220,21 +220,21 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">The Problem</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Picture this: Your kid has soccer at 5:30 PM. The field is 20 minutes away. You want to arrive 10 minutes early. You need 15 minutes to get them ready. Suddenly, you're doing T-minus mental math to figure out you need to start at 4:45 PM.
+            Picture this: Your kid has soccer at 5:30 PM. The field is 20 minutes away. You want to arrive 10 minutes early. You need 15 minutes to get them ready. Suddenly, <strong>you're doing T-minus mental math</strong> to figure out you need to start at 4:45 PM.
           </p>
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Now multiply that by three kids, across different activities, with different drivers, at different locations.
+            Now multiply that by <strong>three kids, across different activities, with different drivers, at different locations.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            30 million sports families in the US manage this complexity daily. They're juggling Google Calendar, team apps like TeamSnap, group texts, and carpools, all while simply trying to be on time.
+            <strong>30 million sports families in the US</strong> manage this complexity daily. They're juggling Google Calendar, team apps like TeamSnap, group texts, and carpools, all while simply trying to be on time.
           </p>
 
           <img src="/assets/case-studies/orgo/problem-mobile.png" alt="The chaos of coordinating family schedules" className="w-full mb-12 md:hidden" />
           <img src="/assets/case-studies/orgo/problem2.png" alt="The chaos of coordinating family schedules" className="w-full mb-12 hidden md:block" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            I facilitated a focus group with 20 parents, and we individually interviewed 12 more.
+            I facilitated a <strong>focus group with 20 parents, and we individually interviewed 12 more.</strong>
           </p>
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">What we heard from parents:</h3>
@@ -272,7 +272,7 @@ export default function OrgoCaseAlt() {
           </ol>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            <strong className="text-[#333]">The core problem:</strong> Schedules live everywhere - emails, team apps, group texts, Google Calendar. No single tool brought it all together while handling prep time, travel time, early arrival, driver coordination, or the reality that you have to traverse space and time to actually execute on commitments.
+            <strong>The core problem:</strong> Schedules live everywhere - emails, team apps, group texts, Google Calendar. <strong>No single tool brought it all together while handling prep time, travel time, early arrival, driver coordination, or the reality that you have to traverse space and time to actually execute on commitments.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
@@ -310,10 +310,10 @@ export default function OrgoCaseAlt() {
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">The First Big Decision: Activity Structure</h3>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            <strong>Traditional calendars ask:</strong> "What time does it start?"
+            <strong className="text-[#333]">Traditional calendars ask:</strong> "What time does it start?"
           </p>
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            <strong>We needed to ask:</strong> "When do you need to START PREPARING?"
+            <strong className="text-[#333]">We needed to ask:</strong> "When do you need to START PREPARING?"
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
@@ -326,7 +326,7 @@ export default function OrgoCaseAlt() {
           </ul>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            This meant building something fundamentally different from Google Calendar. It was riskier, but it solved the actual problem. Getting the activity addition screen right took three iterations - refining the structure, testing different UI approaches, and figuring out how much information to show without overwhelming users.
+            This meant <strong>building something fundamentally different from Google Calendar.</strong> It was riskier, but it solved the actual problem. Getting the activity addition screen right took <strong>three iterations</strong> - refining the structure, testing different UI approaches, and figuring out how much information to show without overwhelming users.
           </p>
 
           <div className="flex flex-col md:flex-row md:justify-center md:items-start gap-20 md:gap-[2.5%]">
@@ -383,21 +383,17 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">October 2023: Alpha Testing</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            We launched to 25 users via Expo (not even TestFlight yet - they had to scan QR codes to download). The alpha group used the app for a couple of weeks, and we had a GroupMe where they could report bugs, feedback, and issues.
+            We launched to <strong>25 users via Expo</strong> (not even TestFlight yet - they had to scan QR codes to download). The alpha group used the app for a couple of weeks, and we had a GroupMe where they could report bugs, feedback, and issues.
           </p>
 
           <img src="/assets/case-studies/orgo/alpha.png" alt="Alpha version of Orgo" className="w-full mb-12 shadow-lg" />
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            <strong className="text-[#333]">The feedback was swift and humbling:</strong>
-          </p>
-
-          <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Users understood the concept but kept asking: <em>"Can I import my Google Calendar?"</em> and <em>"How do I change the default location?"</em>
+            The feedback was swift and humbling. Users understood the concept but kept asking: <strong><em>"Can I import my Google Calendar?"</em></strong> and <strong><em>"How do I change the default location?"</em></strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Two critical flaws emerged:
+            <strong className="text-[#333]">Two critical flaws emerged:</strong>
           </p>
 
           <div className="space-y-8 mb-12">
@@ -417,11 +413,11 @@ export default function OrgoCaseAlt() {
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            <strong className="text-[#333]">The hard truth:</strong> We'd built for our idealized version of the problem, not the messy reality of how families actually live.
+            <strong>The hard truth: We'd built for our idealized version of the problem, not the messy reality of how families actually live.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            We went back to the drawing board. Between October 2023 and April 2024, I redesigned the activity structure to support flexible origin and return locations. Users could now go from school → soccer → home, not just home → soccer → home.
+            We went back to the drawing board. <strong>Between October 2023 and April 2024, I redesigned the activity structure to support flexible origin and return locations.</strong> Users could now go from school → soccer → home, not just home → soccer → home.
           </p>
 
           <div className="flex justify-center mb-12">
@@ -429,7 +425,7 @@ export default function OrgoCaseAlt() {
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            We also knew Google Calendar integration was critical - it was the #1 request. But we considered Google a fast follower. If we waited to build everything perfectly, someone else would launch first. So we shipped what we had and planned to iterate fast.
+            We also knew <strong>Google Calendar integration was critical - it was the #1 request.</strong> But we considered Google a fast follower. <strong>If we waited to build everything perfectly, someone else would launch first. So we shipped what we had and planned to iterate fast.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
@@ -442,15 +438,15 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">April 2024: Public Launch</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            We pushed a public App Store release with the updated activity structure. Users came in from our waitlist - 500 registered users.
+            We pushed a public App Store release with the updated activity structure. Users came in from our waitlist - <strong>500 registered users.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            For 8 months, we iterated within the constraints of our initial platform. Our developers were talented but moonlighting like we were, which meant limited bandwidth for the ambitious features users wanted.
+            For 8 months, we iterated within the constraints of our initial platform. Our developers were talented but moonlighting like we were, which meant <strong>limited bandwidth for the ambitious features users wanted.</strong>
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-            By January 2025, we faced a strategic choice: continue incremental improvements or rebuild the foundation to unlock faster iteration. We chose the latter.
+            By January 2025, we faced a strategic choice: continue incremental improvements or rebuild the foundation to unlock faster iteration. <strong>We chose the latter.</strong>
           </p>
         </section>
 
@@ -459,11 +455,11 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">The Pivot: Rebuilding Everything</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            We converted from LLC to C-Corp, restacked the cap table, and raised $80K from angel investors. We brought on new developers - a full-time development team in Brazil - and started a complete rewrite.
+            We converted from LLC to C-Corp, restacked the cap table, and <strong>raised $80K from angel investors.</strong> We brought on new developers - a full-time development team in Brazil - and started a complete rewrite.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            <strong className="text-[#333]">May-July 2025:</strong> Three months of ground-up rebuilding. We migrated from Firebase to Supabase, rewrote the entire codebase, and professionalized the infrastructure.
+            <strong>May-July 2025: Three months of ground-up rebuilding.</strong> We migrated from Firebase to Supabase, rewrote the entire codebase, and professionalized the infrastructure.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-6">
@@ -477,7 +473,7 @@ export default function OrgoCaseAlt() {
           </ul>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-            The new foundation unlocked the speed we needed to build and iterate.
+            <strong>The new foundation unlocked the speed we needed to build and iterate.</strong>
           </p>
         </section>
 
@@ -486,7 +482,7 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Feature Evolution: Building What Mattered</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            Once we had a solid foundation, we moved fast. Here's how the product evolved through user feedback:
+            Once we had a solid foundation, <strong>we moved fast.</strong> Here's how the product evolved through user feedback:
           </p>
 
           {/* Round 1 */}
@@ -503,10 +499,10 @@ export default function OrgoCaseAlt() {
                   <strong className="text-[#333]">The problem:</strong> Manual entry was limiting adoption.
                 </p>
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                  <strong className="text-[#333]">The solution:</strong> Leveraged existing APIs, webhooks (Google), and ICS link parsing to automatically translate 2D calendar events into our 3D logistics model - capturing not just when events happen, but how families actually move through their day.
+                  <strong className="text-[#333]">The solution:</strong> Leveraged existing APIs, webhooks (Google), and ICS link parsing to <strong>automatically translate 2D calendar events into our 3D logistics model</strong> - capturing not just when events happen, but how families actually move through their day.
                 </p>
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-8">
-                  <strong className="text-[#333]">Why it mattered:</strong> This was the #1 user request. It went from "nice idea" to "actively using daily."
+                  <strong className="text-[#333]">Why it mattered:</strong> This was the #1 user request. <strong>It went from "nice idea" to "actively using daily."</strong>
                 </p>
               </div>
               <div className="flex justify-center">
@@ -526,13 +522,13 @@ export default function OrgoCaseAlt() {
               </div>
               <div className="md:ml-[56px]">
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                  <strong className="text-[#333]">The problem:</strong> App was entirely free until August. First attempt at monetization (free trial, no credit card) had only 10% conversion.
+                  <strong className="text-[#333]">The problem:</strong> App was entirely free until August. First attempt at monetization (free trial, no credit card) had <strong>only 10% conversion.</strong>
                 </p>
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-4">
-                  <strong className="text-[#333]">The solution:</strong> Switched to upfront payment in September. Users pay $6.95/month from day one, with clear value proposition.
+                  <strong className="text-[#333]">The solution:</strong> <strong>Switched to upfront payment in September.</strong> Users pay $6.95/month from day one, with clear value proposition. We grandfathered all existing users into a free year to reward early adopters.
                 </p>
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-8">
-                  <strong className="text-[#333]">Why it mattered:</strong> Conversion jumped from 10% to 40% - 4x better than before, and 3-4x industry standard. Got 150 paid families in first 2 months.
+                  <strong className="text-[#333]">Why it mattered:</strong> <strong>Conversion jumped from 10% to 40%</strong> - 4x better than before, and 3-4x industry standard. <strong>Got 150 paid families in first 2 months.</strong>
                 </p>
               </div>
               <div className="flex justify-center">
@@ -558,7 +554,7 @@ export default function OrgoCaseAlt() {
                   <strong className="text-[#333]">The solution:</strong> Smart import rules that let users set defaults (participants, drivers, locations) + AI name detection in event titles.
                 </p>
                 <p className="text-[1.1rem] text-[#666] leading-[1.8] mb-8">
-                  <strong className="text-[#333]">Why it mattered:</strong> Turned 2 hours of setup into 5 minutes.
+                  <strong className="text-[#333]">Why it mattered:</strong> <strong>Turned 2 hours of setup into 5 minutes.</strong>
                 </p>
               </div>
               <div className="flex justify-center">
@@ -651,10 +647,10 @@ export default function OrgoCaseAlt() {
                 <h4 className="text-[1.2rem] font-bold text-[#333]">For Scheduling</h4>
               </div>
               <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
-                <li>Auto-calculated travel times using actual routes</li>
-                <li>Prep time tracked separately from event time</li>
-                <li>Early arrival buffers (show up 15 min before start)</li>
-                <li>Multi-stop routing for errands and carpools</li>
+                <li><strong>Auto-calculated travel times</strong> using actual routes</li>
+                <li><strong>Prep time tracked separately</strong> from event time</li>
+                <li><strong>Early arrival buffers</strong> (show up 15 min before start)</li>
+                <li><strong>Multi-stop routing</strong> for errands and carpools</li>
               </ul>
             </div>
 
@@ -670,10 +666,10 @@ export default function OrgoCaseAlt() {
                 <h4 className="text-[1.2rem] font-bold text-[#333]">For Coordination</h4>
               </div>
               <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
-                <li>Driver assignment for pickup, dropoff, and staying</li>
-                <li>Cross-family crew connections for carpooling</li>
-                <li>Smart notifications (only when you need to act)</li>
-                <li>Three views: Calendar, Agenda, Text summary</li>
+                <li><strong>Driver assignment</strong> for pickup, dropoff, and staying</li>
+                <li><strong>Cross-family crew connections</strong> for carpooling</li>
+                <li><strong>Smart notifications</strong> (only when you need to act)</li>
+                <li><strong>Three views:</strong> Calendar, Agenda, Text summary</li>
               </ul>
             </div>
 
@@ -687,10 +683,10 @@ export default function OrgoCaseAlt() {
                 <h4 className="text-[1.2rem] font-bold text-[#333]">For Accuracy</h4>
               </div>
               <ul className="space-y-2 text-[1rem] text-[#666] leading-[1.6] list-disc ml-6">
-                <li>Import rules for bulk setup from existing calendars</li>
-                <li>AI name detection in event titles</li>
-                <li>Weather integrated per event location</li>
-                <li>Conflict detection on a per-person basis</li>
+                <li><strong>Import rules</strong> for bulk setup from existing calendars</li>
+                <li><strong>AI name detection</strong> in event titles</li>
+                <li><strong>Weather integrated</strong> per event location</li>
+                <li><strong>Conflict detection</strong> on a per-person basis</li>
               </ul>
             </div>
           </div>
@@ -784,8 +780,8 @@ export default function OrgoCaseAlt() {
 
           <h3 className="text-[1.8rem] font-bold text-[#333] mb-8">Marketing Efficiency</h3>
           <ul className="space-y-3 text-[1.1rem] text-[#666] leading-[1.8] list-disc ml-6 mb-12">
-            <li>$50.61 CAC with 30% install-to-paid (3-4x industry standard)</li>
-            <li>Grew organically to 2,500 users before any paid marketing</li>
+            <li><strong>$50.61 CAC with 30% install-to-paid (3-4x industry standard)</strong></li>
+            <li><strong>Grew organically to 2,500 users before any paid marketing</strong></li>
             <li>Started paid ads in August 2025, now at 250K+ monthly impressions</li>
           </ul>
 
@@ -821,35 +817,35 @@ export default function OrgoCaseAlt() {
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">1. Start with validation, not vision</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
-                Running that first focus group was the best decision we made. It prevented us from building in a vacuum.
+                <strong>Running that first focus group was the best decision we made.</strong> It prevented us from building in a vacuum.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">2. Users will tell you what's broken - listen</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
-                Every major feature came from user feedback. Google Calendar integration, origin/return locations, import rules - all user-driven.
+                <strong>Every major feature came from user feedback.</strong> Google Calendar integration, origin/return locations, import rules - all user-driven.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">3. Being designer + developer = better product decisions</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
-                Learning React Native let me make real-time tradeoffs between ideal design and technical feasibility. No "hand it off and hope" friction.
+                Learning React Native let me <strong>make real-time tradeoffs between ideal design and technical feasibility.</strong> No "hand it off and hope" friction.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">4. Bootstrapping requires strategic tradeoffs</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
-                Working unpaid for 2.5 years while freelancing taught me to ruthlessly prioritize. Limited time meant every feature decision had to count. When we finally raised funding, the difference in velocity was significant.
+                <strong>Working unpaid for 2.5 years while freelancing taught me to ruthlessly prioritize.</strong> Limited time meant every feature decision had to count. When we finally raised funding, the difference in velocity was significant.
               </p>
             </div>
 
             <div>
               <h3 className="text-[1.4rem] font-bold text-[#333] mb-4">5. Operational skills matter as much as design skills</h3>
               <p className="text-[1.15rem] text-[#666] leading-[1.8] md:ml-6">
-                Setting up analytics, monetization, ad tracking, database queries - these aren't "design" but they're essential to shipping real products.
+                Setting up analytics, monetization, ad tracking, database queries - <strong>these aren't "design" but they're essential to shipping real products.</strong>
               </p>
             </div>
           </div>
@@ -860,7 +856,7 @@ export default function OrgoCaseAlt() {
           <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">What's Next</h2>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-            We're not done. The vision is bigger than sports families.
+            We're not done. <strong>The vision is bigger than sports families.</strong>
           </p>
 
           <div className="space-y-8 mb-12">
@@ -883,7 +879,7 @@ export default function OrgoCaseAlt() {
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mt-12">
-            The core insight remains: Calendars should reflect reality, not just record events. We built that, and we're continuing to refine it as we grow.
+            The core insight remains: <strong>Calendars should reflect reality, not just record events.</strong> We built that, and we're continuing to refine it as we grow.
           </p>
         </section>
         </main>

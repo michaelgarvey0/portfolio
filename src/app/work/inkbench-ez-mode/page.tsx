@@ -163,11 +163,11 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              Inkbench was a <strong>brand management SaaS startup</strong> I worked for from May 2020 until May 2022. We helped <strong>franchises maintain brand consistency</strong> by letting them <strong>store digital assets, create locked-down templates, and distribute them to franchisees</strong> - preventing the <strong>"off-brand materials" problem</strong> common in multi-location systems.
+              Inkbench was a <strong>brand management SaaS startup</strong> I worked for from May 2020 until May 2022. We helped <strong>franchises maintain brand consistency</strong> by letting them store digital assets, create locked-down templates, and distribute them to franchisees - preventing the "off-brand materials" problem common in multi-location systems.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              I was tasked with <strong>redesigning the dashboard</strong>, which was the <strong>first screen users saw after login</strong>. The existing version had <strong>usability issues</strong> that limited its effectiveness.
+              I was tasked with <strong>redesigning the dashboard</strong>, which was the first screen users saw after login. The existing version had <strong>usability issues</strong> that limited its effectiveness.
             </p>
           </section>
 
@@ -258,25 +258,33 @@ export default function InkbenchEZMode() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={1} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={1} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Action buttons.</strong> Search or open the Brand Library, or create a new project.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={2} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={2} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Tabs setup.</strong> The Home tab is the same across the Enterprise (i.e., everyone sees the same stuff). Approvals are projects pending approval, and favorites are assets or projects you've marked as special to you.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={3} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={3} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Pinned items.</strong> Administrators can "pin" items to the dashboard for everyone to see, access, and use.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={4} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={4} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Support links.</strong> Helpful Center articles to get started on the platform
                 </p>
@@ -315,7 +323,7 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Analyzing the wireframes</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              I <strong>converted wireframes</strong> (created by Heather O'Neill after client interviews) <strong>into high-fidelity designs</strong>. The wireframes <strong>split into two dashboards</strong>: one for franchisors with <strong>analytics</strong>, and one for franchisees with <strong>simplified templating</strong> - essentially, <strong>one for administrators and one for standard users</strong>.
+              I <strong>converted wireframes into high-fidelity designs</strong>. The wireframes <strong>split into two dashboards</strong>: one for franchisors with <strong>analytics</strong>, and one for franchisees with <strong>simplified templating</strong>.
             </p>
 
             <div className="border border-[rgba(0,0,0,0.08)] shadow-md mb-12">
@@ -328,37 +336,49 @@ export default function InkbenchEZMode() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={1} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={1} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Communication with franchisees.</strong> Administrators can push content to users, such as messages and "recommendations" they can customize.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={2} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={2} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Active users.</strong> Active = has signed in and made one export, download, or print, for today, the last week, and the last month.
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={3} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={3} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Most active users.</strong> (Excludes administrators) Who's done the most of the actions?
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={4} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={4} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Most active projects and templates.</strong> What projects have the greatest number of unique users exporting them?
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={5} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={5} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Recently used projects and templates.</strong> What is the most recent activity on the platform?
                 </p>
               </div>
               <div className="p-6 bg-[#fafafa] border border-[rgba(0,0,0,0.08)]">
-                <NumberBadge number={6} color="#3b3668" />
+                <div className="mb-4">
+                  <NumberBadge number={6} color="#3b3668" />
+                </div>
                 <p className="text-[1.15rem] text-[#666] leading-[1.8]">
                   <strong className="font-bold text-[#212121]">Notifications.</strong> A hub for updates about usage statistics, approval workflow requests, and messages from franchisees.
                 </p>
@@ -366,7 +386,7 @@ export default function InkbenchEZMode() {
             </div>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              The wireframes were designed with <strong>two main principles</strong> in mind: 1) to <strong>enable franchisors to provide franchisees with all the necessary materials while monitoring their activity</strong>, and 2) to <strong>make it as simple as possible for franchisees to customize their designs</strong>. With this understanding, and armed with <strong>valuable insights gathered through customer success conversations</strong>, I proceeded with the UI design.
+              The wireframes were designed with <strong>two main principles</strong> in mind: 1) to <strong>enable franchisors to provide franchisees with materials while monitoring their activity</strong>, and 2) to <strong>make it as simple as possible for franchisees to customize their designs</strong>.
             </p>
           </section>
 
@@ -375,7 +395,7 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">UI Design</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              The <strong>UI design process was the majority of my work</strong>, and it required me to <strong>define a set of styles and apply them consistently</strong> throughout the product. By <strong>making adjustments to some functionality</strong> represented in the wireframes, I was able to <strong>better align the design with user expectations</strong> and <strong>incorporate any missing features</strong>.
+              The UI design process was the majority of my work, and it required me to <strong>define a set of styles and apply them consistently</strong> throughout the product. By <strong>making adjustments to some functionality</strong> represented in the wireframes, I was able to <strong>better align the design with user expectations</strong>.
             </p>
           </section>
 
@@ -386,7 +406,7 @@ export default function InkbenchEZMode() {
             </h3>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              Since Inkbench <strong>didn't have an established design system</strong>, I created <strong>a UI kit based on industry best practices</strong> to <strong>ensure consistency throughout the product</strong>.
+              Since Inkbench <strong>didn't have an established design system</strong>, I created <strong>a UI kit based on industry best practices</strong> to ensure consistency throughout the product.
             </p>
 
             <img src="/assets/case-studies/inkbench/ui-kit.png" alt="Inkbench UI kit showing buttons, inputs, and toggles" className="w-full mb-12" />
@@ -565,11 +585,11 @@ export default function InkbenchEZMode() {
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Final UI</h2>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-              Below, you'll find a screenshot of the final UI design. To <strong>fully experience the product</strong>, I recommend <strong>exploring the prototype</strong>. The <strong>"user preview" button allows you to toggle between the franchisor and franchisee dashboard views</strong>.
+              Below, you'll find a screenshot of the final UI design. To <strong>fully experience the product</strong>, I recommend <strong>exploring the prototype</strong>. The "user preview" button allows you to <strong>toggle between the franchisor and franchisee dashboard views</strong>.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
-              It is worth noting that if Inkbench were still with us, I would have loved to <strong>conduct usability tests with our clients</strong> to <strong>validate some of the changes I made</strong>. This would have provided <strong>valuable insights and feedback</strong> and helped ensure that the <strong>final product met the needs of our users</strong>.
+              It is worth noting that if Inkbench were still with us, I would have loved to <strong>conduct usability tests with our clients</strong> to validate some of the changes I made. This would have provided valuable insights and feedback and helped ensure that the final product met the needs of our users.
             </p>
 
             <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-12">
