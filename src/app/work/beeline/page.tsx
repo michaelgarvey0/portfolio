@@ -118,7 +118,7 @@ export default function Beeline() {
             }
           }
         `}</style>
-        <main className="flex-1">
+        <main className="flex-1 min-w-0">
           {/* Summary */}
           <motion.section
             initial={{ opacity: 0, y: 30 }}
@@ -440,12 +440,12 @@ export default function Beeline() {
               I came up with <strong>six high-level sections</strong> to wireframe and test based on feature brainstorming and flows from the persona's tasks.
             </p>
 
-            <div className="overflow-x-auto mb-12">
-              <table className="w-full border-collapse border border-[rgba(0,0,0,0.08)]">
+            <div className="overflow-auto mb-12">
+              <table className="border-collapse border border-[rgba(0,0,0,0.08)]">
                 <thead>
                   <tr style={{ backgroundColor: brandColor }}>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Area</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">High-level requirements</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">Area</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">High-level requirements</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -631,15 +631,15 @@ export default function Beeline() {
               I conducted usability tests with six participants over two days. To do this, I came up with seven core tasks and had participants click through the Figma prototype.
             </p>
 
-            <div className="overflow-x-auto mb-12">
-              <table className="w-full border-collapse border border-[rgba(0,0,0,0.08)]">
+            <div className="overflow-auto mb-12">
+              <table className="border-collapse border border-[rgba(0,0,0,0.08)]">
                 <thead>
                   <tr style={{ backgroundColor: brandColor }}>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Task</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Direct success</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Indirect success</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Gave up</th>
-                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white">Notes</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">Task</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">Direct success</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">Indirect success</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">Gave up</th>
+                    <th className="border border-[rgba(0,0,0,0.08)] p-4 text-left font-bold text-white whitespace-nowrap">Notes</th>
                   </tr>
                 </thead>
                 <tbody>
