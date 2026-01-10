@@ -438,7 +438,7 @@ export default function Webster() {
             As a first step, I focused on <strong>organizing our typography tokens</strong>, which are <strong>compositions of several other tokens</strong> like font family and font size. This helped <strong>simplify the hierarchy of text styles</strong> and made the system <strong>easier to maintain</strong>.
           </p>
 
-          <div style={{ width: '100%', overflow: 'auto' }} className="border border-[rgba(0,0,0,0.08)] shadow-sm mb-12">
+          <div style={{ maxWidth: '100%', overflow: 'scroll' }} className="border border-[rgba(0,0,0,0.08)] shadow-sm mb-12">
             <table className="w-[1000px]">
               <thead>
                 <tr className="bg-gray-50">
@@ -618,8 +618,8 @@ export default function Webster() {
             }
           }
         `}</style>
-        <div className="flex justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
-          <Link href="/work/orgo" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+        <div className="flex flex-col md:flex-row justify-between pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20 gap-8">
+          <Link href="/work/orgo" className="flex flex-col items-start gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -637,7 +637,7 @@ export default function Webster() {
             </span>
           </Link>
 
-          <Link href="/work/inkbench-ez-mode" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-1/2">
+          <Link href="/work/inkbench-ez-mode" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
             <div className="flex items-center gap-2 font-bold text-[#0066cc]">
               <span>Up next</span>
               <svg
