@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const sourceSans3 = Source_Sans_3({
@@ -47,6 +48,7 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-source-sans-3)' }}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
