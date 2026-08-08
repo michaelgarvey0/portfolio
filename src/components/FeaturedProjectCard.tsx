@@ -83,24 +83,31 @@ export default function FeaturedProjectCard({
         {locked ? (
           <form onSubmit={handleUnlock} className="flex flex-col gap-2 max-w-[22rem]">
             <p className="text-xs text-[#999]">Password is on my resume - reach out if you don&apos;t have it.</p>
-            <div className="flex items-center gap-2 pl-4 pr-1.5 py-1.5 border border-gray-300 bg-white focus-within:border-[#0066cc] transition-colors">
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => { setPassword(e.target.value); setError(false); }}
-                placeholder="Enter password to unlock"
-                aria-label="Password"
-                className="flex-1 min-w-0 py-1.5 text-sm bg-transparent focus:outline-none"
-              />
-              <button
-                type="submit"
-                disabled={loading || !password}
-                className="px-4 py-2 bg-[#0066cc] text-white text-sm font-bold hover:bg-[#0052a3] transition-colors disabled:opacity-50 flex-shrink-0"
+            <div className="relative">
+              <div className="flex items-center gap-2 pl-4 pr-1.5 py-1.5 border border-gray-300 bg-white focus-within:border-[#0066cc] transition-colors">
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => { setPassword(e.target.value); setError(false); }}
+                  placeholder="Enter password to unlock"
+                  aria-label="Password"
+                  className="flex-1 min-w-0 py-1.5 text-sm bg-transparent focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  disabled={loading || !password}
+                  className="px-4 py-2 bg-[#0066cc] text-white text-sm font-bold hover:bg-[#0052a3] transition-colors disabled:opacity-50 flex-shrink-0"
+                >
+                  {loading ? '...' : 'Unlock'}
+                </button>
+              </div>
+              <span
+                className="absolute left-0 top-full mt-1.5 text-xs text-red-600 transition-opacity duration-300"
+                style={{ opacity: error ? 1 : 0, pointerEvents: 'none' }}
               >
-                {loading ? '...' : 'Unlock'}
-              </button>
+                Incorrect password - try again.
+              </span>
             </div>
-            {error && <span className="text-xs text-red-600">Incorrect password - try again.</span>}
           </form>
         ) : (
           <span className="inline-flex items-center gap-2 text-base font-bold text-[#0066cc]">

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getLiveflowToken } from '@/lib/liveflowAuth';
 
 export async function POST(request: NextRequest) {
   const { password } = await request.json();
@@ -7,8 +8,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: false }, { status: 401 });
   }
 
+  const token = await getLiveflowToken();
+
   const response = NextResponse.json({ success: true });
-  response.cookies.set('liveflow_auth', 'true', {
+  response.cookies.set('liveflow_auth', token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
