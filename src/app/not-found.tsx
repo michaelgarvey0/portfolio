@@ -8,7 +8,13 @@ export default function NotFound() {
 
   useEffect(() => {
     sessionStorage.setItem('show404Toast', 'true');
-    router.push('/work');
+
+    // If we have somewhere in-app to go back to, stay put instead of bouncing to /work.
+    if (window.history.length > 1 && window.history.state) {
+      router.back();
+    } else {
+      router.push('/work');
+    }
   }, [router]);
 
   return null;

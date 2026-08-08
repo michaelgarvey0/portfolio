@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
+import Toast404 from "@/components/Toast404";
 import "./globals.css";
 
 const sourceSans3 = Source_Sans_3({
@@ -10,10 +11,10 @@ const sourceSans3 = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: "Michael Garvey - Product Designer & UX Lead",
-  description: "Portfolio of Michael Garvey, Head of Product and UX at Orgo, showcasing design systems, mobile apps, and digital experiences.",
+  description: "Portfolio of Michael Garvey, Product Designer at LiveFlow, showcasing design systems, mobile apps, and digital experiences.",
   openGraph: {
     title: "Michael Garvey - Product Designer & UX Lead",
-    description: "Portfolio of Michael Garvey, Head of Product and UX at Orgo, showcasing design systems, mobile apps, and digital experiences.",
+    description: "Portfolio of Michael Garvey, Product Designer at LiveFlow, showcasing design systems, mobile apps, and digital experiences.",
     url: "https://garvey.design",
     siteName: "Michael Garvey",
     images: [
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Michael Garvey - Product Designer & UX Lead",
-    description: "Portfolio of Michael Garvey, Head of Product and UX at Orgo, showcasing design systems, mobile apps, and digital experiences.",
+    description: "Portfolio of Michael Garvey, Product Designer at LiveFlow, showcasing design systems, mobile apps, and digital experiences.",
     images: ["/opengraph.png"],
   },
 };
@@ -47,6 +48,7 @@ export default function RootLayout({
         style={{ fontFamily: 'var(--font-source-sans-3)' }}
       >
         {children}
+        <Toast404 />
       </body>
     </html>
   );

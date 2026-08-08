@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Work - Michael Garvey",
-  description: "Portfolio of Michael Garvey, Head of Product and UX at Orgo, showcasing design systems, mobile apps, and digital experiences.",
+  description: "Portfolio of Michael Garvey, Product Designer at LiveFlow, showcasing design systems, mobile apps, and digital experiences.",
   openGraph: {
     title: "Work - Michael Garvey",
-    description: "Portfolio of Michael Garvey, Head of Product and UX at Orgo, showcasing design systems, mobile apps, and digital experiences.",
+    description: "Portfolio of Michael Garvey, Product Designer at LiveFlow, showcasing design systems, mobile apps, and digital experiences.",
     url: "https://garvey.design/work",
     images: [{ url: "/work-og.png", width: 1200, height: 630 }],
   },

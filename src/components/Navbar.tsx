@@ -33,12 +33,13 @@ export default function Navbar() {
   };
 
   const caseStudies = [
-    { href: '/work/orgo', title: 'Orgo: The App', tag: 'Mobile App Design + Development', logo: '/assets/case-studies/orgo/logo.svg' },
-    { href: '/work/webster', title: 'Webster Bank', tag: 'Design System', logo: '/assets/case-studies/webster/logo.svg' },
-    { href: '/work/inkbench-ez-mode', title: 'Inkbench EZ Mode', tag: 'Web App Design', logo: '/assets/case-studies/inkbench/logo.svg' },
-    { href: '/work/orgo-brand', title: 'Orgo: The Brand', tag: 'Branding and Site Design', logo: '/assets/case-studies/orgo/logo.svg' },
-    { href: '/work/newport-in-bloom', title: 'Newport in Bloom', tag: 'Site Design + Development', logo: '/assets/case-studies/newport-in-bloom/logo.png' },
-    { href: '/work/beeline', title: 'Beeline', tag: 'Mobile App Concept', logo: '/assets/case-studies/beeline/logo.svg' },
+    { href: '/work/liveflow', title: 'LiveFlow', tag: 'AI Web App Design + Dev', logo: '', locked: true },
+    { href: '/work/orgo', title: 'Orgo: The App', tag: 'Mobile App Design + Dev', logo: '/assets/case-studies/orgo/logo.svg', locked: false },
+    { href: '/work/webster', title: 'Webster Bank', tag: 'Design System', logo: '/assets/case-studies/webster/logo.svg', locked: false },
+    { href: '/work/inkbench-ez-mode', title: 'Inkbench EZ Mode', tag: 'Web App Design', logo: '/assets/case-studies/inkbench/logo.svg', locked: false },
+    { href: '/work/orgo-brand', title: 'Orgo: The Brand', tag: 'Branding and Site Design', logo: '/assets/case-studies/orgo/logo.svg', locked: false },
+    { href: '/work/newport-in-bloom', title: 'Newport in Bloom', tag: 'Site Design + Dev', logo: '/assets/case-studies/newport-in-bloom/logo.png', locked: false },
+    { href: '/work/beeline', title: 'Beeline', tag: 'Mobile App Concept', logo: '/assets/case-studies/beeline/logo.svg', locked: false },
   ];
 
   return (
@@ -68,10 +69,10 @@ export default function Navbar() {
         animate={{
           opacity: 1,
           y: 0,
-          backgroundColor: mobileMenuOpen ? 'rgb(255, 255, 255)' : 'rgba(249, 250, 251, 0.95)'
+          backgroundColor: mobileMenuOpen ? 'rgb(255, 255, 255)' : 'rgba(249, 250, 251, 0.75)'
         }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-0 right-0 border-b border-[rgba(0,0,0,0.08)] z-50"
+        className="fixed top-0 left-0 right-0 border-b border-[rgba(0,0,0,0.08)] z-50 backdrop-blur-md"
       >
         <div className="mx-auto flex justify-between items-center px-6 py-3 lg:px-12 lg:py-6" style={{ maxWidth: 'var(--max-width)' }}>
           <Link href="/work" className="text-2xl font-bold text-[#1e3f66] hover:text-[#0d243f] transition-colors" style={{ letterSpacing: 0 }}>
@@ -168,7 +169,15 @@ export default function Navbar() {
                         {study.logo && <img src={study.logo} alt={study.title} className="w-full h-full object-contain" />}
                       </div>
                       <div className="flex-1">
-                        <div className="text-[0.9rem] text-[#333] font-bold">{study.title}</div>
+                        <div className="text-[0.9rem] text-[#333] font-bold flex items-center gap-1.5">
+                          {study.title}
+                          {study.locked && (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                          )}
+                        </div>
                         <div className="text-[0.75rem] text-[#999] mt-1">{study.tag}</div>
                       </div>
                     </Link>
@@ -234,7 +243,15 @@ export default function Navbar() {
                         </div>
                       )}
                       <div className="text-center">
-                        <div className="text-[0.85rem] text-[#333] font-semibold leading-tight">{study.title}</div>
+                        <div className="text-[0.85rem] text-[#333] font-semibold leading-tight flex items-center justify-center gap-1">
+                          {study.title}
+                          {study.locked && (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                          )}
+                        </div>
                         <div className="text-[0.65rem] text-[#999] mt-1 leading-tight">{study.tag}</div>
                       </div>
                     </Link>

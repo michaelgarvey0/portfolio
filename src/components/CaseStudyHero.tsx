@@ -7,8 +7,8 @@ interface CaseStudyHeroProps {
   description: string;
   gradientFrom: string;
   gradientTo: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   textColor?: string;
   ctaText?: string;
   ctaHref?: string;
@@ -117,7 +117,16 @@ export default function CaseStudyHero({
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
               style={{ y: imageY, scale: imageScale, opacity: imageOpacity }}
             >
-              <img src={imageSrc} alt={imageAlt} className="w-full block" style={{ aspectRatio: '16/10' }} />
+              {imageSrc ? (
+                <img src={imageSrc} alt={imageAlt} className="w-full block" style={{ aspectRatio: '16/10' }} />
+              ) : (
+                <div
+                  className="w-full flex items-center justify-center"
+                  style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #9CA3AF 0%, #4B5563 100%)' }}
+                >
+                  <span className="text-white/50 text-sm font-medium tracking-wide">Image coming soon</span>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>
