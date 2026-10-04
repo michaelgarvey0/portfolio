@@ -10,7 +10,7 @@ import CaseStudyHero from '@/components/CaseStudyHero';
 export default function LiveFlow() {
   const [activeSection, setActiveSection] = useState('summary');
   const [showSidebarTitle, setShowSidebarTitle] = useState(false);
-  const brandColor = '#4B5563';
+  const brandColor = '#2E54AB';
 
   const sections = [
     { id: 'summary', title: 'Summary' },
@@ -79,12 +79,13 @@ export default function LiveFlow() {
     <div className="min-h-screen bg-white relative">
       <Navbar />
 
-      {/* Hero — no image yet, CaseStudyHero falls back to a gray placeholder */}
       <CaseStudyHero
         title="LiveFlow"
         description="Agentic accounting that closes the books on its own."
-        gradientFrom="#9CA3AF"
-        gradientTo="#4B5563"
+        gradientFrom="#0C1163"
+        gradientTo="#2E54AB"
+        imageSrc="/assets/case-studies/liveflow/placeholder.svg"
+        imageAlt="LiveFlow placeholder"
         ctaText="Visit LiveFlow"
         ctaHref="https://liveflow.com"
         ctaColor="#374151"
@@ -204,7 +205,7 @@ export default function LiveFlow() {
             }}
           >
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-12 h-12" style={{ background: 'linear-gradient(135deg, #9CA3AF 0%, #4B5563 100%)' }} />
+              <div className="w-12 h-12" style={{ background: 'linear-gradient(135deg, #0C1163 0%, #2E54AB 100%)' }} />
               <span className="font-bold text-xl text-[#333]">LiveFlow</span>
             </div>
           </div>

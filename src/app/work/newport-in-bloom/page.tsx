@@ -281,7 +281,7 @@ export default function NewportInBloom() {
               description="The Preservation Society of Newport County preserves and protects the area's architectural, decorative arts, landscape, and social history. They run the Newport Mansions, which primarily make Newport a tourist destination."
               bulletPoints={[
                 "Significant amount of information",
-                "All pages are accessible from the primary navigation menu— some have four levels of dropdowns",
+                "All pages are accessible from the primary navigation menu- some have four levels of dropdowns",
                 "Photo-heavy (pictures of mansion interiors, exteriors, gardens, etc.)",
                 "On specific pages, they employ secondary navigation in the form of a sidebar",
                 "Primary CTAs are for member login, ticket purchase, and donations",
@@ -705,7 +705,7 @@ export default function NewportInBloom() {
               <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">HOW IT ADDRESSES THE PROBLEM</h5>
               <ul className="space-y-3 ml-6 list-disc">
                 <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">The section links inform the users what information they can access from this page.</strong> This was a problem during usability testing, and some quick re-testing on that particular task proved this to be an effective solution.</li>
-                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Improved visual hierarchy.</strong> There aren't as many homogenous blocks of text— the intention here is to drive the user's attention to the header, then to the update, and then to the rest of the copy.</li>
+                <li className="text-[1.15rem] text-[#666] leading-[1.8]"><strong className="font-bold text-[#212121]">Improved visual hierarchy.</strong> There aren't as many homogenous blocks of text- the intention here is to drive the user's attention to the header, then to the update, and then to the rest of the copy.</li>
               </ul>
             </div>
           </div>

@@ -5,14 +5,14 @@ import LiveFlowGate from "@/components/LiveFlowGate";
 
 export const metadata: Metadata = {
   title: "LiveFlow - Michael Garvey",
-  description: "Agentic accounting that closes the books on its own.",
+  description: "I'm a product designer at LiveFlow, building Flow - an AI-native ERP that automates financial close for growing businesses. I design and build the AI features myself, prompts included, with real business context behind every decision.",
   robots: {
     index: false,
     follow: false,
   },
   openGraph: {
     title: "LiveFlow - Michael Garvey",
-    description: "Agentic accounting that closes the books on its own.",
+    description: "I'm a product designer at LiveFlow, building Flow - an AI-native ERP that automates financial close for growing businesses. I design and build the AI features myself, prompts included, with real business context behind every decision.",
     url: "https://garvey.design/work/liveflow",
     images: [{ url: "/liveflow-og.png", width: 1200, height: 630 }],
   },
@@ -22,19 +22,25 @@ export const metadata: Metadata = {
   },
 };
 
-// Second, independent check — the middleware already blocks this route, but
-// this makes sure the actual page content is never rendered without the
-// right cookie even if the middleware layer is ever bypassed or misconfigured.
+// Gate is fail-safe: any problem checking auth (missing env var, etc.) falls
+// through to "not authenticated" and shows the password prompt - never an
+// error page, never a redirect, never the real content.
 export default async function LiveFlowLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const cookie = cookieStore.get('liveflow_auth')?.value;
-  const expected = await getLiveflowToken();
+  let authed = false;
+  try {
+    const cookieStore = await cookies();
+    const cookie = cookieStore.get('liveflow_auth')?.value;
+    const expected = await getLiveflowToken();
+    authed = cookie === expected;
+  } catch {
+    authed = false;
+  }
 
-  if (cookie !== expected) {
+  if (!authed) {
     return <LiveFlowGate />;
   }
 

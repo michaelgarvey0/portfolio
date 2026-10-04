@@ -247,7 +247,7 @@ export default function OrgoCaseAlt() {
             ].map((item, i) => (
               <div key={i} className="p-8 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)]">
                 <p className="text-[1.1rem] text-[#333] italic mb-6 leading-relaxed">"{item.quote}"</p>
-                <p className="text-sm text-[#666] font-bold">— {item.author}</p>
+                <p className="text-sm text-[#666] font-bold">- {item.author}</p>
               </div>
             ))}
           </div>
@@ -803,7 +803,7 @@ export default function OrgoCaseAlt() {
                   ))}
                 </div>
                 <p className="text-[1.1rem] text-[#333] italic mb-6 leading-relaxed">"{item.quote}"</p>
-                <p className="text-sm text-[#666] font-bold">— {item.author}</p>
+                <p className="text-sm text-[#666] font-bold">- {item.author}</p>
               </div>
             ))}
           </div>

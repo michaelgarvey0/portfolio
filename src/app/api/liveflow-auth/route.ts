@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getLiveflowToken } from '@/lib/liveflowAuth';
 
+export async function GET(request: NextRequest) {
+  try {
+    const cookie = request.cookies.get('liveflow_auth')?.value;
+    const expected = await getLiveflowToken();
+    return NextResponse.json({ authed: cookie === expected });
+  } catch {
+    return NextResponse.json({ authed: false });
+  }
+}
+
 export async function POST(request: NextRequest) {
   const { password } = await request.json();
 

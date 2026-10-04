@@ -369,7 +369,7 @@ export default function Beeline() {
                   "Can create different types of lists",
                   "Allows users to set dietary preferences",
                   "Has no location information within stores",
-                  "Cannot search generically—requires specific product names",
+                  "Cannot search generically-requires specific product names",
                   "Focuses on achieving lowest price"
                 ]}
                 openAccordion={openAccordion}

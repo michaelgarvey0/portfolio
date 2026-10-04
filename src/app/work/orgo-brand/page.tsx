@@ -161,7 +161,7 @@ export default function OrgoBrand() {
           </div>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">
-            Orgo is a mobile app that <strong>streamlines personal logistics</strong>—ensuring the <strong>right people get to the right places on time</strong>. While our initial focus is on <strong>busy families</strong>, the app's utility extends to various scheduling scenarios. As a co-founder, I contributed across multiple areas: <strong>brand creation, marketing site design, and app design and development</strong>.
+            Orgo is a mobile app that <strong>streamlines personal logistics</strong>-ensuring the <strong>right people get to the right places on time</strong>. While our initial focus is on <strong>busy families</strong>, the app's utility extends to various scheduling scenarios. As a co-founder, I contributed across multiple areas: <strong>brand creation, marketing site design, and app design and development</strong>.
           </p>
 
           <p className="text-[1.15rem] text-[#666] leading-[1.8] mb-8">

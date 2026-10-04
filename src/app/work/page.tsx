@@ -83,8 +83,11 @@ export default function Work() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
             <h1 className="font-sans text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-[1.4] text-[#333] tracking-tight">
-              I'm Michael Garvey, currently leading product design at <a href="https://liveflow.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:no-underline">LiveFlow</a>, building experiences that bridge creativity and logic.
+              I&apos;m a product designer who codes, builds AI-powered features, and understands the business behind the product - currently at <a href="https://liveflow.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:no-underline">LiveFlow</a>.
             </h1>
+            <p className="mt-8 max-w-[36rem] text-[0.95rem] text-[#999]">
+              I built this portfolio with Next.js, TypeScript, and Framer Motion, paired with Claude Code the whole way.
+            </p>
           </motion.div>
         </section>
 
@@ -100,8 +103,9 @@ export default function Work() {
               linkText="View project"
               delay={0.5}
               isExiting={!imagesLoaded}
-              gradientFrom="#9CA3AF"
-              gradientTo="#4B5563"
+              imageSrc="/assets/case-studies/liveflow/placeholder.svg"
+              gradientFrom="#0C1163"
+              gradientTo="#2E54AB"
               locked
             />
 
@@ -109,7 +113,7 @@ export default function Work() {
               href="/work/orgo"
               title="Orgo"
               tag="Mobile App Design + Dev"
-              description="B2C mobile app for managing daily life. End-to-end product design from research to launch."
+              description="Co-founded and built this from an idea into a real B2C mobile app. Led product and design end-to-end, from the first sketch to what's shipped today."
               linkText="View project"
               delay={0.65}
               isExiting={!imagesLoaded}

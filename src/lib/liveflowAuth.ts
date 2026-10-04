@@ -1,6 +1,6 @@
 // Computes a signed token proving the LiveFlow gate was unlocked with the
 // correct password. The signing secret never leaves the server, so a visitor
-// can't just fabricate a valid cookie value — they'd need this exact HMAC,
+// can't just fabricate a valid cookie value - they'd need this exact HMAC,
 // which only the server (given the secret) can produce.
 const ENCODER = new TextEncoder();
 

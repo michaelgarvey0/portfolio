@@ -122,7 +122,7 @@ export default function CaseStudyHero({
               ) : (
                 <div
                   className="w-full flex items-center justify-center"
-                  style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #9CA3AF 0%, #4B5563 100%)' }}
+                  style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #0C1163 0%, #2E54AB 100%)' }}
                 >
                   <span className="text-white/50 text-sm font-medium tracking-wide">Image coming soon</span>
                 </div>

@@ -21,7 +21,7 @@ export default function Home() {
     const canvas = canvasRef.current;
     if (!scene || !back || !mid || !front || !canvas) return;
 
-    // Parallax — moving the front SVG moves the portal with it, since it's drawn inside the same viewBox.
+    // Parallax - moving the front SVG moves the portal with it, since it's drawn inside the same viewBox.
     let cleanupParallax = () => {};
     if (!reduce && window.matchMedia('(hover: hover)').matches) {
       const onMove = (e: MouseEvent) => {
@@ -266,11 +266,11 @@ export default function Home() {
               d="M0,520 C180,480 320,560 500,500 C680,440 780,300 950,260 C1080,230 1180,320 1300,360 C1380,385 1420,400 1440,400 L1440,700 L0,700 Z"
               fill="#5B7699"
             />
-            {/* Grain clipped to the dune silhouette only — the sky and portal stay smooth. Faint here: atmospheric distance softens detail. */}
+            {/* Grain clipped to the dune silhouette only - the sky and portal stay smooth. Faint here: atmospheric distance softens detail. */}
             <rect x="0" y="0" width="1440" height="700" filter="url(#grainMid)" clipPath="url(#midDuneClip)" />
           </svg>
 
-          {/* Portal is drawn inside this SVG's own coordinate space, at the dune's actual peak (1010,255) —
+          {/* Portal is drawn inside this SVG's own coordinate space, at the dune's actual peak (1010,255) -
               so it scales and positions together with the dune shape, and can never drift out of alignment. */}
           <svg ref={frontRef} className="layer front-dune" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMax slice">
             <defs>
@@ -296,7 +296,7 @@ export default function Home() {
               d="M0,620 C150,600 280,650 420,600 C560,550 680,420 820,340 C900,295 950,270 1010,255 C1070,270 1130,300 1220,360 C1320,420 1400,460 1440,470 L1440,700 L0,700 Z"
               fill="#22314A"
             />
-            {/* Grain clipped to the dune silhouette — sits below the portal so the light itself stays clean. */}
+            {/* Grain clipped to the dune silhouette - sits below the portal so the light itself stays clean. */}
             <rect x="0" y="0" width="1440" height="700" filter="url(#grainFront)" clipPath="url(#frontDuneClip)" />
             <circle className="portal-pulse" cx="1010" cy="185" r="150" fill="url(#portalHalo)" />
             <path
@@ -312,7 +312,7 @@ export default function Home() {
         </div>
 
         <div className="hero-copy">
-          <p className="eyebrow">Michael Garvey &mdash; Product &amp; UX</p>
+          <p className="eyebrow">Michael Garvey - Product &amp; UX</p>
           <h1>A peek inside my head.</h1>
           <p className="sub">I&apos;m Head of Product &amp; UX at Orgo. Step through to the work.</p>
           <Link href="/work" className="cta">
