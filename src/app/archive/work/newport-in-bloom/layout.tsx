@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
-
-const raleway = Raleway({
-  weight: ['400', '700'],
-  subsets: ["latin"],
-  variable: "--font-raleway",
-});
+import { raleway } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Newport in Bloom - Michael Garvey",

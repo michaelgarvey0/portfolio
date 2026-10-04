@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-
-const dmSans = DM_Sans({
-  weight: ['400', '700'],
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-});
+import { dmSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Beeline - Michael Garvey",
