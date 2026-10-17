@@ -1,9 +1,8 @@
 /**
  * Single source of truth for LiveFlow case study content.
  *
- * All three exploration layouts (/work/liveflow-v1, -v2, -v3) render from this
- * file, so structure can be compared without rewriting content three times.
- * Whichever layout wins becomes /work/liveflow with no content migration.
+ * Raw source material for the LiveFlow case studies. The old exploration pages
+ * that rendered from this file were removed to start fresh.
  *
  * Prose marked [CONFIRM] is a first draft written from Michael's summary plus
  * domain knowledge - it needs his verification before this page is shown to
