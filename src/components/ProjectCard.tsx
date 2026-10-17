@@ -10,6 +10,7 @@ interface ProjectCardProps {
   description: string;
   delay: number;
   isExiting: boolean;
+  instant?: boolean;
   imageHeight?: string;
   imageSrc?: string;
 }
@@ -21,12 +22,13 @@ export default function ProjectCard({
   description,
   delay,
   isExiting,
+  instant = false,
   imageHeight = "200px",
   imageSrc
 }: ProjectCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={instant ? false : { opacity: 0, y: 30 }}
       animate={{ opacity: isExiting ? 0 : 1, y: isExiting ? 30 : 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: isExiting ? 0 : delay }}
       className="flex"

@@ -321,8 +321,8 @@ export function SlideBody({
         >
           {eyebrow}
         </div>
-        {graphic && <div style={{ marginBottom: '3rem' }}>{graphic}</div>}
-        <div style={{ fontSize: '1.65rem', color: LF.grey[800], lineHeight: 1.6, fontWeight: 500 }}>{children}</div>
+        <div style={{ fontSize: '1.65rem', color: LF.grey[800], lineHeight: 1.6, fontWeight: 500, marginBottom: graphic ? '3rem' : 0 }}>{children}</div>
+        {graphic && <div>{graphic}</div>}
       </div>
     </div>
   );

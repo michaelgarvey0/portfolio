@@ -14,7 +14,7 @@ export default function Navbar() {
 
   // Check if we're coming from the home page on mount
   const isFromHome = typeof window !== 'undefined' && sessionStorage.getItem('isFromHome') === 'true';
-  const shouldAnimate = isFromHome;
+  const shouldAnimate = false;
 
   useEffect(() => {
     // Clear the flag after first render

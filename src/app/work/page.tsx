@@ -72,23 +72,26 @@ export default function Work() {
         }}
       />
 
+      <motion.div
+        initial={{ opacity: 1 }}
+        animate={{ opacity: imagesLoaded ? 0 : 1 }}
+        transition={{ duration: 0.8 }}
+        className="fixed inset-0 bg-white z-[100] pointer-events-none"
+      />
+
       <Navbar />
 
       <div className="mx-auto relative z-[2] main-container" style={{ maxWidth: 'var(--max-width)' }}>
         {/* Hero Section */}
         <section className="relative hero-section">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: imagesLoaded ? 1 : 0, y: imagesLoaded ? 0 : 30 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          >
+          <div>
             <h1 className="font-sans text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-[1.4] text-[#333] tracking-tight">
               I&apos;m a product designer who codes, builds AI-powered features, and understands the business behind the product - currently at <a href="https://liveflow.com" target="_blank" rel="noopener noreferrer" className="text-[#0066cc] underline hover:no-underline">LiveFlow</a>.
             </h1>
             <p className="mt-8 max-w-[36rem] text-[0.95rem] text-[#999]">
               I built this portfolio with Next.js, TypeScript, and Framer Motion, paired with Claude Code the whole way.
             </p>
-          </motion.div>
+          </div>
         </section>
 
         {/* Featured Work Section */}
@@ -101,8 +104,9 @@ export default function Work() {
               tag="AI Web App Design + Dev"
               description="Agentic accounting platform that closes the books on its own. Leading product design for the AI system replacing legacy ERPs."
               linkText="View project"
-              delay={0.5}
-              isExiting={!imagesLoaded}
+              delay={0}
+              isExiting={false}
+              instant
               imageSrc="/assets/case-studies/liveflow/placeholder.svg"
               gradientFrom="#0C1163"
               gradientTo="#2E54AB"
@@ -115,8 +119,9 @@ export default function Work() {
               tag="Mobile App Design + Dev"
               description="Co-founded and built this from an idea into a real B2C mobile app. Led product and design end-to-end, from the first sketch to what's shipped today."
               linkText="View project"
-              delay={0.65}
-              isExiting={!imagesLoaded}
+              delay={0}
+              isExiting={false}
+              instant
               imageSrc="/assets/case-studies/orgo/preview.png"
             />
 
@@ -127,8 +132,9 @@ export default function Work() {
                 title="Webster Bank"
                 tag="Design System"
                 description="Migrated and enhanced their design system from Sketch to Figma."
-                delay={0.8}
-                isExiting={!imagesLoaded}
+                delay={0}
+                isExiting={false}
+              instant
                 imageSrc="/assets/case-studies/webster/preview.png"
               />
 
@@ -137,8 +143,9 @@ export default function Work() {
                 title="Inkbench EZ Mode"
                 tag="Web App Design"
                 description="Converting wireframes to high-fidelity designs."
-                delay={0.95}
-                isExiting={!imagesLoaded}
+                delay={0}
+                isExiting={false}
+              instant
                 imageSrc="/assets/case-studies/inkbench/preview.png"
               />
 
@@ -147,8 +154,9 @@ export default function Work() {
                 title="Orgo: The Brand"
                 tag="Branding and Site Design"
                 description="Defining a brand for a B2C mobile app."
-                delay={1.1}
-                isExiting={!imagesLoaded}
+                delay={0}
+                isExiting={false}
+              instant
                 imageSrc="/assets/case-studies/orgo-brand/preview.png"
               />
 
@@ -157,8 +165,9 @@ export default function Work() {
                 title="Newport in Bloom"
                 tag="Site Design + Dev"
                 description="Designing and developing a responsive website for a local nonprofit."
-                delay={1.25}
-                isExiting={!imagesLoaded}
+                delay={0}
+                isExiting={false}
+              instant
                 imageSrc="/assets/case-studies/newport-in-bloom/preview.png"
               />
 
@@ -167,8 +176,9 @@ export default function Work() {
                 title="Beeline"
                 tag="Mobile App Concept"
                 description="A GPS for your grocery shopping experience."
-                delay={1.4}
-                isExiting={!imagesLoaded}
+                delay={0}
+                isExiting={false}
+              instant
                 imageSrc="/assets/case-studies/beeline/preview.png"
               />
             </div>
