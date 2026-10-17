@@ -12,6 +12,37 @@ import doorMobileAnimation from '../../public/door-mobile.json';
 import doorZoomAnimation from '../../public/door-zoom.json';
 import doorZoomMobileAnimation from '../../public/door-zoom-mobile.json';
 
+const DOOR_SETTLE_FRAME = 62;
+const DOOR_OPEN_FRAME = 150;
+
+// The door swing is eased inside the animation, so most of the visible movement happens in the
+// first frames. These map "how open it looks" (0-1) to a frame, so hover can ease evenly both ways.
+const bezierY = (t: number) => {
+  let lo = 0;
+  let hi = 1;
+  for (let i = 0; i < 24; i++) {
+    const s = (lo + hi) / 2;
+    const x = 3 * (1 - s) * (1 - s) * s * 0.33 + 3 * (1 - s) * s * s * 0.11 + s * s * s;
+    if (x < t) lo = s;
+    else hi = s;
+  }
+  const s = (lo + hi) / 2;
+  return 1 - (1 - s) * (1 - s) * (1 - s);
+};
+const swingAt = (frame: number) => bezierY(Math.min(1, Math.max(0, (frame - 30) / 120)));
+const SETTLE_SWING = swingAt(DOOR_SETTLE_FRAME);
+const frameForSwing = (swing: number) => {
+  let lo = 30;
+  let hi = DOOR_OPEN_FRAME;
+  for (let i = 0; i < 24; i++) {
+    const mid = (lo + hi) / 2;
+    if (swingAt(mid) < swing) lo = mid;
+    else hi = mid;
+  }
+  return (lo + hi) / 2;
+};
+const frameForOpenness = (u: number) => frameForSwing(SETTLE_SWING + (1 - SETTLE_SWING) * u);
+
 export default function Home() {
   // Check sessionStorage immediately before rendering
   const isReturningFromStorage = typeof window !== 'undefined' && sessionStorage.getItem('isReturning') === 'true';
@@ -27,7 +58,8 @@ export default function Home() {
   const doorCrackRef = useRef<any>(null);
   const doorZoomRef = useRef<any>(null);
   const backgroundRef = useRef<any>(null);
-  const doorFrame = useRef({ current: 150, target: 150, rate: 20, live: false });
+  const doorFrame = useRef({ current: 0, target: 0, rate: 6, live: false });
+  const overButtonRef = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const overDoorRef = useRef(false);
   const router = useRouter();
@@ -101,7 +133,7 @@ export default function Home() {
     if (doorCrackRef.current) {
       doorCrackRef.current.setDirection(1);
       doorCrackRef.current.setSpeed(1.5);
-      doorCrackRef.current.play();
+      doorCrackRef.current.playSegments([0, DOOR_SETTLE_FRAME], true);
     }
 
     // Debug: Log SVG structure after Lottie renders
@@ -139,25 +171,16 @@ export default function Home() {
     // Show button after animation completes (4s for 1.5x speed + small delay)
     const buttonTimer = setTimeout(() => {
       setShowButton(true);
-      doorFrame.current.live = true;
     }, 4200);
 
-    const REST = 64;
-    const MAX = 70;
-    const MIN = 40;
-    const onMove = (e: PointerEvent) => {
-      if (!doorFrame.current.live && doorCrackRef.current) {
-        const item = doorCrackRef.current.animationItem ?? doorCrackRef.current;
-        doorFrame.current.current = Math.max(0, item.currentFrame ?? 0);
-        doorFrame.current.live = true;
-      }
-      const doorX = window.innerWidth <= 767 ? 0.5 : 0.75;
-      const dx = e.clientX / window.innerWidth - doorX;
-      const dy = e.clientY / window.innerHeight - 0.5;
-      const out = Math.hypot(Math.max(0, Math.abs(dx) - 0.11), Math.max(0, Math.abs(dy) - 0.28) * 0.6);
-      const prox = Math.exp(-Math.pow(out / 0.16, 2));
-      doorFrame.current.target = MIN + (MAX - MIN) * prox;
+    // Hover only takes over once the entrance has settled, so it can never interrupt it
+    const liveTimer = setTimeout(() => {
+      doorFrame.current.current = 0;
+      doorFrame.current.live = true;
+      doorFrame.current.target = overDoorRef.current || overButtonRef.current ? 1 : 0;
+    }, Math.ceil((DOOR_SETTLE_FRAME / 30 / 1.5) * 1000) + 150);
 
+    const onMove = (e: PointerEvent) => {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       const mobile = vw <= 767;
@@ -168,14 +191,16 @@ export default function Home() {
       const toY = (y: number) => offY + scale * (1250 + (y - 1500) * 0.83333);
       const inDoor = e.clientX >= toX(3694) && e.clientX <= toX(4641) && e.clientY >= toY(742) && e.clientY <= toY(2400);
       overDoorRef.current = inDoor;
-      if (rootRef.current) rootRef.current.style.cursor = inDoor && doorFrame.current.live ? 'pointer' : '';
+      if (rootRef.current) rootRef.current.style.cursor = inDoor ? 'pointer' : '';
+      if (doorFrame.current.live) {
+        doorFrame.current.target = inDoor || overButtonRef.current ? 1 : 0;
+      }
     };
     const onLeave = () => {
-      doorFrame.current.target = REST;
       overDoorRef.current = false;
       if (rootRef.current) rootRef.current.style.cursor = '';
+      if (doorFrame.current.live) doorFrame.current.target = overButtonRef.current ? 1 : 0;
     };
-    doorFrame.current.target = REST;
     window.addEventListener('pointermove', onMove);
     document.addEventListener('pointerleave', onLeave);
 
@@ -189,7 +214,7 @@ export default function Home() {
         const next = d.current + (d.target - d.current) * Math.min(1, dt * d.rate);
         if (Math.abs(next - d.current) > 0.02) {
           d.current = next;
-          doorCrackRef.current.goToAndStop(next, true);
+          doorCrackRef.current.goToAndStop(frameForOpenness(next), true);
         }
       }
       raf = requestAnimationFrame(tick);
@@ -198,6 +223,7 @@ export default function Home() {
 
     return () => {
       clearTimeout(buttonTimer);
+      clearTimeout(liveTimer);
       cancelAnimationFrame(raf);
       window.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerleave', onLeave);
@@ -208,9 +234,9 @@ export default function Home() {
     if (rootRef.current) rootRef.current.style.cursor = '';
     overDoorRef.current = false;
     const d = doorFrame.current;
-    if (d.live && Math.abs(d.current - 150) > 1) {
-      d.target = 150;
-      d.rate = 22;
+    if (d.live && d.current < 0.97) {
+      d.target = 1;
+      d.rate = 24;
       setIsFadingOut(true);
       setTimeout(() => {
         d.live = false;
@@ -255,7 +281,7 @@ export default function Home() {
       ref={rootRef}
       className="relative min-h-screen overflow-hidden bg-white"
       onClick={() => {
-        if (overDoorRef.current && doorFrame.current.live && !isFadingOut && !isReversing) handleDoorClick();
+        if (overDoorRef.current && !isFadingOut && !isReversing) handleDoorClick();
       }}
     >
       {/* Background Lottie animation */}
@@ -470,6 +496,14 @@ export default function Home() {
           {/* Button with icon */}
           <motion.button
             onClick={handleDoorClick}
+            onPointerEnter={() => {
+              overButtonRef.current = true;
+              if (doorFrame.current.live) doorFrame.current.target = 1;
+            }}
+            onPointerLeave={() => {
+              overButtonRef.current = false;
+              if (doorFrame.current.live) doorFrame.current.target = overDoorRef.current ? 1 : 0;
+            }}
             disabled={isFadingOut || isReversing || (isReturning && !showButton)}
             initial={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
             animate={{
