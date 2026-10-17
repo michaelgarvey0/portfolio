@@ -14,6 +14,8 @@ import doorZoomMobileAnimation from '../../public/door-zoom-mobile.json';
 
 const DOOR_SETTLE_FRAME = 62;
 const DOOR_OPEN_FRAME = 150;
+const ENTRANCE_MS = 1700;
+const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 // The door swing is eased inside the animation, so most of the visible movement happens in the
 // first frames. These map "how open it looks" (0-1) to a frame, so hover can ease evenly both ways.
@@ -60,6 +62,7 @@ export default function Home() {
   const backgroundRef = useRef<any>(null);
   const doorFrame = useRef({ current: 0, target: 0, rate: 6, live: false });
   const overButtonRef = useRef(false);
+  const entranceRef = useRef({ start: 0, done: false });
   const rootRef = useRef<HTMLDivElement>(null);
   const overDoorRef = useRef(false);
   const router = useRouter();
@@ -131,10 +134,9 @@ export default function Home() {
       doorZoomRef.current.setSpeed(5);
     }
     if (doorCrackRef.current) {
-      doorCrackRef.current.setDirection(1);
-      doorCrackRef.current.setSpeed(1.5);
-      doorCrackRef.current.playSegments([0, DOOR_SETTLE_FRAME], true);
+      doorCrackRef.current.goToAndStop(frameForSwing(0), true);
     }
+    entranceRef.current = { start: performance.now(), done: false };
 
     // Debug: Log SVG structure after Lottie renders
     setTimeout(() => {
@@ -178,7 +180,7 @@ export default function Home() {
       doorFrame.current.current = 0;
       doorFrame.current.live = true;
       doorFrame.current.target = overDoorRef.current || overButtonRef.current ? 1 : 0;
-    }, Math.ceil((DOOR_SETTLE_FRAME / 30 / 1.5) * 1000) + 150);
+    }, ENTRANCE_MS + 60);
 
     const onMove = (e: PointerEvent) => {
       const vw = window.innerWidth;
@@ -210,6 +212,12 @@ export default function Home() {
       const d = doorFrame.current;
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
+      const ent = entranceRef.current;
+      if (!ent.done && ent.start && doorCrackRef.current) {
+        const t = Math.min(1, (now - ent.start) / ENTRANCE_MS);
+        doorCrackRef.current.goToAndStop(frameForSwing(SETTLE_SWING * easeInOutCubic(t)), true);
+        if (t >= 1) ent.done = true;
+      }
       if (d.live && doorCrackRef.current) {
         const next = d.current + (d.target - d.current) * Math.min(1, dt * d.rate);
         if (Math.abs(next - d.current) > 0.02) {
