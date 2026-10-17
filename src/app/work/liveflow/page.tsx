@@ -1,303 +1,138 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import CaseStudyHero from '@/components/CaseStudyHero';
+import RoiLine from '@/components/liveflow/RoiLine';
+import StoryViewer from '@/components/liveflow/StoryViewer';
+import { byTier, TIER_LABELS, type CaseStudy } from '@/content/liveflowCaseStudies';
 
-export default function LiveFlow() {
-  const [activeSection, setActiveSection] = useState('summary');
-  const [showSidebarTitle, setShowSidebarTitle] = useState(false);
-  const brandColor = '#2E54AB';
+const BRAND = '#2E54AB';
 
-  const sections = [
-    { id: 'summary', title: 'Summary' },
-    { id: 'background', title: 'Background' },
-    { id: 'problem', title: 'The Problem' },
-    { id: 'process', title: 'Building Flow' },
-    { id: 'results', title: 'Results' },
-    { id: 'next', title: "What's Next" }
-  ];
+function Actions({ study, onStory, light = false }: { study: CaseStudy; onStory: () => void; light?: boolean }) {
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <Link
+        href={`/work/liveflow/${study.id}`}
+        className="px-4 py-2 text-sm font-bold"
+        style={light ? { backgroundColor: '#fff', color: BRAND } : { backgroundColor: BRAND, color: '#fff' }}
+      >
+        Read
+      </Link>
+      <button
+        onClick={onStory}
+        className={`px-4 py-2 text-sm font-bold border ${light ? 'border-white/40 text-white' : 'border-[#2E54AB]/30 text-[#2E54AB]'}`}
+      >
+        Story
+      </button>
+      {study.demoKey && (
+        <Link
+          href={`/work/liveflow/demo/${study.demoKey}`}
+          className={`text-sm font-bold underline underline-offset-4 ${light ? 'text-white' : 'text-[#2E54AB]'}`}
+        >
+          Try the prototype
+        </Link>
+      )}
+    </div>
+  );
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById('hero-section');
-      if (heroSection) {
-        const heroRect = heroSection.getBoundingClientRect();
-        setShowSidebarTitle(heroRect.bottom < 100);
-      }
-
-      const sectionElements = sections.map(s => ({
-        id: s.id,
-        element: document.getElementById(s.id)
-      }));
-
-      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
-
-      if (isAtBottom) {
-        setActiveSection('next');
-      } else {
-        let activeId = null;
-
-        for (let i = sectionElements.length - 1; i >= 0; i--) {
-          const section = sectionElements[i];
-          if (section.element) {
-            const rect = section.element.getBoundingClientRect();
-            if (rect.top <= 750) {
-              activeId = section.id;
-              break;
-            }
-          }
-        }
-
-        if (activeId) {
-          setActiveSection(activeId);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: 'smooth'
-      });
-    }
-  };
+export default function LiveFlowHub() {
+  const [story, setStory] = useState<CaseStudy | null>(null);
+  const process = byTier(0)[0];
 
   return (
-    <div className="min-h-screen bg-white relative">
+    <div className="min-h-screen bg-white text-[#1a1a1a]">
       <Navbar />
 
-      <CaseStudyHero
-        title="LiveFlow"
-        description="Agentic accounting that closes the books on its own."
-        gradientFrom="#0C1163"
-        gradientTo="#2E54AB"
-        imageSrc="/assets/case-studies/liveflow/placeholder.svg"
-        imageAlt="LiveFlow placeholder"
-        ctaText="Visit LiveFlow"
-        ctaHref="https://liveflow.com"
-        ctaColor="#374151"
-      />
-
-      {/* Content with Sidebar */}
-      <div className="mx-auto pt-20 flex gap-20 content-container" style={{ maxWidth: 'var(--max-width)' }}>
-        <style jsx>{`
-          .content-container {
-            padding-left: 3rem;
-            padding-right: 3rem;
-          }
-          .sidebar {
-            width: 190px;
-            flex-shrink: 0;
-            position: sticky;
-            top: 8rem;
-            height: fit-content;
-          }
-          @media (max-width: 991px) {
-            .content-container {
-              padding-left: 1.5rem;
-              padding-right: 1.5rem;
-            }
-            .sidebar {
-              display: none;
-            }
-          }
-        `}</style>
-        <main className="flex-1 min-w-0">
-          {/* Summary */}
-          <motion.section
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            id="summary"
-            className="mb-32 scroll-mt-32"
-          >
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Summary</h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 p-10 bg-gradient-to-br from-gray-50 to-white border border-[rgba(0,0,0,0.08)] shadow-sm">
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">ROLE</h5>
-                <p className="text-[#666] leading-relaxed">Product Designer - the only designer on the team</p>
-              </div>
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TEAM</h5>
-                <p className="text-[#666] leading-relaxed">[Add team]</p>
-              </div>
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TIMELINE</h5>
-                <p className="text-[#666] leading-relaxed">[Add timeline]</p>
-              </div>
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">TOOLS</h5>
-                <p className="text-[#666] leading-relaxed">[Add tools]</p>
-              </div>
-            </div>
-
-            <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-              LiveFlow builds Flow, an AI-native, agentic ERP for multi-entity businesses - it closes the books, reconciles accounts, and consolidates across entities in real time instead of the usual manual month-end grind. [Add a sentence or two on your specific contribution.]
-            </p>
-          </motion.section>
-
-          {/* Background */}
-          <section id="background" className="mb-32 scroll-mt-32">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Background</h2>
-            <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-              [What LiveFlow is, why you joined, and the context going in.]
-            </p>
-          </section>
-
-          {/* The Problem */}
-          <section id="problem" className="mb-32 scroll-mt-32">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">The Problem</h2>
-            <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-              [What was broken about legacy ERPs / manual close for multi-entity businesses, and what you were asked to solve.]
-            </p>
-          </section>
-
-          {/* Building Flow */}
-          <section id="process" className="mb-32 scroll-mt-32">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Building Flow</h2>
-            <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-              [Design and research process, key decisions, how the agentic architecture (Orchestrator, Closer, Reconciler, Categorizer, and the rest of the agent team) shaped the product design, notable iterations.]
-            </p>
-          </section>
-
-          {/* Results */}
-          <section id="results" className="mb-32 scroll-mt-32">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">Results</h2>
-            <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-              [Metrics, launch outcomes, customer reception.]
-            </p>
-          </section>
-
-          {/* What's Next */}
-          <section id="next" className="mb-32 scroll-mt-32">
-            <h2 className="text-[clamp(2rem,4vw,3rem)] font-bold text-[#333] mb-12">What&apos;s Next</h2>
-            <p className="text-[1.15rem] text-[#666] leading-[1.8]">
-              [Where the product and your role are headed.]
-            </p>
-          </section>
-        </main>
-
-        {/* Sidebar */}
-        <aside className="w-[190px] flex-shrink-0 sticky top-32 h-fit sidebar">
-          <div
-            className="overflow-hidden ease-out"
-            style={{
-              maxHeight: showSidebarTitle ? '200px' : '0',
-              opacity: showSidebarTitle ? 1 : 0,
-              marginBottom: showSidebarTitle ? '2.5rem' : '0',
-              transition: showSidebarTitle
-                ? 'all 800ms ease-out'
-                : 'all 400ms ease-out'
-            }}
-          >
-            <div className="flex items-center gap-4 mb-3">
-              <div className="w-12 h-12" style={{ background: 'linear-gradient(135deg, #0C1163 0%, #2E54AB 100%)' }} />
-              <span className="font-bold text-xl text-[#333]">LiveFlow</span>
-            </div>
-          </div>
-
-          <nav>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="text-xs font-bold tracking-widest uppercase text-[#999] mb-6"
-            >
-              Contents
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.6 }}
-              className="relative"
-            >
-              {/* Background line */}
-              <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-[#e5e5e5]" />
-
-              {/* Active indicator line */}
-              <div
-                className="absolute w-[3px] transition-all duration-300 ease-out rounded-[99px]"
-                style={{
-                  backgroundColor: brandColor,
-                  top: `${sections.findIndex(s => s.id === activeSection) * 36}px`,
-                  height: '36px',
-                  transform: 'translate3d(0, 0, 0)',
-                  contain: 'layout paint',
-                  left: '-1px'
-                }}
-              />
-
-              <div className="relative">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToSection(section.id)}
-                    style={{
-                      transform: 'translate3d(0, 0, 0)',
-                      contain: 'layout paint',
-                      fontWeight: activeSection === section.id ? 700 : 500,
-                      color: activeSection === section.id ? brandColor : '#666',
-                      transitionProperty: 'opacity'
-                    }}
-                    className="block w-full text-left pl-6 pr-4 py-2 text-sm transition-opacity duration-300 hover:opacity-80"
-                  >
-                    {section.title}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          </nav>
-        </aside>
-      </div>
-
-      {/* Navigation Footer */}
       <div className="mx-auto px-6 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
-        <div className="flex flex-col md:flex-row justify-end pt-16 border-t border-[rgba(0,0,0,0.08)] pb-20">
-          <Link href="/work/orgo" className="flex flex-col items-end gap-3 p-6 border border-[#0066cc] shadow-sm transition-all duration-300 hover:-translate-y-[5px] hover:bg-[rgba(0,102,204,0.05)] w-full md:w-1/2">
-            <div className="flex items-center gap-2 font-bold text-[#0066cc]">
-              <span>Up next</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 -960 960 960"
-                fill="currentColor"
-              >
-                <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
-              </svg>
-            </div>
-            <span className="text-[1.5rem] text-[#666] transition-colors font-bold">
-              Orgo: The App
-            </span>
-          </Link>
-        </div>
-      </div>
+        <header className="pt-40 pb-16 md:pt-48">
+          <div className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">LiveFlow · Sole product designer</div>
+          <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] mb-6">Designing an ERP that closes its own books</h1>
+          <p className="text-[1.15rem] leading-[1.7] text-[#666] max-w-[42rem]">
+            Flow is an AI-native ERP for multi-entity businesses. I&apos;m the only designer on it, so here&apos;s how I work, then the projects
+            that mattered most.
+          </p>
+        </header>
 
-      <div className="mx-auto mt-20 px-12 md:px-12" style={{ maxWidth: 'var(--max-width)' }}>
-        <style jsx>{`
-          @media (max-width: 767px) {
-            div {
-              padding-left: 1.5rem !important;
-              padding-right: 1.5rem !important;
-            }
-          }
-        `}</style>
+        {process && (
+          <section
+            className="p-8 md:p-12 mb-24 text-white"
+            style={{ background: 'linear-gradient(135deg, #0C1163 0%, #2E54AB 100%)' }}
+          >
+            <div className="text-xs font-bold tracking-widest uppercase text-white/60 mb-3">Start here</div>
+            <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold mb-4">{process.title}</h2>
+            <p className="text-white/80 leading-[1.7] max-w-[40rem] mb-8">{process.oneLiner}</p>
+            <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              {process.slides.slice(1).map((s) => (
+                <li key={s.heading} className="bg-white/10 p-5">
+                  <div className="font-bold mb-2">{s.heading}</div>
+                  <div className="text-sm leading-[1.6] text-white/75">{s.body}</div>
+                </li>
+              ))}
+            </ol>
+            <div className="mb-8">
+              <RoiLine text={process.roi} confirmed={process.roiConfirmed} light />
+            </div>
+            <Actions study={process} onStory={() => setStory(process)} light />
+          </section>
+        )}
+
+        <section className="mb-24">
+          <h2 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-8">{TIER_LABELS[1]}</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {byTier(1).map((s) => (
+              <article key={s.id} className="flex flex-col border border-black/10 p-7 bg-[#FAFCFF]">
+                <div className="aspect-[16/10] mb-6 border-2 border-dashed border-[#BED6FE] flex items-center justify-center text-xs font-semibold text-[#4778D1]">
+                  Cover clip
+                </div>
+                <h3 className="text-2xl font-bold mb-3">{s.title}</h3>
+                <p className="text-[#666] leading-[1.6] mb-5 flex-1">{s.oneLiner}</p>
+                <div className="mb-6">
+                  <RoiLine text={s.roi} confirmed={s.roiConfirmed} />
+                </div>
+                <Actions study={s} onStory={() => setStory(s)} />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-24">
+          <h2 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-8">{TIER_LABELS[2]}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {byTier(2).map((s) => (
+              <article key={s.id} className="flex flex-col border border-black/10 p-6">
+                <h3 className="text-xl font-bold mb-2">{s.title}</h3>
+                <p className="text-[#666] text-[0.95rem] leading-[1.6] mb-4 flex-1">{s.oneLiner}</p>
+                <div className="mb-5">
+                  <RoiLine text={s.roi} confirmed={s.roiConfirmed} />
+                </div>
+                <Actions study={s} onStory={() => setStory(s)} />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-32">
+          <h2 className="text-xs font-bold tracking-widest uppercase text-[#999] mb-4">{TIER_LABELS[3]}</h2>
+          <ul className="border-t border-black/10">
+            {byTier(3).map((s) => (
+              <li key={s.id} className="border-b border-black/10">
+                <Link href={`/work/liveflow/${s.id}`} className="group flex flex-col md:flex-row md:items-center gap-2 md:gap-8 py-5">
+                  <span className="font-bold md:w-72 group-hover:text-[#2E54AB] transition-colors">{s.title}</span>
+                  <span className="text-[#666] text-[0.95rem] flex-1">{s.oneLiner}</span>
+                  <span className="text-[#2E54AB] text-sm font-bold">Read →</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <Footer />
       </div>
+
+      {story && <StoryViewer study={story} open={!!story} onClose={() => setStory(null)} />}
     </div>
   );
 }

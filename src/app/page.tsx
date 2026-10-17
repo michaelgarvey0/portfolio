@@ -13,7 +13,7 @@ import doorZoomAnimation from '../../public/door-zoom.json';
 import doorZoomMobileAnimation from '../../public/door-zoom-mobile.json';
 
 const DOOR_SETTLE_FRAME = 62;
-const DOOR_OPEN_FRAME = 150;
+const DOOR_OPEN_FRAME = 76;
 const ENTRANCE_MS = 1700;
 const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
@@ -43,7 +43,8 @@ const frameForSwing = (swing: number) => {
   }
   return (lo + hi) / 2;
 };
-const frameForOpenness = (u: number) => frameForSwing(SETTLE_SWING + (1 - SETTLE_SWING) * u);
+const OPEN_SWING = swingAt(DOOR_OPEN_FRAME);
+const frameForOpenness = (u: number) => frameForSwing(SETTLE_SWING + (OPEN_SWING - SETTLE_SWING) * u);
 
 export default function Home() {
   // Check sessionStorage immediately before rendering
